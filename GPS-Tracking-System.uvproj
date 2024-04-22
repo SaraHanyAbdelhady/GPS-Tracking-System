@@ -480,6 +480,11 @@
               <FileType>5</FileType>
               <FilePath>.\Headers\HAL\LED.h</FilePath>
             </File>
+            <File>
+              <FileName>UART_private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UART_private.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
