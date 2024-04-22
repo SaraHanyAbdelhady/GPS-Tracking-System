@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 #include "../../Services/Bit_Utilities.h"
 #include "../../Services/STD_TYPES.h"
 #include  "../../Services/tm4c123gh6pm.h"
-=======
-
-
-
 
 void Set_vPinDirection(u8 port_name,u8 pin_number, u8 pin_direction){ // a fn that specifiec whether the pin is input or output
 	
@@ -223,4 +218,3 @@ void Set_vPinDirection(u8 port_name,u8 pin_number, u8 pin_direction){ // a fn th
 	
 	
 
->>>>>>> c3212b4fcc3c62c984655ea289dee5509b21b42c
