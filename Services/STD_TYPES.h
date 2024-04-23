@@ -5,7 +5,7 @@
 
 #define STD_TYPES_OK		1
 #define STD_TYPES_NOK		0
-
+#define GPIO_LOCK_KEY		0x4C4F434B
 
 typedef unsigned char		u8;
 typedef unsigned short  	u16;
