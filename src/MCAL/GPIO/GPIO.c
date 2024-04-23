@@ -1,7 +1,7 @@
-#include "../../Services/Bit_Utilities.h"
-#include "../../Services/STD_TYPES.h"
-#include  "../../Services/tm4c123gh6pm.h"
-#include "../../Headers/MCAL/GPIO.h"
+#include "../../../Services/Bit_Utilities.h"
+#include "../../../Services/STD_TYPES.h"
+#include  "../../../Services/tm4c123gh6pm.h"
+#include "../../../Headers/MCAL/GPIO/GPIO.h"
 
 u8 Init_Port(u8 Port_ID){  // a fn that initializes the port
 	switch(Port_ID){
