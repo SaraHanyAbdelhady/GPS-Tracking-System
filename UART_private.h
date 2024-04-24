@@ -34,6 +34,7 @@
 #define UART_POARTE				4
 /*************************************< UART_DATA_LENGTH_MSK ****************************/
 #define UART_LCRH_WLEN_S		5
+#define UART_LCRH_FEN       0x10
 
 #define UART_CLOCK              16000000
 

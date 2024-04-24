@@ -34,7 +34,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART0_IBRD_R = (u32)Local_u32Divisor;
 		UART0_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART0_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S;
+		UART0_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S + UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART0_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -87,7 +87,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART1_IBRD_R = (u32)Local_u32Divisor;
 		UART1_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART1_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S;
+		UART1_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART1_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -139,7 +139,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART2_IBRD_R = (u32)Local_u32Divisor;
 		UART2_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART2_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S;
+		UART2_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART2_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -186,7 +186,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART3_IBRD_R = (u32)Local_u32Divisor;
 		UART3_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART3_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S;
+		UART3_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART3_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -233,7 +233,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART4_IBRD_R = (u32)Local_u32Divisor;
 		UART4_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART4_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S;
+		UART4_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART4_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -280,7 +280,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART5_IBRD_R = (u32)Local_u32Divisor;
 		UART5_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART5_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S;
+		UART5_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART5_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -327,7 +327,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART6_IBRD_R = (u32)Local_u32Divisor;
 		UART6_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART6_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S;
+		UART6_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART6_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -374,7 +374,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART7_IBRD_R = (u32)Local_u32Divisor;
 		UART7_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART7_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S;
+		UART7_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART7_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -550,3 +550,5 @@ void UART_voidReceiveString(u8 copy_u8UARTNo,u8 *copy_pu8Buffer)
     copy_pu8Buffer[i] = '\0';
 
 }
+
+
