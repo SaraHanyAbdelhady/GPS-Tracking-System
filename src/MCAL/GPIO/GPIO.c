@@ -12,7 +12,7 @@ u8 Init_Port(u8 Port_ID){  // a fn that initializes the port
 		case 'a':
 		{
 			SET_BIT(SYSCTL_RCGCGPIO_R,0);
-			while(GET_BIT(SYSCTL_PRGPIO_R,0)==0);
+			while(READ_BIT(SYSCTL_PRGPIO_R,0)==0);
 			GPIO_PORTA_LOCK_R =GPIO_LOCK_KEY;
 		    GPIO_PORTA_AFSEL_R = 0x00;
 			GPIO_PORTA_PCTL_R = 0x00;
@@ -26,7 +26,7 @@ u8 Init_Port(u8 Port_ID){  // a fn that initializes the port
 		case 'b':
 		{
 			SET_BIT(SYSCTL_RCGCGPIO_R,1);
-			while(GET_BIT(SYSCTL_PRGPIO_R,1)==0);
+			while(READ_BIT(SYSCTL_PRGPIO_R,1)==0);
 			GPIO_PORTB_LOCK_R =GPIO_LOCK_KEY;
 			GPIO_PORTB_CR_R=0xFF;
 		    GPIO_PORTB_AFSEL_R = 0x00;
@@ -40,7 +40,7 @@ u8 Init_Port(u8 Port_ID){  // a fn that initializes the port
 		case 'c':
 		{
 			SET_BIT(SYSCTL_RCGCGPIO_R,2);
-			while(GET_BIT(SYSCTL_PRGPIO_R,2)==0);
+			while(READ_BIT(SYSCTL_PRGPIO_R,2)==0);
 			GPIO_PORTC_LOCK_R =GPIO_LOCK_KEY;
 			GPIO_PORTC_CR_R=0xFF;
 			GPIO_PORTC_AFSEL_R = 0x00;
@@ -53,7 +53,7 @@ u8 Init_Port(u8 Port_ID){  // a fn that initializes the port
 		case 'd':
 		{
 			SET_BIT(SYSCTL_RCGCGPIO_R,3);
-			while(GET_BIT(SYSCTL_PRGPIO_R,3)==0);
+			while(READ_BIT(SYSCTL_PRGPIO_R,3)==0);
 			GPIO_PORTD_LOCK_R =GPIO_LOCK_KEY;
 			GPIO_PORTD_CR_R=0xFF;
 			GPIO_PORTD_AFSEL_R = 0x00;
@@ -66,7 +66,7 @@ u8 Init_Port(u8 Port_ID){  // a fn that initializes the port
 		case 'e':
 		{
 			SET_BIT(SYSCTL_RCGCGPIO_R,4);
-			while(GET_BIT(SYSCTL_PRGPIO_R,4)==0);
+			while(READ_BIT(SYSCTL_PRGPIO_R,4)==0);
 			GPIO_PORTE_LOCK_R =GPIO_LOCK_KEY;
 			GPIO_PORTE_CR_R=0xFF;
 			GPIO_PORTE_AFSEL_R = 0x00;
@@ -81,7 +81,7 @@ u8 Init_Port(u8 Port_ID){  // a fn that initializes the port
 		case 'f':
 		{
 			SET_BIT(SYSCTL_RCGCGPIO_R,5);
-			while(GET_BIT(SYSCTL_PRGPIO_R,5)==0);
+			while(READ_BIT(SYSCTL_PRGPIO_R,5)==0);
 			GPIO_PORTF_LOCK_R =GPIO_LOCK_KEY;
 			GPIO_PORTF_CR_R=0xFF;
 			GPIO_PORTF_AFSEL_R = 0x00;
@@ -102,8 +102,8 @@ u8 Init_Port(u8 Port_ID){  // a fn that initializes the port
 		return status;
 	}
 
-
 }
+
 u8 Write_PIN_value(u8 Port_ID,u8 Pin_Number,u8 Pin_Value){ // a fn that writes a value on a specific pin
 	u8 status=STD_TYPES_OK; // a variable to store the status of the function wether it's written the value or not
 	if(((Port_ID>='A' && Port_ID<='F')||(Port_ID>='a' && Port_ID<='f'))&&((Pin_Number>=0)&&(Pin_Number<=7))&&((Pin_Value==0)||(Pin_Value==1)))
@@ -113,7 +113,7 @@ u8 Write_PIN_value(u8 Port_ID,u8 Pin_Number,u8 Pin_Value){ // a fn that writes a
 		case 'a':
 		{
 			if(Pin_Value==0)
-				CLEAR_BIT(GPIO_PORTA_DATA_R,Pin_Number);
+				CLR_BIT(GPIO_PORTA_DATA_R,Pin_Number);
 			else
 				SET_BIT(GPIO_PORTA_DATA_R,Pin_Number);
 		}
@@ -122,7 +122,7 @@ u8 Write_PIN_value(u8 Port_ID,u8 Pin_Number,u8 Pin_Value){ // a fn that writes a
 		case 'b':
 		{
 			if(Pin_Value==0)
-				CLEAR_BIT(GPIO_PORTB_DATA_R,Pin_Number);
+				CLR_BIT(GPIO_PORTB_DATA_R,Pin_Number);
 			else
 				SET_BIT(GPIO_PORTB_DATA_R,Pin_Number);
 		}
@@ -131,7 +131,7 @@ u8 Write_PIN_value(u8 Port_ID,u8 Pin_Number,u8 Pin_Value){ // a fn that writes a
 		case 'c':
 		{
 			if(Pin_Value==0)
-				CLEAR_BIT(GPIO_PORTC_DATA_R,Pin_Number);
+				CLR_BIT(GPIO_PORTC_DATA_R,Pin_Number);
 			else
 				SET_BIT(GPIO_PORTC_DATA_R,Pin_Number);
 		}
@@ -140,7 +140,7 @@ u8 Write_PIN_value(u8 Port_ID,u8 Pin_Number,u8 Pin_Value){ // a fn that writes a
 		case 'd':
 		{
 			if(Pin_Value==0)
-				CLEAR_BIT(GPIO_PORTD_DATA_R,Pin_Number);
+				CLR_BIT(GPIO_PORTD_DATA_R,Pin_Number);
 			else
 				SET_BIT(GPIO_PORTD_DATA_R,Pin_Number);
 		}
@@ -150,7 +150,7 @@ u8 Write_PIN_value(u8 Port_ID,u8 Pin_Number,u8 Pin_Value){ // a fn that writes a
 		{
 			if((Pin_Number>=0)&&(Pin_Number<=5)){
 			if(Pin_Value==0)
-				CLEAR_BIT(GPIO_PORTE_DATA_R,Pin_Number);
+				CLR_BIT(GPIO_PORTE_DATA_R,Pin_Number);
 			else
 				SET_BIT(GPIO_PORTE_DATA_R,Pin_Number);
 		}else{
@@ -163,7 +163,7 @@ u8 Write_PIN_value(u8 Port_ID,u8 Pin_Number,u8 Pin_Value){ // a fn that writes a
 		{
 			if((Pin_Number>=0)&&(Pin_Number<=4)){
 			if(Pin_Value==0)
-				CLEAR_BIT(GPIO_PORTF_DATA_R,Pin_Number);
+				CLR_BIT(GPIO_PORTF_DATA_R,Pin_Number);
 			else
 				SET_BIT(GPIO_PORTF_DATA_R,Pin_Number);
 		}else{
@@ -310,7 +310,7 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 		case 'a':
 		{
 			if(pin_direction==0) //input
-				CLEAR_BIT(GPIO_PORTA_DIR_R,pin_number);
+				CLR_BIT(GPIO_PORTA_DIR_R,pin_number);
 			else //output
 				SET_BIT(GPIO_PORTA_DIR_R,pin_number);
 		}
@@ -320,7 +320,7 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 		case 'b':
 		{
 			if(pin_direction==0) //input
-				CLEAR_BIT(GPIO_PORTB_DIR_R,pin_number);
+				CLR_BIT(GPIO_PORTB_DIR_R,pin_number);
 			else //output
 				SET_BIT(GPIO_PORTB_DIR_R,pin_number);
 		}
@@ -330,7 +330,7 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 		case 'c':
 		{
 			if(pin_direction==0) //input
-				CLEAR_BIT(GPIO_PORTC_DIR_R,pin_number);
+				CLR_BIT(GPIO_PORTC_DIR_R,pin_number);
 			else
 				SET_BIT(GPIO_PORTC_DIR_R,pin_number);
 		}
@@ -340,7 +340,7 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 		case 'd':
 		{
 			if(pin_direction==0) //input
-				CLEAR_BIT(GPIO_PORTD_DIR_R,pin_number);
+				CLR_BIT(GPIO_PORTD_DIR_R,pin_number);
 			else //output
 				SET_BIT(GPIO_PORTD_DIR_R,pin_number);
 		}
@@ -352,7 +352,7 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 		{
 			if((pin_number>=0)&&(pin_number<=5)){
 			if(pin_direction==0) //input
-				CLEAR_BIT(GPIO_PORTE_DIR_R,pin_number);
+				CLR_BIT(GPIO_PORTE_DIR_R,pin_number);
 			else //output
 				SET_BIT(GPIO_PORTE_DIR_R,pin_number);
 				}else{
@@ -366,7 +366,7 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 		{
 				if((pin_number>=0)&&(pin_number<=4)){
 			if(pin_direction==0) //input
-				CLEAR_BIT(GPIO_PORTF_DIR_R,pin_number);
+				CLR_BIT(GPIO_PORTF_DIR_R,pin_number);
 			else //output
 				SET_BIT(GPIO_PORTF_DIR_R,pin_number);
 				}else{
@@ -393,28 +393,28 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 		case 'A':
 		case 'a':
 		{
-			return GET_BIT(GPIO_PORTA_DATA_R,pin_number);
+			return CLR_BIT(GPIO_PORTA_DATA_R,pin_number);
 		}
 		break;
 		
 		case 'B':
 		case 'b':
 		{
-			return GET_BIT(GPIO_PORTB_DATA_R,pin_number);
+			return READ_BIT(GPIO_PORTB_DATA_R,pin_number);
 		}
 		break;
 		
 		case 'C':
 		case 'c':
 		{
-			return GET_BIT(GPIO_PORTC_DATA_R,pin_number);
+			return READ_BIT(GPIO_PORTC_DATA_R,pin_number);
 		}
 		break;
 		
 		case 'D':
 		case 'd':
 		{
-			return GET_BIT(GPIO_PORTD_DATA_R,pin_number);
+			return READ_BIT(GPIO_PORTD_DATA_R,pin_number);
 		}
 		break;
 		
@@ -422,7 +422,7 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 		case 'e':
 		{
 			if((pin_number>=0)&&(pin_number<=5)){
-			return GET_BIT(GPIO_PORTE_DATA_R,pin_number);
+			return READ_BIT(GPIO_PORTE_DATA_R,pin_number);
 			}else{
 				return -1;
 			}
@@ -433,7 +433,7 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 		case 'f':
 		{
 			if((pin_number>=0)&&(pin_number<=4)){
-			return GET_BIT(GPIO_PORTF_DATA_R,pin_number);
+			return READ_BIT(GPIO_PORTF_DATA_R,pin_number);
 			}else{
 				return -1;
 			}

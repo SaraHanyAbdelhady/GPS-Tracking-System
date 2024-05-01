@@ -1,8 +1,8 @@
-#include "../../Services/tm4c123gh6pm.h"
-#include "../../Services/Bit_Utilities.h"
-#include "../../Services/STD_TYPES.h"
-#include "../../Headers/MCAL/UART.h"
-#include "../../Headers/MCAL/UART_private.h"
+#include "../../../Services/tm4c123gh6pm.h"
+#include "../../../Services/Bit_Utilities.h"
+#include "../../../Services/STD_TYPES.h"
+#include "../../../Headers/MCAL/UART/UART.h"
+
 
 
 
@@ -21,7 +21,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		/**< Enable GPIO clock for UART pins */
 		SET_BIT(SYSCTL_RCGCGPIO_R,UART_POARTA);
 		/** Wait for clock stabilization */ 
-		while(!GET_BIT(SYSCTL_PRGPIO_R,UART_POARTA));
+		while(!READ_BIT(SYSCTL_PRGPIO_R,UART_POARTA));
 		/**< Configure UART pins */
 		GPIO_PORTA_AFSEL_R |= GPIO_PA0_U0RX | GPIO_PA1_U0TX; /**< Set the PA0 and PA1 to operate in alternative mode */
 		GPIO_PORTA_PCTL_R  |= GPIO_PCTL_PA0_U0RX | GPIO_PCTL_PA1_U0TX; /**< Select the alternative mode to be UART */
@@ -34,7 +34,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART0_IBRD_R = (u32)Local_u32Divisor;
 		UART0_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART0_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S + UART_LCRH_FEN;
+		UART0_LCRH_R = ((copy_u8DataBits - 5) << UART_LCRH_WLEN_S )+ UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART0_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -74,7 +74,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		/**< Enable GPIO clock for UART pins */
 		SET_BIT(SYSCTL_RCGCGPIO_R,UART_POARTB);
 		/** Wait for clock stabilization */ 
-		while(!GET_BIT(SYSCTL_PRGPIO_R,UART_POARTB));
+		while(!READ_BIT(SYSCTL_PRGPIO_R,UART_POARTB));
 		/**< Configure UART pins */
 		GPIO_PORTB_AFSEL_R |= GPIO_PB0_U1RX | GPIO_PB1_U1TX;
 		GPIO_PORTB_PCTL_R  |= GPIO_PCTL_PB0_U1RX | GPIO_PCTL_PB1_U1TX;
@@ -87,7 +87,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART1_IBRD_R = (u32)Local_u32Divisor;
 		UART1_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART1_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
+		UART1_LCRH_R = ((copy_u8DataBits - 5) << UART_LCRH_WLEN_S )+UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART1_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -126,7 +126,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		/**< Enable GPIO clock for UART pins */
 		SET_BIT(SYSCTL_RCGCGPIO_R,UART_POARTD);
 		/** Wait for clock stabilization */ 
-		while(!GET_BIT(SYSCTL_PRGPIO_R,UART_POARTD));
+		while(!READ_BIT(SYSCTL_PRGPIO_R,UART_POARTD));
 		/**< Configure UART pins */
 		GPIO_PORTD_AFSEL_R |= GPIO_PD6_U2RX | GPIO_PD7_U2TX;
 		GPIO_PORTD_PCTL_R  |= GPIO_PCTL_PD6_U2RX | GPIO_PCTL_PD7_U2TX;
@@ -139,7 +139,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART2_IBRD_R = (u32)Local_u32Divisor;
 		UART2_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART2_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
+		UART2_LCRH_R = ((copy_u8DataBits - 5) << UART_LCRH_WLEN_S )+UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART2_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -173,7 +173,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		/**< Enable GPIO clock for UART pins */
 		SET_BIT(SYSCTL_RCGCGPIO_R,UART_POARTC);
 		/** Wait for clock stabilization */ 
-		while(!GET_BIT(SYSCTL_PRGPIO_R,UART_POARTC));
+		while(!READ_BIT(SYSCTL_PRGPIO_R,UART_POARTC));
 		/**< Configure UART pins */
 		GPIO_PORTC_AFSEL_R |= GPIO_PC6_U3RX | GPIO_PC7_U3TX;
 		GPIO_PORTC_PCTL_R  |= GPIO_PCTL_PC6_U3RX | GPIO_PCTL_PC7_U3TX;
@@ -186,7 +186,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART3_IBRD_R = (u32)Local_u32Divisor;
 		UART3_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART3_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
+		UART3_LCRH_R = ((copy_u8DataBits - 5) << UART_LCRH_WLEN_S )+UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART3_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -220,7 +220,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		/**< Enable GPIO clock for UART pins */
 		SET_BIT(SYSCTL_RCGCGPIO_R,UART_POARTC);
 		/** Wait for clock stabilization */ 
-		while(!GET_BIT(SYSCTL_PRGPIO_R,UART_POARTC));
+		while(!READ_BIT(SYSCTL_PRGPIO_R,UART_POARTC));
 		/**< Configure UART pins */
 		GPIO_PORTC_AFSEL_R |= GPIO_PC4_U4RX | GPIO_PC5_U4TX;
 		GPIO_PORTC_PCTL_R  |= GPIO_PCTL_PC4_U4RX | GPIO_PCTL_PC5_U4TX;
@@ -233,7 +233,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART4_IBRD_R = (u32)Local_u32Divisor;
 		UART4_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART4_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
+		UART4_LCRH_R = ((copy_u8DataBits - 5) << UART_LCRH_WLEN_S )+UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART4_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -267,7 +267,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		/**< Enable GPIO clock for UART pins */
 		SET_BIT(SYSCTL_RCGCGPIO_R,UART_POARTE);
 		/** Wait for clock stabilization */ 
-		while(!GET_BIT(SYSCTL_PRGPIO_R,UART_POARTE));
+		while(!READ_BIT(SYSCTL_PRGPIO_R,UART_POARTE));
 		/**< Configure UART pins */
 		GPIO_PORTE_AFSEL_R |= GPIO_PE4_U5RX | GPIO_PE5_U5TX;
 		GPIO_PORTE_PCTL_R  |= GPIO_PCTL_PE4_U5RX | GPIO_PCTL_PE5_U5TX;
@@ -280,7 +280,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART5_IBRD_R = (u32)Local_u32Divisor;
 		UART5_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART5_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
+		UART5_LCRH_R = ((copy_u8DataBits - 5) << UART_LCRH_WLEN_S) +UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART5_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -314,7 +314,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		/**< Enable GPIO clock for UART pins */
 		SET_BIT(SYSCTL_RCGCGPIO_R,UART_POARTD);
 		/** Wait for clock stabilization */ 
-		while(!GET_BIT(SYSCTL_PRGPIO_R,UART_POARTD));
+		while(!READ_BIT(SYSCTL_PRGPIO_R,UART_POARTD));
 		/**< Configure UART pins */
 		GPIO_PORTD_AFSEL_R |= GPIO_PD4_U6RX | GPIO_PD5_U6TX;
 		GPIO_PORTD_PCTL_R  |= GPIO_PCTL_PD4_U6RX | GPIO_PCTL_PD5_U6TX;
@@ -327,7 +327,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART6_IBRD_R = (u32)Local_u32Divisor;
 		UART6_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART6_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
+		UART6_LCRH_R = ((copy_u8DataBits - 5) << UART_LCRH_WLEN_S )+UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART6_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);
@@ -361,7 +361,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		/**< Enable GPIO clock for UART pins */
 		SET_BIT(SYSCTL_RCGCGPIO_R,UART_POARTE);
 		/** Wait for clock stabilization */ 
-		while(!GET_BIT(SYSCTL_PRGPIO_R,UART_POARTE));
+		while(!READ_BIT(SYSCTL_PRGPIO_R,UART_POARTE));
 		/**< Configure UART pins */
 		GPIO_PORTE_AFSEL_R |= GPIO_PE0_U7RX | GPIO_PE1_U7TX;
 		GPIO_PORTE_PCTL_R  |= GPIO_PCTL_PE0_U7RX | GPIO_PCTL_PE1_U7TX;
@@ -374,7 +374,7 @@ void UART_voidInit(u8 copy_u8UARTNo,u32 copy_u32BaudRate, u8 copy_u8DataBits, u8
 		UART7_IBRD_R = (u32)Local_u32Divisor;
 		UART7_FBRD_R = (u32)((Local_u32FractionalDivider*64)+0.5);
 		/**< Configure data format */
-		UART7_LCRH_R = (copy_u8DataBits - 5) << UART_LCRH_WLEN_S +UART_LCRH_FEN;
+		UART7_LCRH_R = ((copy_u8DataBits - 5) << UART_LCRH_WLEN_S )+UART_LCRH_FEN;
 		if(copy_u8Parity == UART_PARITY_NONE)
 		{
 			UART7_LCRH_R &= ~(UART_LCRH_PEN | UART_LCRH_EPS | UART_LCRH_SPS);

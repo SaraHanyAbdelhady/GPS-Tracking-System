@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <Stdlib.h>
-
+#include <math.h>
 /***************************** LIB *****************************/
 #include "../../../Services/STD_TYPES.h"
 #include "../../../Services/BIT_UTILITIES.h"
@@ -58,7 +58,7 @@ void GPS_voidReceiveSentence(f64* Copy_f64Latitude, f64 *Copy_f64Longitude, u8 *
 										Local_u8GPS_Sentence[Local_u8ReadCounter] = Local_u8ReceivedChar;
 										Local_u8ReadCounter++;
 									}
-									GPS_voidExtractCoordinates(Local_u8GPS_Sentence,Copy_f64Latitude,Copy_f64Longitude);
+									GPS_voidExtractCoordinates(Local_u8GPS_Sentence,Copy_f64Latitude,Copy_f64Longitude,Copy_u8Speed);
 								}
 							}
 						}

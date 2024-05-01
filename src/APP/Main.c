@@ -1,3 +1,15 @@
+#include "../../Services/tm4c123gh6pm.h"
+#include "../../Services/Bit_Utilities.h"
+#include "../../Services/STD_TYPES.h"
+#include "../../Headers/MCAL/UART/UART.h"
+#include "../../Headers/MCAL/UART/UART_private.h"
+#include "../../Headers/MCAL/GPIO.h"
+#include "../../Headers/HAL/GPS/GPS.h"
+#include "../../Headers/HAL/LED/LED.h"
+#include "../../Headers/HAL/Push button/Push button.h"
+
+
+
 unsigned char SW1_input(void){
 return GPIO_PORTF_DATA_R & 0x10;
 }
@@ -14,13 +26,18 @@ GPIO_PORTF_DATA_R |= data;
 unsigned char push_button;
 
 int main() {
+	// intiallize portf
+	// intiallize uart0 for gps
+	// intiallize uart5 for bluetooth or serial inter face between laptop&tiva c
+	Button_Init();
+	LEDInit();
 	while(1){
 		
-		push_button = "SW1_input()";	//Between " " add function name of SW1 that returns current state of switch
+		push_button = Button_Pressed();	
 		
-		while((push_button == 0x10) & (distance < 100 )){
+		while(!push_button){
 			//Put trajectories
 		}
-		LEDs_output(RED);
+		LED_On(LED_RED);
 	}
 }
