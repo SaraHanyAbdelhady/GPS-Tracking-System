@@ -4,6 +4,161 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\User\Documents\GitHub\GPS-Tracking-System\GPS-Tracking-System.uvproj
-Project File Date:  04/24/2024
+Project File Date:  05/01/2024
 
 <h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling startup_TM4C123.s...
+compiling system_TM4C123.c...
+compiling Main.c...
+src\APP\../../Headers/MCAL/UART/UART.h(12): warning:  #1295-D: Deprecated declaration UART_Recievechar - give arg types
+  u8 UART_Recievechar ();
+src\APP\../../Headers/MCAL/UART/UART.h(83): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\APP\../../Headers/MCAL/GPIO.h(8): warning:  #1-D: last line of file ends without a newline
+   
+src\APP\../../Headers/HAL/GPS/GPS.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif
+src\APP\../../Headers/HAL/LED/LED.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\APP\../../Headers/HAL/Push button/Push button.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\APP\Main.c: 6 warnings, 0 errors
+compiling UART.c...
+src\MCAL\UART\../../../Headers/MCAL/UART/UART.h(12): warning:  #1295-D: Deprecated declaration UART_Recievechar - give arg types
+  u8 UART_Recievechar ();
+src\MCAL\UART\../../../Headers/MCAL/UART/UART.h(83): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\MCAL\UART\UART.c: 2 warnings, 0 errors
+compiling GPIO.c...
+src\MCAL\GPIO\../../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1-D: last line of file ends without a newline
+  u8 Toggle_vPinValue(u8 port_name,u8 pin_number);
+src\MCAL\GPIO\GPIO.c(8): warning:  #185-D: dynamic initialization in unreachable code
+                u8 status= STD_TYPES_OK;        // a variable to store the status of the function wether it's initialized the port or not
+src\MCAL\GPIO\GPIO.c(7): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "status" (declared at line 8)
+        switch(Port_ID){
+        ^
+src\MCAL\GPIO\GPIO.c(105): warning:  #940-D: missing return statement at end of non-void function "Init_Port"
+  }
+src\MCAL\GPIO\GPIO.c(109): warning:  #186-D: pointless comparison of unsigned integer with zero
+        if(((Port_ID>='A' && Port_ID<='F')||(Port_ID>='a' && Port_ID<='f'))&&((Pin_Number>=0)&&(Pin_Number<=7))&&((Pin_Value==0)||(Pin_Value==1)))
+src\MCAL\GPIO\GPIO.c(151): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((Pin_Number>=0)&&(Pin_Number<=5)){
+src\MCAL\GPIO\GPIO.c(164): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((Pin_Number>=0)&&(Pin_Number<=4)){
+src\MCAL\GPIO\GPIO.c(262): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(268): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(274): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(280): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(286): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(292): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(306): warning:  #186-D: pointless comparison of unsigned integer with zero
+        if(((port_name>='A' && port_name<='F')||(port_name>='a' && port_name<='f'))&&((pin_number>=0)&&(pin_number<=7))&&((pin_direction==0)||(pin_direction==1)))
+src\MCAL\GPIO\GPIO.c(353): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((pin_number>=0)&&(pin_number<=5)){
+src\MCAL\GPIO\GPIO.c(367): warning:  #186-D: pointless comparison of unsigned integer with zero
+                                if((pin_number>=0)&&(pin_number<=4)){
+src\MCAL\GPIO\GPIO.c(390): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if(((port_name>='A' && port_name<='F')||(port_name>='a' && port_name<='f'))&&((pin_number>=0)&&(pin_number<=7))&&((pin_direction==0)||(pin_direction==1)))
+src\MCAL\GPIO\GPIO.c(398): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(405): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(412): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(419): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(424): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((pin_number>=0)&&(pin_number<=5)){
+src\MCAL\GPIO\GPIO.c(427): warning:  #68-D: integer conversion resulted in a change of sign
+                                return -1;
+src\MCAL\GPIO\GPIO.c(430): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(435): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((pin_number>=0)&&(pin_number<=4)){
+src\MCAL\GPIO\GPIO.c(438): warning:  #68-D: integer conversion resulted in a change of sign
+                                return -1;
+src\MCAL\GPIO\GPIO.c(441): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(443): warning:  #68-D: integer conversion resulted in a change of sign
+                        return -1;
+src\MCAL\GPIO\GPIO.c(445): warning:  #68-D: integer conversion resulted in a change of sign
+                return -1;
+src\MCAL\GPIO\GPIO.c(502): warning:  #940-D: missing return statement at end of non-void function "Set_vPortValue"
+        }       
+src\MCAL\GPIO\GPIO.c(451): warning:  #550-D: variable "status" was set but never used
+                u8 status=STD_TYPES_OK; // a variable to store the status of the function wether it's set the Port value or not
+src\MCAL\GPIO\GPIO.c(507): warning:  #186-D: pointless comparison of unsigned integer with zero
+        if(((port_name>='A' && port_name<='F')||(port_name>='a' && port_name<='f'))&&((pin_number>=0)&&(pin_number<=7)))
+src\MCAL\GPIO\GPIO.c(540): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if((pin_number>=0)&&(pin_number<=5))
+src\MCAL\GPIO\GPIO.c(549): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if ((pin_number>=0)&&(pin_number<=4))
+src\MCAL\GPIO\GPIO.c(564): warning:  #940-D: missing return statement at end of non-void function "Toggle_vPinValue"
+        }       
+src\MCAL\GPIO\GPIO.c(506): warning:  #550-D: variable "status" was set but never used
+        u8 status=STD_TYPES_OK; // a variable to store the status of the function wether it's toggled the pin value or not
+src\MCAL\GPIO\GPIO.c: 36 warnings, 0 errors
+compiling Systick.c...
+compiling GPS.c...
+src\HAL\GPS\../../../Services/STD_TYPES.h(4): warning:  #47-D: incompatible redefinition of macro "NULL" (declared at line 56 of "C:\Keil\ARM\ARMCC\bin\..\include\Stdlib.h")
+  #define NULL                          ((void *)0)
+src\HAL\GPS\../../../Headers/MCAL/UART/UART.h(12): warning:  #1295-D: Deprecated declaration UART_Recievechar - give arg types
+  u8 UART_Recievechar ();
+src\HAL\GPS\../../../Headers/MCAL/UART/UART.h(83): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\HAL\GPS\../../../Headers/HAL/GPS/GPS.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif
+src\HAL\GPS\GPS.c(29): warning:  #223-D: function "UART_voidInit" declared implicitly
+                UART_voidInit(UART2, UART_BDR_9600, UART_DATA_8, UART_PARITY_NONE, UART_STOP_BIT_1);
+src\HAL\GPS\GPS.c(34): warning:  #223-D: function "UART_voidReceiveByte" declared implicitly
+                UART_voidReceiveByte(UART2,&Local_u8ReceivedChar);
+src\HAL\GPS\GPS.c(114): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c(121): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c: 8 warnings, 0 errors
+compiling LED.c...
+src\HAL\LED\../../../Headers/HAL/LED/LED.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1-D: last line of file ends without a newline
+  u8 Toggle_vPinValue(u8 port_name,u8 pin_number);
+src\HAL\LED\LED.c(41): warning:  #1-D: last line of file ends without a newline
+        
+src\HAL\LED\LED.c: 3 warnings, 0 errors
+compiling Push button.c...
+src\HAL\Push Button\../../../Headers/HAL/Push Button/Push button.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\HAL\Push Button\Push button.c(15): warning:  #1-D: last line of file ends without a newline
+  }
+src\HAL\Push Button\Push button.c: 2 warnings, 0 errors
+linking...
+.\GPS-Tracking-System.axf: Error: L6218E: Undefined symbol GPS_u8SpeedArr (referred from gps.o).
+.\GPS-Tracking-System.axf: Error: L6218E: Undefined symbol UART_voidInit (referred from gps.o).
+.\GPS-Tracking-System.axf: Error: L6218E: Undefined symbol UART_voidReceiveByte (referred from gps.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 3 error messages.
+".\GPS-Tracking-System.axf" - 3 Error(s), 57 Warning(s).
+Target not created
+if 
+src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1-D: last line of file ends without a newline
+  u8 Toggle_vPinValue(u8 port_name,u8 pin_number);
+src\HAL\LED\LED.c(41): warning:  #1-D: last line of file ends without a newline
+        
+src\HAL\LED\LED.c: 3 warnings, 0 errors
+compiling Push button.c...
+src\HAL\Push Button\../../../Headers/HAL/Push Button/Push button.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\HAL\Push Button\Push button.c(15): warning:  #1-D: last line of file ends without a newline
+  }
+src\HAL\Push Button\Push button.c: 2 warnings, 0 errors
+".\GPS-Tracking-System.axf" - 7 Error(s), 57 Warning(s).
+Target not created
+ated

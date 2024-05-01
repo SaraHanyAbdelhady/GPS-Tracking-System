@@ -120,7 +120,8 @@ void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f64 *Copy_f64Latitude,f64 *
 	Min=*Copy_f64Longitude-(f32)(Deg*100);
 	Sec=Min/60.0;
 	*Copy_f64Longitude= Deg+Sec;
-	for (int i =0;i<4;i++)
+	//int i;
+	for ( i =0;i<4;i++)
 	{
 		GPS_u8SpeedArr[i]=SpeedARR[i];
 	}

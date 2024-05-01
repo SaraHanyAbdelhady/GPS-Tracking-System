@@ -2,7 +2,6 @@
 #include "../../Services/Bit_Utilities.h"
 #include "../../Services/STD_TYPES.h"
 #include "../../Headers/MCAL/UART/UART.h"
-#include "../../Headers/MCAL/UART/UART_private.h"
 #include "../../Headers/MCAL/GPIO.h"
 #include "../../Headers/HAL/GPS/GPS.h"
 #include "../../Headers/HAL/LED/LED.h"

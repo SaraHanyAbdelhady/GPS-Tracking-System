@@ -421,34 +421,34 @@
           <GroupName>src</GroupName>
           <Files>
             <File>
-              <FileName>GPIO.c</FileName>
+              <FileName>Main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\MCAL\GPIO.c</FilePath>
-            </File>
-            <File>
-              <FileName>Systick.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\MCAL\Systick.c</FilePath>
+              <FilePath>.\src\APP\Main.c</FilePath>
             </File>
             <File>
               <FileName>UART.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\MCAL\UART.c</FilePath>
+              <FilePath>.\src\MCAL\UART\UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\MCAL\GPIO\GPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>Systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\MCAL\SYSTICK\Systick.c</FilePath>
             </File>
             <File>
               <FileName>GPS.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\HAL\GPS.c</FilePath>
+              <FilePath>.\src\HAL\GPS\GPS.c</FilePath>
             </File>
             <File>
               <FileName>LED.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\HAL\LED.c</FilePath>
-            </File>
-            <File>
-              <FileName>Main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\APP\Main.c</FilePath>
+              <FilePath>.\src\HAL\LED\LED.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -461,29 +461,29 @@
               <FilePath>.\Headers\MCAL\GPIO.h</FilePath>
             </File>
             <File>
-              <FileName>Systick.h</FileName>
+              <FileName>UART_private.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Headers\MCAL\Systick.h</FilePath>
+              <FilePath>.\UART_private.h</FilePath>
             </File>
             <File>
               <FileName>UART.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Headers\MCAL\UART.h</FilePath>
+              <FilePath>.\Headers\MCAL\UART\UART.h</FilePath>
+            </File>
+            <File>
+              <FileName>Systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\MCAL\SYSTICK\Systick.h</FilePath>
             </File>
             <File>
               <FileName>GPS.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Headers\HAL\GPS.h</FilePath>
+              <FilePath>.\Headers\HAL\GPS\GPS.h</FilePath>
             </File>
             <File>
               <FileName>LED.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Headers\HAL\LED.h</FilePath>
-            </File>
-            <File>
-              <FileName>UART_private.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\UART_private.h</FilePath>
+              <FilePath>.\Headers\HAL\LED\LED.h</FilePath>
             </File>
           </Files>
         </Group>
