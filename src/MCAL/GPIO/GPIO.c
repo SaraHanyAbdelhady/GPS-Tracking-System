@@ -3,7 +3,7 @@
 #include  "../../../Services/tm4c123gh6pm.h"
 #include "../../../Headers/MCAL/GPIO/GPIO.h"
 
-u8 Init_Port(u8 Port_ID){  // a fn that initializes the port
+/* u8 Init_Port(u8 Port_ID){  // a fn that initializes the port
 	switch(Port_ID){
 		u8 status= STD_TYPES_OK; 	// a variable to store the status of the function wether it's initialized the port or not
 		if((Port_ID>='A' && Port_ID<='F')||(Port_ID>='a' && Port_ID<='f'))
@@ -561,7 +561,80 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 	}else{
 		status=STD_TYPES_NOK;
 	}
-	}	
+	}	 */
+
+
+	// Port F initialization as GPIO for switches and LEDs
+ void PortF_Init(){ 
+	SET_BIT(SYSCTL_RCGCGPIO_R,5);
+			while(READ_BIT(SYSCTL_PRGPIO_R,5)==0);
+			GPIO_PORTF_LOCK_R =GPIO_LOCK_KEY;
+			GPIO_PORTF_CR_R=0xFF;
+			GPIO_PORTF_AFSEL_R = 0x00;
+			GPIO_PORTF_DEN_R = 0xFF;
+			GPIO_PORTF_PCTL_R = 0x00;
+			GPIO_PORTF_AMSEL_R = 0x00;
+          // Set the direction of bits 1,2,3 as output and the rest remains zeros (inputs)
+			SET_BIT(GPIO_PORTF_DIR_R,1);
+			SET_BIT(GPIO_PORTF_DIR_R,2);
+			SET_BIT(GPIO_PORTF_DIR_R,3);
+		// initialize pins 1-3 with zeros (LEDs are off at the beginning)
+		CLR_BIT(GPIO_PORTF_DATA_R,1);
+		CLR_BIT(GPIO_PORTF_DATA_R,2);
+		CLR_BIT(GPIO_PORTF_DATA_R,3);
+ }
+
+ // Port A initialization as UART
+  
+  void PortA_Init(){
+	SET_BIT(SYSCTL_RCGCGPIO_R,0);
+			while(READ_BIT(SYSCTL_PRGPIO_R,0)==0);
+			GPIO_PORTA_LOCK_R =GPIO_LOCK_KEY;
+		    GPIO_PORTA_AFSEL_R = 0x01;
+			GPIO_PORTA_PCTL_R = 0x11;
+			GPIO_PORTA_DEN_R = 0xFF;
+			GPIO_PORTA_AMSEL_R = 0x00;
+			GPIO_PORTA_CR_R=0xFF;
+
+  }
+
+  // Port B initialization as GPIO for LCD
+
+  void PortB_Init(){
+	SET_BIT(SYSCTL_RCGCGPIO_R,1);
+			while(READ_BIT(SYSCTL_PRGPIO_R,1)==0);
+			GPIO_PORTB_LOCK_R =GPIO_LOCK_KEY;
+			GPIO_PORTB_CR_R=0xFF;
+		    GPIO_PORTB_AFSEL_R = 0x00;
+			GPIO_PORTB_PCTL_R = 0x00;
+			GPIO_PORTB_DEN_R = 0xFF;
+			GPIO_PORTB_AMSEL_R = 0x00;
+
+  }
+
+// Read the value of switch 1 to check whether it is pressed or not
+
+  u8 SW1_Input(void)
+{
+	return GPIO_PORTF_DATA_R&0x10;
+}
+
+// Set the LED output value
+void LEDs_output(u8 data)
+{
+	CLR_BIT(GPIO_PORTF_DATA_R,1);
+	CLR_BIT(GPIO_PORTF_DATA_R,2);
+	CLR_BIT(GPIO_PORTF_DATA_R,3);
+
+	GPIO_PORTF_DATA_R |=data;
+}
+
+
+
+
+
+
+
 	
 		
 
