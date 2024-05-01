@@ -7,22 +7,9 @@
 #include "../../Headers/HAL/LED/LED.h"
 #include "../../Headers/HAL/Push button/Push button.h"
 
+u8 GPS_u8SpeedArr[5];
 
-
-unsigned char SW1_input(void){
-return GPIO_PORTF_DATA_R & 0x10;
-}
-unsigned char SW2_input(void){
-return GPIO_PORTF_DATA_R & 0x01;
-}
-void LEDs_output(unsigned char data){
-GPIO_PORTF_DATA_R &= ~0x0E; //clearing bits
-GPIO_PORTF_DATA_R |= data;
-}
-
-
-
-unsigned char push_button;
+u8 push_button;
 
 int main() {
 	// intiallize portf for leds & switches

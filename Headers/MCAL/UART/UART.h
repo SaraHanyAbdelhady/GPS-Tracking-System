@@ -12,7 +12,7 @@ void UART2_Init (void);
 
 void UART0_SendChar (u8 data);
 void UART0_SendString (u8 *pt);
-u8 UART0_Recievechar ();
+u8 UART0_Recievechar (void);
 void UART0_RecieveString (u8 *command, u32 length);
 
 void UART2_SendChar (u8 data);

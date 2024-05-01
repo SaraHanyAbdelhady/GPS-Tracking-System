@@ -14,7 +14,7 @@
 #include "../../../Headers/HAL/GPS/GPS.h"
 
 /********************** GLOBAL VARIABLES **********************/
-extern char GPS_u8SpeedArr[5];
+extern u8 GPS_u8SpeedArr[5];
 
 
 void GPS_voidReceiveSentence(f64* Copy_f64Latitude, f64 *Copy_f64Longitude, u8 *Copy_u8Speed)
@@ -31,28 +31,28 @@ void GPS_voidReceiveSentence(f64* Copy_f64Latitude, f64 *Copy_f64Longitude, u8 *
 	}
 	do 
 	{
-		UART_voidReceiveByte(UART2,&Local_u8ReceivedChar);
+		UART2_Recievechar ();
 		if(Local_u8ReceivedChar == Local_u8GPS_Check[0])
 		{
-			UART_voidReceiveByte(UART2,&Local_u8ReceivedChar);
+			UART2_Recievechar ();
 			if(Local_u8ReceivedChar == Local_u8GPS_Check[1])
 			{
-				UART_voidReceiveByte(UART2,&Local_u8ReceivedChar);
+				UART2_Recievechar ();
 				if(Local_u8ReceivedChar == Local_u8GPS_Check[2])
 				{
-					UART_voidReceiveByte(UART2,&Local_u8ReceivedChar);
+					UART2_Recievechar ();
 					if(Local_u8ReceivedChar == Local_u8GPS_Check[3])
 					{
-						UART_voidReceiveByte(UART2,&Local_u8ReceivedChar);
+						UART2_Recievechar ();
 						if(Local_u8ReceivedChar == Local_u8GPS_Check[4])
 						{
-							UART_voidReceiveByte(UART2,&Local_u8ReceivedChar);
+							UART2_Recievechar ();
 							if(Local_u8ReceivedChar == Local_u8GPS_Check[5])
 							{
-								UART_voidReceiveByte(UART2,&Local_u8ReceivedChar);
+								UART2_Recievechar ();
 								if(Local_u8ReceivedChar == Local_u8GPS_Check[6])
 								{
-									UART_voidReceiveByte(UART2,&Local_u8ReceivedChar);
+									UART2_Recievechar ();
 									while(Local_u8ReceivedChar != '*')
 									{
 										Local_u8GPS_Sentence[Local_u8ReadCounter] = Local_u8ReceivedChar;

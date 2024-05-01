@@ -3,7 +3,55 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\Takwa\OneDrive\Documents\GitHub\GPS-Tracking-System\GPS-Tracking-System.uvproj
+C:\Users\Acer\Documents\GitHub\GPS-Tracking-System\GPS-Tracking-System.uvproj
 Project File Date:  05/01/2024
 
 <h2>Output:</h2>
+Build target 'Target 1'
+compiling Main.c...
+src\APP\../../Headers/MCAL/UART/UART.h(15): warning:  #1295-D: Deprecated declaration UART0_Recievechar - give arg types
+  u8 UART0_Recievechar ();
+src\APP\../../Headers/MCAL/UART/UART.h(20): warning:  #1295-D: Deprecated declaration UART2_Recievechar - give arg types
+  u8 UART2_Recievechar ();
+src\APP\../../Headers/MCAL/UART/UART.h(90): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(1): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifndef GPIO.H
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(2): warning:  #2775-D: white space is required between the macro name "GPIO" and its replacement text
+  #define GPIO.H
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(12): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
+  void PortF_Init();
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(13): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
+  void PortA_Init();
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(14): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
+  void PortB_Init();
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
+  void PortD_Init();
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif
+src\APP\../../Headers/HAL/GPS/GPS.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif
+src\APP\../../Headers/HAL/LED/LED.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\APP\../../Headers/HAL/Push button/Push button.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\APP\Main.c: 13 warnings, 0 errors
+compiling GPS.c...
+src\HAL\GPS\../../../Services/STD_TYPES.h(4): warning:  #47-D: incompatible redefinition of macro "NULL" (declared at line 56 of "C:\Keil\ARM\ARMCC\bin\..\include\Stdlib.h")
+  #define NULL                          ((void *)0)
+src\HAL\GPS\../../../Headers/MCAL/UART/UART.h(15): warning:  #1295-D: Deprecated declaration UART0_Recievechar - give arg types
+  u8 UART0_Recievechar ();
+src\HAL\GPS\../../../Headers/MCAL/UART/UART.h(20): warning:  #1295-D: Deprecated declaration UART2_Recievechar - give arg types
+  u8 UART2_Recievechar ();
+src\HAL\GPS\../../../Headers/MCAL/UART/UART.h(90): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\HAL\GPS\../../../Headers/HAL/GPS/GPS.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif
+src\HAL\GPS\GPS.c(114): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c(121): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c: 7 warnings, 0 errors
+linking...
+Program Size: Code=1812 RO-data=652 RW-data=8 ZI-data=608  
+".\GPS-Tracking-System.axf" - 0 Error(s), 20 Warning(s).
