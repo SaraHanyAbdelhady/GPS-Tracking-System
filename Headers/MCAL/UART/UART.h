@@ -2,16 +2,23 @@
 #define __MCAL_UART_INTERFACE_H__
 
 #define END    0x2A
-
+#define pinUart2    0xC0
+#define pinUart0		0x03
 
 
 
 void UART0_Init (void);
-void UART_SendChar (u8 data);
-void UART_SendString (u8 *pt);
-u8 UART_Recievechar ();
-void UART_RecieveString (u8 *command, u32 length);
+void UART2_Init (void);
 
+void UART0_SendChar (u8 data);
+void UART0_SendString (u8 *pt);
+u8 UART0_Recievechar ();
+void UART0_RecieveString (u8 *command, u32 length);
+
+void UART2_SendChar (u8 data);
+void UART2_SendString (u8 *pt);
+u8 UART2_Recievechar ();
+void UART2_RecieveString (u8 *command, u32 length);
 
 
 
