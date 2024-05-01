@@ -578,6 +578,8 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 			SET_BIT(GPIO_PORTF_DIR_R,1);
 			SET_BIT(GPIO_PORTF_DIR_R,2);
 			SET_BIT(GPIO_PORTF_DIR_R,3);
+			CLR_BIT(GPIO_PORTF_DATA_R,0);
+		    CLR_BIT(GPIO_PORTF_DATA_R,4);
 		// initialize pins 1-3 with zeros (LEDs are off at the beginning)
 		CLR_BIT(GPIO_PORTF_DATA_R,1);
 		CLR_BIT(GPIO_PORTF_DATA_R,2);
