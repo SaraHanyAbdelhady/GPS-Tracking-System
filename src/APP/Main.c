@@ -2,7 +2,7 @@
 #include "../../Services/Bit_Utilities.h"
 #include "../../Services/STD_TYPES.h"
 #include "../../Headers/MCAL/UART/UART.h"
-#include "../../Headers/MCAL/GPIO.h"
+#include "../../Headers/MCAL/GPIO/GPIO.h"
 #include "../../Headers/HAL/GPS/GPS.h"
 #include "../../Headers/HAL/LED/LED.h"
 #include "../../Headers/HAL/Push button/Push button.h"
@@ -26,9 +26,13 @@ unsigned char push_button;
 
 int main() {
 	// intiallize portf for leds & switches
-	// intiallize portA for LCD
-	// intiallize uart0 for gps
-	// intiallize uart5 for bluetooth or serial inter face between laptop&tiva c
+    PortF_Init();
+	// intiallize portB for LCD
+	PortB_Init();
+	// intiallize uart2 for gps
+	UART2_Init();
+	// intiallize uart0 for bluetooth or serial inter face between laptop&tiva c
+	UART0_Init();
 	Button_Init();
 	LEDInit();
 	while(1){
