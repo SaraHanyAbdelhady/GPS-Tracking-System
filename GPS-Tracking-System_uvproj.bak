@@ -450,6 +450,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\HAL\LED\LED.c</FilePath>
             </File>
+            <File>
+              <FileName>Push button.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\HAL\Push Button\Push button.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -459,11 +464,6 @@
               <FileName>GPIO.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Headers\MCAL\GPIO.h</FilePath>
-            </File>
-            <File>
-              <FileName>UART_private.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\UART_private.h</FilePath>
             </File>
             <File>
               <FileName>UART.h</FileName>
@@ -484,6 +484,11 @@
               <FileName>LED.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Headers\HAL\LED\LED.h</FilePath>
+            </File>
+            <File>
+              <FileName>Push button.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\HAL\Push Button\Push button.h</FilePath>
             </File>
           </Files>
         </Group>

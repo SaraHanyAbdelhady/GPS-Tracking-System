@@ -13,4 +13,5 @@ void PortF_Init();
 void PortA_Init();
 void PortB_Init();
 void PortD_Init();
+void PortE_Init();
 #endif

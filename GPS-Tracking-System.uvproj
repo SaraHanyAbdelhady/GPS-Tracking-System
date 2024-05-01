@@ -510,21 +510,6 @@
               <FileType>5</FileType>
               <FilePath>.\Services\tm4c123gh6pm.h</FilePath>
             </File>
-            <File>
-              <FileName>GPIO.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\MCAL\GPIO.c</FilePath>
-            </File>
-            <File>
-              <FileName>Systick.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\MCAL\Systick.c</FilePath>
-            </File>
-            <File>
-              <FileName>UART.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\MCAL\UART.c</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>

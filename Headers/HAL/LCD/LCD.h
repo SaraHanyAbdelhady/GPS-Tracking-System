@@ -11,7 +11,7 @@
 #define LCD_RW_PIN					2
 #define LCD_EN_PIN					3
 /*************************************** DATA PINS MACROS ******************************************/
-#define DATA_PORT					'C'
+#define DATA_PORT					'E'
 #define DATA_PORT_DIR				0xFF
 #define LCD_D0_PIN					0
 #define LCD_D1_PIN					1

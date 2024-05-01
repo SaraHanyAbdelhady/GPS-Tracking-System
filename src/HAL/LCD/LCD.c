@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include "../../../Headers/MCAL/GPIO/GPIO.h"
-#include "../../../Services/Bit_Utilities"
-#include "../../../Services/STD_TYPES"
+#include "../../../Services/Bit_Utilities.h"
+#include "../../../Services/STD_TYPES.h"
 #include "../../../Headers/HAL/LCD/LCD.h"
+#include "../../../Headers/MCAL/SYSTICK/Systick.h"
 
 /*
  * Array of characters that stores the string to be printed on the LCD
@@ -24,15 +25,15 @@ char str_distance[16];
  */
 void LCD_voidInit()
 {
-	Set_vPortDirection(DATA_PORT, CTRL_PORT_DIR);
-	Set_vPortDirection(DATA_PORT, DATA_PORT_DIR);
-	SystickWait(16000000);
+	PortE_Init();
+	PortB_Init();
+	Systick_Wait(16000000);
 	LCD_SendCommand(LCD_8_BIT_MODE_CMND);
-	SystickWait(16000000);
+	Systick_Wait(16000000);
 	LCD_SendCommand(LCD_CLEAR_CMND);
-	SystickWait(16000000);
+	Systick_Wait(16000000);
 	LCD_SendCommand(LCD_CURSOR_OFF_CMND);
-	SystickWait(16000000);
+	Systick_Wait(16000000);
 	LCD_SendCommand(ENTRY_MODE_SET_CMND);
 }
 
@@ -52,7 +53,7 @@ void LCD_SendCommand(u8 Data_Value)
 	Set_vPinValue(CTRL_PORT, LCD_RW_PIN, PIN_LOW);
 	Set_vPortValue(CTRL_PORT, Data_Value);
 	Set_vPinValue(CTRL_PORT, LCD_RS_PIN, PIN_HIGH);
-	SystickWait(32000000);
+	Systick_Wait(32000000);
 	Set_vPinValue(CTRL_PORT, LCD_EN_PIN, PIN_LOW);
 }
 
@@ -72,7 +73,7 @@ void LCD_voidSendData(u8 character)
 	Set_vPinValue(CTRL_PORT, LCD_RW_PIN, PIN_LOW);
 	Set_vPortValue(CTRL_PORT, character);
 	Set_vPinValue(CTRL_PORT, LCD_RS_PIN, PIN_HIGH);
-	SystickWait(32000000);
+	Systick_Wait(32000000);
 	Set_vPinValue(CTRL_PORT, LCD_EN_PIN, PIN_LOW);
 }
 
