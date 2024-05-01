@@ -71,7 +71,7 @@ void GPS_voidReceiveSentence(f64* Copy_f64Latitude, f64 *Copy_f64Longitude, u8 *
 
 void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f64 *Copy_f64Latitude,f64 *Copy_f64Longitude,u8 *Copy_u8Speed)
 {
-	f32 Local_f32Deg,Local_f32Min,Local_f32Sec;
+	f32 Deg,Min,Sec;
 	char altitudeARR[15]={0};
 	char longARR[15]={0};
 	char SpeedARR[10];
@@ -109,17 +109,17 @@ void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f64 *Copy_f64Latitude,f64 *
 		i++;
 	}
 	*Copy_f64Latitude=atof(altitudeARR);
-	Local_f32Deg=*Copy_f64Latitude/100;
-	Local_f32Min=*Copy_f64Latitude-(f32)(Local_f32Deg*100);
-	Local_f32Sec=Local_f32Min/60.0;
-	*Copy_f64Latitude= Local_f32Deg+Local_f32Sec;
+	Deg=*Copy_f64Latitude/100;
+	Min=*Copy_f64Latitude-(f32)(Deg*100);
+	Sec=Min/60.0;
+	*Copy_f64Latitude= Deg+Sec;
 
 
 	*Copy_f64Longitude=atof(longARR);
-	Local_f32Deg=*Copy_f64Longitude/100;
-	Local_f32Min=*Copy_f64Longitude-(f32)(Local_f32Deg*100);
-	Local_f32Sec=Local_f32Min/60.0;
-	*Copy_f64Longitude= Local_f32Deg+Local_f32Sec;
+	Deg=*Copy_f64Longitude/100;
+	Min=*Copy_f64Longitude-(f32)(Deg*100);
+	Sec=Min/60.0;
+	*Copy_f64Longitude= Deg+Sec;
 	for (int i =0;i<4;i++)
 	{
 		GPS_u8SpeedArr[i]=SpeedARR[i];
