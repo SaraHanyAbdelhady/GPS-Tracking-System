@@ -8,7 +8,7 @@
 /*
  * Array of characters that stores the string to be printed on the LCD
  */
-char str_distance[16];
+u8 str_distance[16];
 
 /* 
  * Description : 
@@ -34,7 +34,7 @@ void LCD_voidInit()
 	Systick_Wait(16000000);
 	LCD_SendCommand(LCD_CURSOR_OFF_CMND);
 	Systick_Wait(16000000);
-	LCD_SendCommand(ENTRY_MODE_SET_CMND);
+	LCD_SendCommand(LCD_ENTRY_MODE_SET_CMND);
 }
 
 
@@ -82,7 +82,7 @@ void LCD_voidSendData(u8 character)
  * Description : 
  * Sends each character in the string to be printed on the LCD 
  */
-void LCD_voidSendString(char str[])
+void LCD_voidSendString(u8 str[])
 {
 	u8 i = 0;
 	while(str[i]!='\0')
@@ -98,7 +98,7 @@ void LCD_voidSendString(char str[])
  */
 void ConvertFloatToStr(f32 distance)
 {
-	sprintf(str_distance, "Distance = %f", distance);
+	distance = sprintf(str_distance, "Distance = %f", distance);
 }
 
 
@@ -110,7 +110,7 @@ void ConvertFloatToStr(f32 distance)
  */
 void Print_Distance_To_LCD(f32 distance)
 {
-	char str[20];
-	ConvertFloatToStr(f32);
-	LCD_voidSendString(str_string);
+	u8 str[20];
+	ConvertFloatToStr(distance);
+	LCD_voidSendString(str_distance);
 }

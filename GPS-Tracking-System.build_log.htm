@@ -3,7 +3,7 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\Acer\Documents\GitHub\GPS-Tracking-System\GPS-Tracking-System.uvproj
+C:\Users\hp\Downloads\GPS-Tracking-System\GPS-Tracking-System.uvproj
 Project File Date:  05/01/2024
 
 <h2>Output:</h2>
@@ -33,8 +33,6 @@ src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(35): warning:  #1-D: last line of fil
   void Print_Distance_To_LCD(f32 distance);
 src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h(7): warning:  #1-D: last line of file ends without a newline
   #endif 
-src\HAL\LCD\LCD.c(37): error:  #20: identifier "ENTRY_MODE_SET_CMND" is undefined
-        LCD_SendCommand(ENTRY_MODE_SET_CMND);
 src\HAL\LCD\LCD.c(52): warning:  #223-D: function "Set_vPinValue" declared implicitly
         Set_vPinValue(CTRL_PORT, LCD_RS_PIN, PIN_LOW);
 src\HAL\LCD\LCD.c(54): warning:  #223-D: function "Set_vPortValue" declared implicitly
@@ -43,20 +41,46 @@ src\HAL\LCD\LCD.c(72): warning:  #223-D: function "Set_vPinValue" declared impli
         Set_vPinValue(CTRL_PORT, LCD_RS_PIN, PIN_HIGH);
 src\HAL\LCD\LCD.c(74): warning:  #223-D: function "Set_vPortValue" declared implicitly
         Set_vPortValue(CTRL_PORT, character);
-src\HAL\LCD\LCD.c(85): error:  #147-D: declaration is incompatible with "void LCD_voidSendString(u8 *)" (declared at line 32 of "src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h")
-  void LCD_voidSendString(char str[])
-src\HAL\LCD\LCD.c(114): error:  #254: type name is not allowed
-        ConvertFloatToStr(f32);
-src\HAL\LCD\LCD.c(115): error:  #20: identifier "str_string" is undefined
-        LCD_voidSendString(str_string);
+src\HAL\LCD\LCD.c(101): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+        distance = sprintf(str_distance, "Distance = %f", distance);
 src\HAL\LCD\LCD.c(116): warning:  #1-D: last line of file ends without a newline
   }
 src\HAL\LCD\LCD.c(113): warning:  #177-D: variable "str" was declared but never referenced
-        char str[20];
-src\HAL\LCD\LCD.c: 18 warnings, 4 errors
-".\GPS-Tracking-System.axf" - 4 Error(s), 18 Warning(s).
+        u8 str[20];
+src\HAL\LCD\LCD.c: 19 warnings, 0 errors
+linking...
+.\GPS-Tracking-System.axf: Error: L6218E: Undefined symbol PortE_Init (referred from lcd.o).
+.\GPS-Tracking-System.axf: Error: L6218E: Undefined symbol Set_vPinValue (referred from lcd.o).
+.\GPS-Tracking-System.axf: Error: L6218E: Undefined symbol Set_vPortValue (referred from lcd.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 3 error messages.
+".\GPS-Tracking-System.axf" - 3 Error(s), 19 Warning(s).
 Target not created
-f preprocessing directive
+</pre>
+</body>
+</html>
+ders/MCAL/GPIO/GPIO.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+src\MCAL\GPIO\GPIO.c: 8 warnings, 0 errors
+compiling Systick.c...
+compiling GPS.c...
+src\HAL\GPS\../../../Services/STD_TYPES.h(4): warning:  #47-D: incompatible redefinition of macro "NULL" (declared at line 56 of "C:\Keil\ARM\ARMCC\bin\..\include\Stdlib.h")
+  #define NULL                          ((void *)0)
+src\HAL\GPS\../../../Headers/MCAL/UART/UART.h(20): warning:  #1295-D: Deprecated declaration UART2_Recievechar - give arg types
+  u8 UART2_Recievechar ();
+src\HAL\GPS\../../../Headers/MCAL/UART/UART.h(90): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\HAL\GPS\../../../Headers/HAL/GPS/GPS.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif
+src\HAL\GPS\GPS.c(114): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c(121): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c: 6 warnings, 0 errors
+compiling LED.c...
+src\HAL\LED\../../../Headers/HAL/LED/LED.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(1): warning:  #14-D: extra text after expected end of preprocessing directive
   #ifndef GPIO.H
 src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(2): warning:  #2775-D: white space is required between the macro name "GPIO" and its replacement text
   #define GPIO.H
@@ -75,6 +99,12 @@ src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(17): warning:  #1-D: last line of 
 src\HAL\LED\LED.c(41): warning:  #1-D: last line of file ends without a newline
         
 src\HAL\LED\LED.c: 10 warnings, 0 errors
+compiling Push button.c...
+src\HAL\Push Button\../../../Headers/HAL/Push Button/Push button.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\HAL\Push Button\Push button.c(15): warning:  #1-D: last line of file ends without a newline
+  }
+src\HAL\Push Button\Push button.c: 2 warnings, 0 errors
 compiling LCD.c...
 src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(1): warning:  #14-D: extra text after expected end of preprocessing directive
   #ifndef GPIO.H
@@ -96,36 +126,36 @@ src\HAL\LCD\../../../Services/STD_TYPES.h(4): warning:  #47-D: incompatible rede
   #define NULL                          ((void *)0)
 src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(30): warning:  #1295-D: Deprecated declaration LCD_voidInit - give arg types
   void LCD_voidInit();
+src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(34): error:  #18: expected a ")"
+  void ConvertFloatToStr(f32 &distance);
 src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(35): warning:  #1-D: last line of file ends without a newline
   void Print_Distance_To_LCD(f32 distance);
 src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h(7): warning:  #1-D: last line of file ends without a newline
   #endif 
-src\HAL\LCD\LCD.c(30): warning:  #223-D: function "SystickWait" declared implicitly
-        SystickWait(16000000);
-src\HAL\LCD\LCD.c(37): error:  #20: identifier "ENTRY_MODE_SET_CMND" is undefined
-        LCD_SendCommand(ENTRY_MODE_SET_CMND);
 src\HAL\LCD\LCD.c(52): warning:  #223-D: function "Set_vPinValue" declared implicitly
         Set_vPinValue(CTRL_PORT, LCD_RS_PIN, PIN_LOW);
 src\HAL\LCD\LCD.c(54): warning:  #223-D: function "Set_vPortValue" declared implicitly
         Set_vPortValue(CTRL_PORT, Data_Value);
-src\HAL\LCD\LCD.c(56): warning:  #223-D: function "SystickWait" declared implicitly
-        SystickWait(32000000);
 src\HAL\LCD\LCD.c(72): warning:  #223-D: function "Set_vPinValue" declared implicitly
         Set_vPinValue(CTRL_PORT, LCD_RS_PIN, PIN_HIGH);
 src\HAL\LCD\LCD.c(74): warning:  #223-D: function "Set_vPortValue" declared implicitly
         Set_vPortValue(CTRL_PORT, character);
-src\HAL\LCD\LCD.c(76): warning:  #223-D: function "SystickWait" declared implicitly
-        SystickWait(32000000);
-src\HAL\LCD\LCD.c(85): error:  #147-D: declaration is incompatible with "void LCD_voidSendString(u8 *)" (declared at line 32 of "src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h")
-  void LCD_voidSendString(char str[])
-src\HAL\LCD\LCD.c(114): error:  #254: type name is not allowed
-        ConvertFloatToStr(f32);
-src\HAL\LCD\LCD.c(115): error:  #20: identifier "str_string" is undefined
-        LCD_voidSendString(str_string);
+src\HAL\LCD\LCD.c(99): error:  #18: expected a ")"
+  void ConvertFloatToStr(f32 &distance)
+src\HAL\LCD\LCD.c(99): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  void ConvertFloatToStr(f32 &distance)
+src\HAL\LCD\LCD.c(101): error:  #20: identifier "distance" is undefined
+        sprintf(str_distance, "Distance = %f", distance);
+src\HAL\LCD\LCD.c(111): error:  #18: expected a ")"
+  void Print_Distance_To_LCD(f32 &distance)
+src\HAL\LCD\LCD.c(111): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  void Print_Distance_To_LCD(f32 &distance)
+src\HAL\LCD\LCD.c(114): error:  #20: identifier "distance" is undefined
+        ConvertFloatToStr(&distance);
 src\HAL\LCD\LCD.c(116): warning:  #1-D: last line of file ends without a newline
   }
 src\HAL\LCD\LCD.c(113): warning:  #177-D: variable "str" was declared but never referenced
         char str[20];
-src\HAL\LCD\LCD.c: 21 warnings, 4 errors
-".\GPS-Tracking-System.axf" - 4 Error(s), 52 Warning(s).
+src\HAL\LCD\LCD.c: 18 warnings, 7 errors
+".\GPS-Tracking-System.axf" - 7 Error(s), 59 Warning(s).
 Target not created

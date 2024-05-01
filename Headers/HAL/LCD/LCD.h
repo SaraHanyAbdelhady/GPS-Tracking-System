@@ -25,7 +25,7 @@
 #define LCD_8_BIT_MODE_CMND 			0x38
 #define LCD_CLEAR_CMND					0x01
 #define LCD_CURSOR_OFF_CMND				0x0C
-#define LCD_ENTRY_MODE_SET_CMND			0x06
+#define LCD_ENTRY_MODE_SET_CMND		0x06
 /*********************************** LCD FUNCTIONS PROTOTYPES **************************************/
 void LCD_voidInit();
 void LCD_voidSendData(u8 character);
