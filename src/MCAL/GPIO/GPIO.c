@@ -612,22 +612,21 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 
   }
 
-// Read the value of switch 1 to check whether it is pressed or not
+  // Port D initialization as GPIO 
 
-  u8 SW1_Input(void)
-{
-	return GPIO_PORTF_DATA_R&0x10;
-}
+  void PortD_Init(){
+	SET_BIT(SYSCTL_RCGCGPIO_R,3);
+			while(READ_BIT(SYSCTL_PRGPIO_R,3)==0);
+			GPIO_PORTD_LOCK_R =GPIO_LOCK_KEY;
+			GPIO_PORTD_CR_R=0xFF;
+			GPIO_PORTD_AFSEL_R = 0x00;
+			GPIO_PORTD_DEN_R = 0xFF;
+			GPIO_PORTD_PCTL_R = 0x00;
+			GPIO_PORTD_AMSEL_R = 0x00;
 
-// Set the LED output value
-void LEDs_output(u8 data)
-{
-	CLR_BIT(GPIO_PORTF_DATA_R,1);
-	CLR_BIT(GPIO_PORTF_DATA_R,2);
-	CLR_BIT(GPIO_PORTF_DATA_R,3);
+  }
 
-	GPIO_PORTF_DATA_R |=data;
-}
+
 
 
 
