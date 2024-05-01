@@ -26,7 +26,8 @@ GPIO_PORTF_DATA_R |= data;
 unsigned char push_button;
 
 int main() {
-	// intiallize portf
+	// intiallize portf for leds & switches
+	// intiallize portA for LCD
 	// intiallize uart0 for gps
 	// intiallize uart5 for bluetooth or serial inter face between laptop&tiva c
 	Button_Init();
