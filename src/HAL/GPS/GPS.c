@@ -26,7 +26,7 @@ void GPS_voidReceiveSentence(f64* Copy_f64Latitude, f64 *Copy_f64Longitude, u8 *
 	u8 Local_u8ReceivedChar;
 	if(Local_u8UART_InitFlag == 0)
 	{
-		UART_voidInit(UART2, UART_BDR_9600, UART_DATA_8, UART_PARITY_NONE, UART_STOP_BIT_1);
+		UART2_Init();
 		Local_u8UART_InitFlag++;
 	}
 	do 
