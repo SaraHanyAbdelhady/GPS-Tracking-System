@@ -172,37 +172,37 @@ u8 Get_Port_Value(u8 Port_ID){ // a fn that reads the data of the port
 		{
 			return GPIO_PORTA_DATA_R;
 		}
-		break;
+
 		case 'B':
 		case 'b':
 		{
 			return GPIO_PORTB_DATA_R;
 		}
-		break;
+	
 		case 'C':
 		case 'c':
 		{
 			return GPIO_PORTC_DATA_R;
 		}
-		break;
+
 		case 'D':
 		case 'd':
 		{
 			return GPIO_PORTD_DATA_R;
 		}
-		break;
+		
 		case 'E':
 		case 'e':
 		{
 		   return GPIO_PORTE_DATA_R;
 		}
-		break;
+		
 		case 'F':
 		case 'f':
 		{
 			return GPIO_PORTF_DATA_R;
 		}
-		break;
+
 		default:
 			return 0;
 		}
@@ -221,28 +221,28 @@ u8 Get_Port_Value(u8 Port_ID){ // a fn that reads the data of the port
 		{
 			return CLR_BIT(GPIO_PORTA_DATA_R,pin_number);
 		}
-		break;
+
 		
 		case 'B':
 		case 'b':
 		{
 			return READ_BIT(GPIO_PORTB_DATA_R,pin_number);
 		}
-		break;
+
 		
 		case 'C':
 		case 'c':
 		{
 			return READ_BIT(GPIO_PORTC_DATA_R,pin_number);
 		}
-		break;
+
 		
 		case 'D':
 		case 'd':
 		{
 			return READ_BIT(GPIO_PORTD_DATA_R,pin_number);
 		}
-		break;
+
 		
 		case 'E':
 		case 'e':
@@ -251,9 +251,10 @@ u8 Get_Port_Value(u8 Port_ID){ // a fn that reads the data of the port
 			return READ_BIT(GPIO_PORTE_DATA_R,pin_number);
 			}else{
 				return -1;
+
 			}
 		}
-		break;
+
 		
 		case 'F':
 		case 'f':
@@ -264,7 +265,7 @@ u8 Get_Port_Value(u8 Port_ID){ // a fn that reads the data of the port
 				return -1;
 			}
 		}
-		break;
+
 		default:
 			return -1;
 	}}else{

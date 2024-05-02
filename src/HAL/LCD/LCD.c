@@ -8,6 +8,7 @@
 /*
  * Array of characters that stores the string to be printed on the LCD
  */
+ 
 u8 str_distance[16];
 
 /* 
