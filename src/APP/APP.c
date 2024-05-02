@@ -1,11 +1,10 @@
-#include "GPS.h"
-#include "bit_utilies.h"
+#include "../../Headers/HAL/GPS/GPS.h"
+#include "../../Headers/APP/APP.h"
+#include "../../Services/Bit_Utilities.h"
 #include <math.h>
 //#include "TM4C123.h"						//hardware arch layer
 
 //GPS file is to calculate the distance using latitude and longtude
-
-const double Earth_Radius = 6371000;
 
 //Takes the lat and convert it into degree
 float Todegree(float angle){
@@ -15,7 +14,7 @@ float Todegree(float angle){
 }
 //takes the degree and convert it into rad
 float ToRad(float angle){
-return angle*PI/180;
+return angle*M_PI/180;
 }
 
 //We have two points' longitude and latitude to calculate the distance between them

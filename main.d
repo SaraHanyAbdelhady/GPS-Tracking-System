@@ -7,3 +7,4 @@
 .\main.o: src\APP\../../Headers/HAL/GPS/GPS.h
 .\main.o: src\APP\../../Headers/HAL/LED/LED.h
 .\main.o: src\APP\../../Headers/HAL/Push button/Push button.h
+.\main.o: src\APP\../../Headers/APP/APP.h
