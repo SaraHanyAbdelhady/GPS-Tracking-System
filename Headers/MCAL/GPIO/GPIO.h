@@ -1,6 +1,7 @@
 #ifndef GPIO_H
 #define GPIO_H
 
+#include "../../../Services/STD_TYPES.h"
 
 #define PIN_LOW 0
 #define PIN_INPUT 0

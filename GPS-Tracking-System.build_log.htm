@@ -3,127 +3,124 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\Acer\Documents\GitHub\GPS-Tracking-System\GPS-Tracking-System.uvproj
+C:\Users\hp\Downloads\GPS-Tracking-System\GPS-Tracking-System.uvproj
 Project File Date:  05/02/2024
 
 <h2>Output:</h2>
-Build target 'Target 1'
+Rebuild target 'Target 1'
+assembling startup_TM4C123.s...
+compiling system_TM4C123.c...
 compiling Main.c...
 src\APP\../../Headers/MCAL/UART/UART.h(20): warning:  #1295-D: Deprecated declaration UART2_Recievechar - give arg types
   u8 UART2_Recievechar ();
 src\APP\../../Headers/MCAL/UART/UART.h(90): warning:  #1-D: last line of file ends without a newline
   #endif // __MCAL_UART_INTERFACE_H__
-src\APP\../../Headers/MCAL/GPIO/GPIO.h(12): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(13): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
   void PortF_Init();
-src\APP\../../Headers/MCAL/GPIO/GPIO.h(13): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(14): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
   void PortA_Init();
-src\APP\../../Headers/MCAL/GPIO/GPIO.h(14): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
   void PortB_Init();
-src\APP\../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(16): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
   void PortD_Init();
-src\APP\../../Headers/MCAL/GPIO/GPIO.h(22): warning:  #1-D: last line of file ends without a newline
+src\APP\../../Headers/MCAL/GPIO/GPIO.h(23): warning:  #1-D: last line of file ends without a newline
   #endif
 src\APP\../../Headers/HAL/LED/LED.h(18): warning:  #1-D: last line of file ends without a newline
   #endif 
 src\APP\../../Headers/HAL/Push button/Push button.h(13): warning:  #1-D: last line of file ends without a newline
   #endif 
-src\APP\Main.c(31): error:  #254: type name is not allowed
-                while(!push_button && Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd) < 100){
-src\APP\Main.c(31): error:  #165: too few arguments in function call
-                while(!push_button && Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd) < 100){
-src\APP\Main.c(31): error:  #18: expected a ")"
-                while(!push_button && Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd) < 100){
-src\APP\Main.c: 9 warnings, 3 errors
-compiling LCD.c...
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(12): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
+src\APP\Main.c: 9 warnings, 0 errors
+compiling UART.c...
+src\MCAL\UART\../../../Headers/MCAL/UART/UART.h(20): warning:  #1295-D: Deprecated declaration UART2_Recievechar - give arg types
+  u8 UART2_Recievechar ();
+src\MCAL\UART\../../../Headers/MCAL/UART/UART.h(90): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\MCAL\UART\UART.c: 2 warnings, 0 errors
+compiling GPIO.c...
+src\MCAL\GPIO\../../../Headers/MCAL/GPIO/GPIO.h(13): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
   void PortF_Init();
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(13): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
+src\MCAL\GPIO\../../../Headers/MCAL/GPIO/GPIO.h(14): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
   void PortA_Init();
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(14): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
+src\MCAL\GPIO\../../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
   void PortB_Init();
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
+src\MCAL\GPIO\../../../Headers/MCAL/GPIO/GPIO.h(16): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
   void PortD_Init();
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(17): error:  #20: identifier "u8" is undefined
-  u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(17): error:  #20: identifier "u8" is undefined
-  u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(17): error:  #20: identifier "u8" is undefined
-  u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(17): error:  #20: identifier "u8" is undefined
-  u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(18): error:  #20: identifier "u8" is undefined
-  u8 Set_vPortValue(u8 port_name, u8 PortValue);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(18): error:  #20: identifier "u8" is undefined
-  u8 Set_vPortValue(u8 port_name, u8 PortValue);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(18): error:  #20: identifier "u8" is undefined
-  u8 Set_vPortValue(u8 port_name, u8 PortValue);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(19): error:  #20: identifier "u8" is undefined
-  u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(19): error:  #20: identifier "u8" is undefined
-  u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(19): error:  #20: identifier "u8" is undefined
-  u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(19): error:  #20: identifier "u8" is undefined
-  u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(20): error:  #20: identifier "u8" is undefined
-  u8 Get_Port_Value(u8 Port_ID);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(20): error:  #20: identifier "u8" is undefined
-  u8 Get_Port_Value(u8 Port_ID);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(22): warning:  #1-D: last line of file ends without a newline
+src\MCAL\GPIO\../../../Headers/MCAL/GPIO/GPIO.h(23): warning:  #1-D: last line of file ends without a newline
   #endif
-src\HAL\LCD\../../../Services/STD_TYPES.h(4): warning:  #47-D: incompatible redefinition of macro "NULL" (declared at line 48 of "C:\Keil\ARM\ARMCC\bin\..\include\stdio.h")
+src\MCAL\GPIO\GPIO.c(653): warning:  #186-D: pointless comparison of unsigned integer with zero
+        if(((Port_ID>='A' && Port_ID<='F')||(Port_ID>='a' && Port_ID<='f'))&&((Pin_Number>=0)&&(Pin_Number<=7))&&((Pin_Value==0)||(Pin_Value==1)))
+src\MCAL\GPIO\GPIO.c(695): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((Pin_Number>=0)&&(Pin_Number<=5)){
+src\MCAL\GPIO\GPIO.c(708): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((Pin_Number>=0)&&(Pin_Number<=4)){
+src\MCAL\GPIO\GPIO.c(736): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(742): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(748): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(754): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(760): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(766): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(777): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if(((port_name>='A' && port_name<='F')||(port_name>='a' && port_name<='f'))&&((pin_number>=0)&&(pin_number<=7))&&((pin_direction==0)||(pin_direction==1)))
+src\MCAL\GPIO\GPIO.c(785): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(792): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(799): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(806): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(811): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((pin_number>=0)&&(pin_number<=5)){
+src\MCAL\GPIO\GPIO.c(814): warning:  #68-D: integer conversion resulted in a change of sign
+                                return -1;
+src\MCAL\GPIO\GPIO.c(817): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(822): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((pin_number>=0)&&(pin_number<=4)){
+src\MCAL\GPIO\GPIO.c(825): warning:  #68-D: integer conversion resulted in a change of sign
+                                return -1;
+src\MCAL\GPIO\GPIO.c(828): warning:  #111-D: statement is unreachable
+                break;
+src\MCAL\GPIO\GPIO.c(830): warning:  #68-D: integer conversion resulted in a change of sign
+                        return -1;
+src\MCAL\GPIO\GPIO.c(832): warning:  #68-D: integer conversion resulted in a change of sign
+                return -1;
+src\MCAL\GPIO\GPIO.c(887): warning:  #940-D: missing return statement at end of non-void function "Set_vPortValue"
+        }       
+src\MCAL\GPIO\GPIO.c(836): warning:  #550-D: variable "status" was set but never used
+                u8 status=STD_TYPES_OK; // a variable to store the status of the function wether it's set the Port value or not
+src\MCAL\GPIO\GPIO.c: 29 warnings, 0 errors
+compiling Systick.c...
+compiling GPS.c...
+src\HAL\GPS\../../../Services/STD_TYPES.h(4): warning:  #47-D: incompatible redefinition of macro "NULL" (declared at line 56 of "C:\Keil\ARM\ARMCC\bin\..\include\Stdlib.h")
   #define NULL                          ((void *)0)
-src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(30): warning:  #1295-D: Deprecated declaration LCD_voidInit - give arg types
-  void LCD_voidInit();
-src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(35): warning:  #1-D: last line of file ends without a newline
-  void Print_Distance_To_LCD(f32 distance);
-src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h(7): warning:  #1-D: last line of file ends without a newline
+src\HAL\GPS\../../../Headers/MCAL/UART/UART.h(20): warning:  #1295-D: Deprecated declaration UART2_Recievechar - give arg types
+  u8 UART2_Recievechar ();
+src\HAL\GPS\../../../Headers/MCAL/UART/UART.h(90): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\HAL\GPS\GPS.c(114): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c(121): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c: 5 warnings, 0 errors
+compiling LED.c...
+src\HAL\LED\../../../Headers/HAL/LED/LED.h(18): warning:  #1-D: last line of file ends without a newline
   #endif 
-src\HAL\LCD\LCD.c(28): warning:  #223-D: function "PortE_Init" declared implicitly
-        PortE_Init();
-src\HAL\LCD\LCD.c(101): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
-        distance = sprintf(str_distance, "Distance = %f", distance);
-src\HAL\LCD\LCD.c(116): warning:  #1-D: last line of file ends without a newline
-  }
-src\HAL\LCD\LCD.c(113): warning:  #177-D: variable "str" was declared but never referenced
-        u8 str[20];
-src\HAL\LCD\LCD.c: 13 warnings, 13 errors
-".\GPS-Tracking-System.axf" - 16 Error(s), 22 Warning(s).
-Target not created
-and implicitly converted to double-precision
-  return angle*M_PI/180;
-src\APP\APP.c: 1 warning, 0 errors
-".\GPS-Tracking-System.axf" - 16 Error(s), 23 Warning(s).
-Target not created
-CD/LCD.h(35): warning:  #1-D: last line of file ends without a newline
-  void Print_Distance_To_LCD(f32 distance);
-src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h(7): warning:  #1-D: last line of file ends without a newline
-  #endif 
-src\HAL\LCD\LCD.c(28): warning:  #223-D: function "PortE_Init" declared implicitly
-        PortE_Init();
-src\HAL\LCD\LCD.c(101): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
-        distance = sprintf(str_distance, "Distance = %f", distance);
-src\HAL\LCD\LCD.c(116): warning:  #1-D: last line of file ends without a newline
-  }
-src\HAL\LCD\LCD.c(113): warning:  #177-D: variable "str" was declared but never referenced
-        u8 str[20];
-src\HAL\LCD\LCD.c: 13 warnings, 13 errors
-compiling APP.c...
-src\APP\APP.c(17): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  return angle*M_PI/180;
-src\APP\APP.c: 1 warning, 0 errors
-".\GPS-Tracking-System.axf" - 17 Error(s), 28 Warning(s).
-Target not created
-s/HAL/GPS/GPS.h(15): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\APP\APP.c(17): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  return angle*M_PI/180;
-src\APP\APP.c: 2 warnings, 0 errors
-".\GPS-Tracking-System.axf" - 17 Error(s), 31 Warning(s).
-Target not created
-/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
+src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(13): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
+  void PortF_Init();
+src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(14): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
+  void PortA_Init();
+src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
+  void PortB_Init();
+src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(16): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
   void PortD_Init();
-src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(22): warning:  #1-D: last line of file ends without a newline
+src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(23): warning:  #1-D: last line of file ends without a newline
   #endif
 src\HAL\LED\LED.c(41): warning:  #1-D: last line of file ends without a newline
         
@@ -135,33 +132,49 @@ src\HAL\Push Button\Push button.c(15): warning:  #1-D: last line of file ends wi
   }
 src\HAL\Push Button\Push button.c: 2 warnings, 0 errors
 compiling LCD.c...
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(12): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
+src\HAL\LCD\../../../Headers/MCAL/GPIO/../../../Services/STD_TYPES.h(4): warning:  #47-D: incompatible redefinition of macro "NULL" (declared at line 48 of "C:\Keil\ARM\ARMCC\bin\..\include\stdio.h")
+  #define NULL                          ((void *)0)
+src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(13): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
   void PortF_Init();
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(13): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
+src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(14): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
   void PortA_Init();
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(14): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
+src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
   void PortB_Init();
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
+src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(16): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
   void PortD_Init();
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(17): error:  #20: identifier "u8" is undefined
-  u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(17): error:  #20: identifier "u8" is undefined
-  u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(17): error:  #20: identifier "u8" is undefined
-  u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(17): error:  #20: identifier "u8" is undefined
-  u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(18): error:  #20: identifier "u8" is undefined
-  u8 Set_vPortValue(u8 port_name, u8 PortValue);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(18): error:  #20: identifier "u8" is undefined
-  u8 Set_vPortValue(u8 port_name, u8 PortValue);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(18): error:  #20: identifier "u8" is undefined
-  u8 Set_vPortValue(u8 port_name, u8 PortValue);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(19): error:  #20: identifier "u8" is undefined
-  u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(19): error:  #20: identifier "u8" is undefined
-  u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
-src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(19): error:  #20: identifier "u8" is undefined
+src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(34): warning:  #1295-D: Deprecated declaration LCD_voidInit - give arg types
+  void LCD_voidInit();
+src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(41): warning:  #1-D: last line of file ends without a newline
+  #endif
+src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\HAL\LCD\LCD.c(28): warning:  #223-D: function "PortE_Init" declared implicitly
+        PortE_Init();
+src\HAL\LCD\LCD.c(101): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+        distance = sprintf(str_distance, "Distance = %f", distance);
+src\HAL\LCD\LCD.c(115): warning:  #1-D: last line of file ends without a newline
+  }
+src\HAL\LCD\LCD.c: 12 warnings, 0 errors
+compiling APP.c...
+src\APP\APP.c(18): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  return angle*M_PI/180;
+src\APP\APP.c: 1 warning, 0 errors
+linking...
+Program Size: Code=14676 RO-data=1236 RW-data=8 ZI-data=608  
+".\GPS-Tracking-System.axf" - 0 Error(s), 67 Warning(s).
+ing:  #1035-D: single-precision operand implicitly converted to double-precision
+  return angle*M_PI/180;
+src\APP\APP.c: 1 warning, 0 errors
+".\GPS-Tracking-System.axf" - 2 Error(s), 67 Warning(s).
+Target not created
+(18): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  return angle*M_PI/180;
+src\APP\APP.c: 1 warning, 0 errors
+".\GPS-Tracking-System.axf" - 3 Error(s), 67 Warning(s).
+Target not created
+s undefined
   u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
 src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(19): error:  #20: identifier "u8" is undefined
   u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
@@ -173,10 +186,10 @@ src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(22): warning:  #1-D: last line of 
   #endif
 src\HAL\LCD\../../../Services/STD_TYPES.h(4): warning:  #47-D: incompatible redefinition of macro "NULL" (declared at line 48 of "C:\Keil\ARM\ARMCC\bin\..\include\stdio.h")
   #define NULL                          ((void *)0)
-src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(30): warning:  #1295-D: Deprecated declaration LCD_voidInit - give arg types
+src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(34): warning:  #1295-D: Deprecated declaration LCD_voidInit - give arg types
   void LCD_voidInit();
-src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(35): warning:  #1-D: last line of file ends without a newline
-  void Print_Distance_To_LCD(f32 distance);
+src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h(41): warning:  #1-D: last line of file ends without a newline
+  #endif
 src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h(7): warning:  #1-D: last line of file ends without a newline
   #endif 
 src\HAL\LCD\LCD.c(28): warning:  #223-D: function "PortE_Init" declared implicitly
@@ -188,13 +201,7 @@ src\HAL\LCD\LCD.c(116): warning:  #1-D: last line of file ends without a newline
 src\HAL\LCD\LCD.c(113): warning:  #177-D: variable "str" was declared but never referenced
         u8 str[20];
 src\HAL\LCD\LCD.c: 13 warnings, 13 errors
-compiling APP.c...
-src\APP\../../Headers/HAL/GPS/GPS.h(16): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\APP\APP.c(8): error:  #40: expected an identifier
-  const double Earth_Radius = 6371000;
-src\APP\APP.c(18): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  return angle*M_PI/180;
-src\APP\APP.c: 2 warnings, 1 error
-".\GPS-Tracking-System.axf" - 14 Error(s), 71 Warning(s).
+".\GPS-Tracking-System.axf" - 16 Error(s), 67 Warning(s).
+Target not created
+7 Warning(s).
 Target not created

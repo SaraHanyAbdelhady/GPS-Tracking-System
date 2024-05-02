@@ -110,7 +110,6 @@ void ConvertFloatToStr(f32 distance)
  */
 void Print_Distance_To_LCD(f32 distance)
 {
-	u8 str[20];
 	ConvertFloatToStr(distance);
 	LCD_voidSendString(str_distance);
 }

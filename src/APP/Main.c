@@ -14,21 +14,34 @@ u8 GPS_u8SpeedArr[5];
 u8 push_button;
 
 int main() {
+	
+	//declaration of variables that store the start points of the trajectory 
+	f32 longStart = 0, latStart = 0;
+	
+	//declaration of variables that store the current points in the trajectory at a specific point of time
+	f32 longEnd = 0, latEnd = 0 ;
+	
 	// intiallize portf for leds & switches
     PortF_Init();
+	
 	// intiallize portB for LCD
 	PortB_Init();
+	
 	// intiallize uart2 for gps
 	UART2_Init();
+	
 	// intiallize uart0 for bluetooth or serial inter face between laptop&tiva c
 	UART0_Init();
 	Button_Init();
 	LEDInit();
+	
+	
+	
 	while(1){
 		
 		push_button = Button_Pressed();	
 		
-		while(!push_button && Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd) < 100){
+		while(!push_button && Distance(longStart, latStart, longEnd, latEnd) < 100){
 			//Put trajectories
 		}
 		LED_On(LED_RED);

@@ -1,3 +1,7 @@
+
+#ifndef LCD_H
+#define LCD_H
+
 #include "../../MCAL/GPIO/GPIO.h"
 #include "../../../Services/STD_TYPES.h"
 
@@ -5,13 +9,13 @@
 
 
 /*************************************** CONTROL PINS MACROS ***************************************/
-#define CTRL_PORT					'B'	
-#define CTRL_PORT_DIR				0xFF
+#define CTRL_PORT					'E'	
+#define CTRL_PORT_DIR				0x07
 #define LCD_RS_PIN					1
 #define LCD_RW_PIN					2
 #define LCD_EN_PIN					3
 /*************************************** DATA PINS MACROS ******************************************/
-#define DATA_PORT					'E'
+#define DATA_PORT					'B'
 #define DATA_PORT_DIR				0xFF
 #define LCD_D0_PIN					0
 #define LCD_D1_PIN					1
@@ -33,3 +37,5 @@ void LCD_voidSendString(u8 str[]);
 void LCD_SendCommand(u8 Data_Value);
 void ConvertFloatToStr(f32 distance);
 void Print_Distance_To_LCD(f32 distance);
+
+#endif
