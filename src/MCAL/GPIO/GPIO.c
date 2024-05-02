@@ -636,9 +636,18 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 			GPIO_PORTE_DEN_R = 0xFF;
 			GPIO_PORTE_AMSEL_R = 0x00;
 			GPIO_PORTE_CR_R=0xFF;
+			// Set the direction of bits 1,2,3 as output and the rest remains zeros (inputs)
+			SET_BIT(GPIO_PORTE_DIR_R,1);
+			SET_BIT(GPIO_PORTE_DIR_R,2);
+			SET_BIT(GPIO_PORTE_DIR_R,3);
+		    // initialize pins 1-3 with zeros 
+		CLR_BIT(GPIO_PORTE_DATA_R,1);
+		CLR_BIT(GPIO_PORTE_DATA_R,2);
+		CLR_BIT(GPIO_PORTE_DATA_R,3);
+ }
 
 
-  }
+  
   u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value){ // a fn that writes a value on a specific pin
 	u8 status=STD_TYPES_OK; // a variable to store the status of the function wether it's written the value or not
 	if(((Port_ID>='A' && Port_ID<='F')||(Port_ID>='a' && Port_ID<='f'))&&((Pin_Number>=0)&&(Pin_Number<=7))&&((Pin_Value==0)||(Pin_Value==1)))
