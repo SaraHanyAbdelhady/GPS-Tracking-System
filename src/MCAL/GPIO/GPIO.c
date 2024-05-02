@@ -627,20 +627,263 @@ u8 status=STD_TYPES_OK; // a variable to store the status of the function wether
 			GPIO_PORTD_AMSEL_R = 0x00;
 
   }
+   void PortE_Init(){
+	SET_BIT(SYSCTL_RCGCGPIO_R,4);
+			while(READ_BIT(SYSCTL_PRGPIO_R,4)==0);
+			GPIO_PORTE_LOCK_R =GPIO_LOCK_KEY;
+		    GPIO_PORTE_AFSEL_R = 0x00;
+			GPIO_PORTE_PCTL_R = 0x00;
+			GPIO_PORTE_DEN_R = 0xFF;
+			GPIO_PORTE_AMSEL_R = 0x00;
+			GPIO_PORTE_CR_R=0xFF;
 
 
+  }
+  u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value){ // a fn that writes a value on a specific pin
+	u8 status=STD_TYPES_OK; // a variable to store the status of the function wether it's written the value or not
+	if(((Port_ID>='A' && Port_ID<='F')||(Port_ID>='a' && Port_ID<='f'))&&((Pin_Number>=0)&&(Pin_Number<=7))&&((Pin_Value==0)||(Pin_Value==1)))
+	{
+		switch(Port_ID){
+		case 'A':
+		case 'a':
+		{
+			if(Pin_Value==0)
+				CLR_BIT(GPIO_PORTA_DATA_R,Pin_Number);
+			else
+				SET_BIT(GPIO_PORTA_DATA_R,Pin_Number);
+		}
+		break;
+		case 'B':
+		case 'b':
+		{
+			if(Pin_Value==0)
+				CLR_BIT(GPIO_PORTB_DATA_R,Pin_Number);
+			else
+				SET_BIT(GPIO_PORTB_DATA_R,Pin_Number);
+		}
+		break;
+		case 'C':
+		case 'c':
+		{
+			if(Pin_Value==0)
+				CLR_BIT(GPIO_PORTC_DATA_R,Pin_Number);
+			else
+				SET_BIT(GPIO_PORTC_DATA_R,Pin_Number);
+		}
+		break;
+		case 'D':
+		case 'd':
+		{
+			if(Pin_Value==0)
+				CLR_BIT(GPIO_PORTD_DATA_R,Pin_Number);
+			else
+				SET_BIT(GPIO_PORTD_DATA_R,Pin_Number);
+		}
+		break;
+		case 'E':
+		case 'e':
+		{
+			if((Pin_Number>=0)&&(Pin_Number<=5)){
+			if(Pin_Value==0)
+				CLR_BIT(GPIO_PORTE_DATA_R,Pin_Number);
+			else
+				SET_BIT(GPIO_PORTE_DATA_R,Pin_Number);
+		}else{
+			status=STD_TYPES_NOK;
+		}
+		}
+		break;
+		case 'F':
+		case 'f':
+		{
+			if((Pin_Number>=0)&&(Pin_Number<=4)){
+			if(Pin_Value==0)
+				CLR_BIT(GPIO_PORTF_DATA_R,Pin_Number);
+			else
+				SET_BIT(GPIO_PORTF_DATA_R,Pin_Number);
+		}else{
+			status=STD_TYPES_NOK;
+		}
+		}
+		break;
+		default:
+			status=STD_TYPES_NOK;
+		}
+	}
+	else{
+		status=STD_TYPES_NOK;
+	}
+	return status;
+}
+u8 Get_Port_Value(u8 Port_ID){ // a fn that reads the data of the port
+	if((Port_ID>='A' && Port_ID<='F')||(Port_ID>='a' && Port_ID<='f'))
+	{
+		switch(Port_ID){
+		case 'A':
+		case 'a':
+		{
+			return GPIO_PORTA_DATA_R;
+		}
+		break;
+		case 'B':
+		case 'b':
+		{
+			return GPIO_PORTB_DATA_R;
+		}
+		break;
+		case 'C':
+		case 'c':
+		{
+			return GPIO_PORTC_DATA_R;
+		}
+		break;
+		case 'D':
+		case 'd':
+		{
+			return GPIO_PORTD_DATA_R;
+		}
+		break;
+		case 'E':
+		case 'e':
+		{
+		   return GPIO_PORTE_DATA_R;
+		}
+		break;
+		case 'F':
+		case 'f':
+		{
+			return GPIO_PORTF_DATA_R;
+		}
+		break;
+		default:
+			return 0;
+		}
+	}
+	else{
+		return 0;
+	}}
 
-
-
-
-
-
-
-	
+	u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction)
+	{ // a fn that reads the data of a specific pin
+		if(((port_name>='A' && port_name<='F')||(port_name>='a' && port_name<='f'))&&((pin_number>=0)&&(pin_number<=7))&&((pin_direction==0)||(pin_direction==1)))
+	{	switch(port_name)
+	{
+		case 'A':
+		case 'a':
+		{
+			return CLR_BIT(GPIO_PORTA_DATA_R,pin_number);
+		}
+		break;
 		
+		case 'B':
+		case 'b':
+		{
+			return READ_BIT(GPIO_PORTB_DATA_R,pin_number);
+		}
+		break;
+		
+		case 'C':
+		case 'c':
+		{
+			return READ_BIT(GPIO_PORTC_DATA_R,pin_number);
+		}
+		break;
+		
+		case 'D':
+		case 'd':
+		{
+			return READ_BIT(GPIO_PORTD_DATA_R,pin_number);
+		}
+		break;
+		
+		case 'E':
+		case 'e':
+		{
+			if((pin_number>=0)&&(pin_number<=5)){
+			return READ_BIT(GPIO_PORTE_DATA_R,pin_number);
+			}else{
+				return -1;
+			}
+		}
+		break;
+		
+		case 'F':
+		case 'f':
+		{
+			if((pin_number>=0)&&(pin_number<=4)){
+			return READ_BIT(GPIO_PORTF_DATA_R,pin_number);
+			}else{
+				return -1;
+			}
+		}
+		break;
+		default:
+			return -1;
+	}}else{
+		return -1;
+	}
+	}	
+	u8 Set_vPortValue(u8 port_name, u8 PortValue){ // a fn the writes data on the port
+		u8 status=STD_TYPES_OK; // a variable to store the status of the function wether it's set the Port value or not
+	if(((port_name>='A' && port_name<='F')||(port_name>='a' && port_name<='f'))&&((PortValue==0)||(PortValue==1)))
+	{switch(port_name)
+	{
+		case 'A':
+		case 'a':
+		{
+			GPIO_PORTA_DATA_R=PortValue;
+		}
+		break;
+		
+		case 'B':
+		case 'b':
+		{
+			GPIO_PORTB_DATA_R=PortValue;
+		}
+		break;
+		
+		case 'C':
+		case 'c':
+		{
+			GPIO_PORTC_DATA_R=PortValue;
+		}
+		break;
+		
+		case 'D':
+		case 'd':
+		{
+			GPIO_PORTD_DATA_R=PortValue;
+		}
+		break;
+		
+		case 'E':
+		case 'e':
+		{
+			GPIO_PORTE_DATA_R=PortValue;
+		}
+		break;
+		
+		case 'F':
+		case 'f':
+		{
+			GPIO_PORTF_DATA_R=PortValue;
+		}
+		break;
+		default:
+			status=STD_TYPES_NOK;
+		}
+	}else{
+		status=STD_TYPES_NOK;
+	}
+	}	
+	
+	
+
+
+
+
 
 	
-	
-	
-	
+
+
 

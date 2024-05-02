@@ -1,5 +1,5 @@
-#ifndef GPIO.H
-#define GPIO.H
+#ifndef GPIO_H
+#define GPIO_H
 
 
 #define PIN_LOW 0
@@ -13,5 +13,10 @@ void PortF_Init();
 void PortA_Init();
 void PortB_Init();
 void PortD_Init();
-void PortE_Init();
+
+u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
+u8 Set_vPortValue(u8 port_name, u8 PortValue);
+u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
+u8 Get_Port_Value(u8 Port_ID);
+
 #endif
