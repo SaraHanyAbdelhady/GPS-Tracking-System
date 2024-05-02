@@ -7,6 +7,7 @@
 #include "../../Headers/HAL/LED/LED.h"
 #include "../../Headers/HAL/Push button/Push button.h"
 #include "../../Headers/APP/APP.h"
+#include "../../Services/STD_TYPES.h"
 
 u8 GPS_u8SpeedArr[5];
 
@@ -27,7 +28,7 @@ int main() {
 		
 		push_button = Button_Pressed();	
 		
-		while(!push_button && Distance(float longStart, float latStart, float longEnd, float latEnd) < 100){
+		while(!push_button && Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd) < 100){
 			//Put trajectories
 		}
 		LED_On(LED_RED);

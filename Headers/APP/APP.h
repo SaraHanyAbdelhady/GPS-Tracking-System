@@ -1,12 +1,11 @@
 #ifndef APP_H
 #define APP_H
 
-/***************************** LIB *****************************/
-#include "../../../Services/STD_TYPES.h"
-
 /**************************** MACROS ***************************/
+#include "../../Services/STD_TYPES.h"
+
 #define Earth_Radius    6371000
 
-float Distance(float longStart, float latStart, float longEnd, float latEnd);
+float Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd);
 
 #endif
