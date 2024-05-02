@@ -31,7 +31,7 @@
 #define LCD_CURSOR_OFF_CMND				0x0C
 #define LCD_ENTRY_MODE_SET_CMND		0x06
 /*********************************** LCD FUNCTIONS PROTOTYPES **************************************/
-void LCD_voidInit();
+void LCD_voidInit(void);
 void LCD_voidSendData(u8 character);
 void LCD_voidSendString(u8 str[]);
 void LCD_SendCommand(u8 Data_Value);

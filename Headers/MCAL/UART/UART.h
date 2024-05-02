@@ -1,7 +1,7 @@
 #ifndef __MCAL_UART_INTERFACE_H__
 #define __MCAL_UART_INTERFACE_H__
 
-#define END    0x2A
+#define END    			0x2A
 #define pinUart2    0xC0
 #define pinUart0		0x03
 
@@ -17,7 +17,7 @@ void UART0_RecieveString (u8 *command, u32 length);
 
 void UART2_SendChar (u8 data);
 void UART2_SendString (u8 *pt);
-u8 UART2_Recievechar ();
+u8 UART2_Recievechar (void);
 void UART2_RecieveString (u8 *command, u32 length);
 
 
@@ -87,4 +87,5 @@ void UART2_RecieveString (u8 *command, u32 length);
 #define UART_POARTE				4
 
 #define UART_LCRH_WLEN_S		5
+
 #endif // __MCAL_UART_INTERFACE_H__

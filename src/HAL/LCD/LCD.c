@@ -25,8 +25,6 @@ u8 str_distance[16];
  */
 void LCD_voidInit()
 {
-	PortE_Init();
-	PortB_Init();
 	Systick_Wait(16000000);
 	LCD_SendCommand(LCD_8_BIT_MODE_CMND);
 	Systick_Wait(16000000);
@@ -98,7 +96,7 @@ void LCD_voidSendString(u8 str[])
  */
 void ConvertFloatToStr(f32 distance)
 {
-	distance = sprintf(str_distance, "Distance = %f", distance);
+	distance = sprintf((u8 *)str_distance, "Distance = %f", distance);
 }
 
 
