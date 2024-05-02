@@ -23,15 +23,17 @@ src\APP\../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declar
   void PortD_Init();
 src\APP\../../Headers/MCAL/GPIO/GPIO.h(22): warning:  #1-D: last line of file ends without a newline
   #endif
-src\APP\../../Headers/HAL/GPS/GPS.h(15): warning:  #1-D: last line of file ends without a newline
-  #endif
 src\APP\../../Headers/HAL/LED/LED.h(18): warning:  #1-D: last line of file ends without a newline
   #endif 
 src\APP\../../Headers/HAL/Push button/Push button.h(13): warning:  #1-D: last line of file ends without a newline
   #endif 
-src\APP\../../Headers/APP/APP.h(5): error:  #5: cannot open source input file "../../../Services/STD_TYPES.h": No such file or directory
-  #include "../../../Services/STD_TYPES.h"
-src\APP\Main.c: 10 warnings, 1 error
+src\APP\Main.c(31): error:  #254: type name is not allowed
+                while(!push_button && Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd) < 100){
+src\APP\Main.c(31): error:  #165: too few arguments in function call
+                while(!push_button && Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd) < 100){
+src\APP\Main.c(31): error:  #18: expected a ")"
+                while(!push_button && Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd) < 100){
+src\APP\Main.c: 9 warnings, 3 errors
 compiling LCD.c...
 src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h(12): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
   void PortF_Init();
@@ -86,15 +88,20 @@ src\HAL\LCD\LCD.c(116): warning:  #1-D: last line of file ends without a newline
 src\HAL\LCD\LCD.c(113): warning:  #177-D: variable "str" was declared but never referenced
         u8 str[20];
 src\HAL\LCD\LCD.c: 13 warnings, 13 errors
-compiling APP.c...
-src\APP\../../Headers/HAL/GPS/GPS.h(15): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\APP\../../Headers/APP/APP.h(5): error:  #5: cannot open source input file "../../../Services/STD_TYPES.h": No such file or directory
-  #include "../../../Services/STD_TYPES.h"
-src\APP\APP.c: 1 warning, 1 error
-".\GPS-Tracking-System.axf" - 15 Error(s), 24 Warning(s).
+".\GPS-Tracking-System.axf" - 16 Error(s), 22 Warning(s).
 Target not created
-is incompatible with parameter of type "char *restrict"
+and implicitly converted to double-precision
+  return angle*M_PI/180;
+src\APP\APP.c: 1 warning, 0 errors
+".\GPS-Tracking-System.axf" - 16 Error(s), 23 Warning(s).
+Target not created
+CD/LCD.h(35): warning:  #1-D: last line of file ends without a newline
+  void Print_Distance_To_LCD(f32 distance);
+src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif 
+src\HAL\LCD\LCD.c(28): warning:  #223-D: function "PortE_Init" declared implicitly
+        PortE_Init();
+src\HAL\LCD\LCD.c(101): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
         distance = sprintf(str_distance, "Distance = %f", distance);
 src\HAL\LCD\LCD.c(116): warning:  #1-D: last line of file ends without a newline
   }
@@ -102,26 +109,19 @@ src\HAL\LCD\LCD.c(113): warning:  #177-D: variable "str" was declared but never 
         u8 str[20];
 src\HAL\LCD\LCD.c: 13 warnings, 13 errors
 compiling APP.c...
-src\APP\../../Headers/HAL/GPS/GPS.h(15): warning:  #1-D: last line of file ends without a newline
+src\APP\APP.c(17): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  return angle*M_PI/180;
+src\APP\APP.c: 1 warning, 0 errors
+".\GPS-Tracking-System.axf" - 17 Error(s), 28 Warning(s).
+Target not created
+s/HAL/GPS/GPS.h(15): warning:  #1-D: last line of file ends without a newline
   #endif
-src\APP\../../Headers/APP/APP.h(5): error:  #5: cannot open source input file "../../../Services/STD_TYPES.h": No such file or directory
-  #include "../../../Services/STD_TYPES.h"
-src\APP\APP.c: 1 warning, 1 error
-".\GPS-Tracking-System.axf" - 14 Error(s), 30 Warning(s).
+src\APP\APP.c(17): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  return angle*M_PI/180;
+src\APP\APP.c: 2 warnings, 0 errors
+".\GPS-Tracking-System.axf" - 17 Error(s), 31 Warning(s).
 Target not created
- 14 Error(s), 31 Warning(s).
-Target not created
-rs
-compiling LED.c...
-src\HAL\LED\../../../Headers/HAL/LED/LED.h(18): warning:  #1-D: last line of file ends without a newline
-  #endif 
-src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(12): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
-  void PortF_Init();
-src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(13): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
-  void PortA_Init();
-src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(14): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
-  void PortB_Init();
-src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
+/MCAL/GPIO/GPIO.h(15): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
   void PortD_Init();
 src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h(22): warning:  #1-D: last line of file ends without a newline
   #endif
