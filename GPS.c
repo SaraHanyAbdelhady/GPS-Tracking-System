@@ -1,4 +1,5 @@
-#include "GPS.h"
+//#include "GPS.h" مفيش جواه غير تعريف ال PI
+#define PI 3.141592653589793238462643
 #include "bit_utilies.h"
 #include <math.h>
 //#include "TM4C123.h"						//hardware arch layer
