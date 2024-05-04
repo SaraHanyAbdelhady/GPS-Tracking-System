@@ -38,7 +38,8 @@ int main() {
 	
 	
 	while(1){
-		
+		const int lengthLap = 2; //For Recieving U
+		//const int lengthGPS = 777; //For Recieving from GPS
 		push_button = Button_Pressed();	
 		
 		while(!push_button && Distance(longStart, latStart, longEnd, latEnd) < 100){

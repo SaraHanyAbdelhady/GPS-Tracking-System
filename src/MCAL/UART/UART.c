@@ -10,8 +10,8 @@ void UART0_Init (void){
 	SYSCTL_RCGCGPIO_R |= 0x0001;  //activate portA clk
 	while((SYSCTL_PRGPIO_R & 0x01) == 0);
 	UART0_CTL_R &= ~0x0001;				//disable UART
-	UART0_IBRD_R = 0x208;					//IBRD = int(80000000/(16*9600)) = int(520.8333)
-	UART0_FBRD_R = 0x35;					//FBRD = int (0.833*64 + 0.5)
+	UART0_IBRD_R = 0x68;					//IBRD = int(16000000/(16*9600)) = int(104.16667)
+	UART0_FBRD_R = 0xB;					  //FBRD = int (0.16667*64 + 0.5)
 	UART0_LCRH_R = 0x070;					//8-bits Data + enable FIFO
 	UART0_CTL_R = 0x0301;					//activate RXE, TXE & UART
 	GPIO_PORTA_AFSEL_R |= pinUart0; 	//enable alternate function PA0 & PA1
@@ -26,8 +26,8 @@ void UART2_Init (void){
 	SYSCTL_RCGCGPIO_R |= 0x0008;  //activate portD clk
 	while((SYSCTL_PRGPIO_R & 0x08) == 0);
 	UART0_CTL_R &= ~0x0001;				//disable UART
-	UART0_IBRD_R = 0x208;					//IBRD = int(80000000/(16*9600)) = int(520.8333)
-	UART0_FBRD_R = 0x35;					//FBRD = int (0.833*64 + 0.5)
+	UART0_IBRD_R = 0x68;					//IBRD = int(16000000/(16*9600)) = int(104.16667)
+	UART0_FBRD_R = 0xB;					  //FBRD = int (0.16667*64 + 0.5)
 	UART0_LCRH_R = 0x070;					//8-bits Data + enable FIFO
 	UART0_CTL_R = 0x0301;					//activate RXE, TXE & UART
 	GPIO_PORTD_AFSEL_R |= pinUart2; 	//enable alternate function PD6 & PD7
@@ -59,12 +59,12 @@ void UART0_RecieveString (u8 *command, u32 length){
 	int i;
 	for(i =0;i<length;i++){
 	  	chararacter = UART0_Recievechar();
-			if(chararacter != END)
+			if(chararacter != CR)
 			{
 				command[i] = chararacter;
 				UART0_SendChar(command[i]);
 			}
-			else if (chararacter == END || i == length) break;
+			else if (chararacter == CR || i == length) break;
 	}
 }
 

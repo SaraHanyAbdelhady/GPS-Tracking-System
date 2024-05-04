@@ -1,6 +1,7 @@
 #ifndef __MCAL_UART_INTERFACE_H__
 #define __MCAL_UART_INTERFACE_H__
 
+#define CR   			  0x0D
 #define END    			0x2A
 #define pinUart2    0xC0
 #define pinUart0		0x03

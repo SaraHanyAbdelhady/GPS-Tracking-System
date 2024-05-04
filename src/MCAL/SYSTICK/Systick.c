@@ -19,6 +19,6 @@ void Systick_Wait(u32 delay){
 void delay (u32 delay){
 		u32 i ;
 		for(i=0;i<delay;i++){
-			Systick_Wait(80000);
+			Systick_Wait(16000);
 		}
 }

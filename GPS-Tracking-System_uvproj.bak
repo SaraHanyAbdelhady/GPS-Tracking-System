@@ -460,6 +460,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\HAL\LCD\LCD.c</FilePath>
             </File>
+            <File>
+              <FileName>APP.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\APP\APP.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -499,6 +504,11 @@
               <FileName>GPIO.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Headers\MCAL\GPIO\GPIO.h</FilePath>
+            </File>
+            <File>
+              <FileName>APP.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\APP\APP.h</FilePath>
             </File>
           </Files>
         </Group>
