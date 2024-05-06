@@ -8812,7 +8812,7 @@
 #define EEPROM_EESUPP_PRETRY    0x00000008  // Programming Must Be Retried
 #define EEPROM_EESUPP_ERETRY    0x00000004  // Erase Must Be Retried
 #define EEPROM_EESUPP_EREQ      0x00000002  // Erase Required
-#define EEPROM_EESUPP_START     0x00000001  // Start Erase
+#define EEPROM_EESUPP_START     0x00000001  // Start Erase Amany's mod
 
 //*****************************************************************************
 //

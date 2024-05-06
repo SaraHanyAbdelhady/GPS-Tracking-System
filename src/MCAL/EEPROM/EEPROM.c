@@ -15,7 +15,7 @@ int EEPROM_Start(void){
 			return -1;
 		} // return an error if any of these two bits (erase retry or program retry) are set which means that theEEPROM was unable to recover its state
 
-        SYSCTL_SREEPROM_R = SYSCTL_SREEPROM_R0; // Reset the EEPROM_0 module 
+        SYSCTL_SREEPROM_R = SYSCTL_SREEPROM_R0; // Reset the EEPROM_0 module DOES IT CLEAR THE DATA ???
         SYSCTL_SREEPROM_R = 0; // This step ensures that the EEPROM module is no longer in a reset state.
         delay(6);
 
@@ -29,13 +29,13 @@ int EEPROM_Start(void){
 		return 1; // initialization is completed without any errors
 }
 
-void eeprom_error_recovery(void)
+void eeprom_error_recovery(void) // NEEDS MORE INVESTIGATION
 {
 	EEPROM_EESUPP_R = EEPROM_EESUPP_START; // start erase
 	while(EEPROM_EEDONE_R & EEPROM_EEDONE_WORKING);
 }
 
-void EEPROM_Init(void)
+int EEPROM_Init(void) // if init fails should we reinit or not ????
 {
 	int flag=0;
 	flag = EEPROM_Start();
@@ -43,6 +43,8 @@ void EEPROM_Init(void)
 		; // no errors initialzation was successful
 	else
 		eeprom_error_recovery(); // error
+
+return flag;
 }
 
 void eeprom_write(int data,u8 addr,u8 blk) // ???? uinnt8_t mkan kol u8 ?????
@@ -53,7 +55,7 @@ void eeprom_write(int data,u8 addr,u8 blk) // ???? uinnt8_t mkan kol u8 ?????
 	while(EEPROM_EEDONE_R & EEPROM_EEDONE_WORKING);
 }
 
-int eeprom_read(u8 addr,u8 blk)
+int eeprom_read(u8 addr,u8 blk) // hl el data htb2a saved mn mara l mara ??
 {
 	int data;
 	EEPROM_EEBLOCK_R = blk;//Block number
