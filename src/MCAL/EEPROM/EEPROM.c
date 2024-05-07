@@ -47,20 +47,26 @@ int EEPROM_Init(void) // if init fails should we reinit or not ????
 return flag;
 }
 
-void eeprom_write(int data,u8 addr,u8 blk) // ???? uinnt8_t mkan kol u8 ?????
+void eeprom_write(f32 data,u32 addr) // ???? uinnt8_t mkan kol u8 ?????
 {
-	EEPROM_EEBLOCK_R = blk;//Block number
-	EEPROM_EEOFFSET_R =  addr; //offset within the block
-	EEPROM_EERDWR_R = data; //data written 
+	while(EEPROM_EEDONE_R & EEPROM_EEDONE_WORKING); //	checking not busy
+	EEPROM_EEBLOCK_R = addr >>4;										//	shifting for keeping in the same block number
+	EEPROM_EEOFFSET_R = (addr& 0xF);				 //offset within the block
+	EEPROM_EERDWR_R = data; 									//data written 
 	while(EEPROM_EEDONE_R & EEPROM_EEDONE_WORKING);
 }
 
-int eeprom_read(u8 addr,u8 blk) // hl el data htb2a saved mn mara l mara ??
+f32 eeprom_read(u32 addr) // hl el data htb2a saved mn mara l mara ??
 {
-	int data;
-	EEPROM_EEBLOCK_R = blk;//Block number
-	EEPROM_EEOFFSET_R =  addr;
-	data = EEPROM_EERDWR_R;
 	while(EEPROM_EEDONE_R & EEPROM_EEDONE_WORKING);
+	f32 data;
+	EEPROM_EEBLOCK_R = addr >>4;//Block number
+	EEPROM_EEOFFSET_R = (addr& 0xF); //offset within the block
+	data = EEPROM_EERDWR_R;
 	return data;
 }
+
+
+
+
+

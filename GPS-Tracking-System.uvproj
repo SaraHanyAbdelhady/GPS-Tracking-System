@@ -465,6 +465,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\APP\APP.c</FilePath>
             </File>
+            <File>
+              <FileName>EEPROM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\MCAL\EEPROM\EEPROM.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -509,6 +514,11 @@
               <FileName>APP.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Headers\APP\APP.h</FilePath>
+            </File>
+            <File>
+              <FileName>EEPROM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\MCAL\EEPROM\EEPROM.h</FilePath>
             </File>
           </Files>
         </Group>

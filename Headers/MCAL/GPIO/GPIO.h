@@ -14,7 +14,7 @@ void PortF_Init(void);
 void PortA_Init(void);
 void PortB_Init(void);
 void PortD_Init(void);
-void PortE_init(void);
+void PortE_Init(void);
 
 u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
 u8 Set_vPortValue(u8 port_name, u8 PortValue);

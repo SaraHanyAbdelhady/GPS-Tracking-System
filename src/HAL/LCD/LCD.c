@@ -112,3 +112,65 @@ void Print_Distance_To_LCD(f32 distance)
 	ConvertFloatToStr(distance);
 	LCD_voidSendString(str_distance);
 }
+
+
+
+//	move cursor to desired position
+void LCD_voidGoToXYPos(u8 copy_u8XPos,u8 copy_u8YPos)
+{
+    u8 Local_u8Address = 0;
+    if((copy_u8XPos== 0 || copy_u8XPos== 1) && (copy_u8YPos >= 0 && copy_u8YPos<=15))
+    {
+        switch(copy_u8XPos)
+        {
+        case 0:
+            Local_u8Address = copy_u8YPos;
+            break;
+        case 1:
+            Local_u8Address = copy_u8YPos+0x40;
+            break;
+        default: /**< Return Error state */break;
+        }
+        /**
+         *  To move the LCD to the calculated address you should SET_BIT(DDRAM,DB7)
+         *  There are many way to do this :
+         *      1)Local_u8Address + 128
+         *      2)Local_u8Address|(1<<8)
+         *      3)SET_BIT(Local_u8Address,8)
+         *  */
+        LCD_SendCommand(Local_u8Address+128);
+    }
+    else
+    {
+        /**< Return Error state */
+    }
+}
+
+
+
+
+void LCD_voidSendNumber(f64 copy_f64Number)
+{
+
+    u8 Local_u8Integer[11]={0};
+    s8 Local_u8Counter = 0;
+    if(((s32)copy_f64Number)<0)
+    {
+        LCD_voidSendData('-');
+        copy_f64Number*=-1;
+    }
+    do
+    {
+        Local_u8Integer[Local_u8Counter] = (u32)copy_f64Number%10;
+        copy_f64Number/=10;
+        Local_u8Counter++;
+    }while((u32)copy_f64Number !=0);
+    Local_u8Counter--;
+    for(;Local_u8Counter>=0;Local_u8Counter--)
+    {
+        LCD_voidSendData(Local_u8Integer[Local_u8Counter]+48);
+    }
+}
+
+
+

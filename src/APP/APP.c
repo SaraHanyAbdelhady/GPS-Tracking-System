@@ -32,6 +32,6 @@ f32 Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd){
 	
 	//calc distance from distance rule:
 f32 a = pow(sin(latitude/2), 2) + cos(latStartRad) * cos(latEndRad) * pow(sin(Longitude/2), 2);
-f64 c = 2 * atan2(sqrt(a), sqrt(a-1));
+f32 c = 2 * atan2(sqrt(a), sqrt(a-1));
 return Earth_Radius * c;
 }

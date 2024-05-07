@@ -17,7 +17,7 @@
 extern u8 GPS_u8SpeedArr[5];
 
 
-void GPS_voidReceiveSentence(f64* Copy_f64Latitude, f64 *Copy_f64Longitude, u8 *Copy_u8Speed)
+void GPS_voidReceiveSentence(f32* Copy_f32Latitude, f32 *Copy_f32Longitude, u8 *Copy_u8Speed)
 {
 	static u8 Local_u8UART_InitFlag = 0;
 	u8 Local_u8ReadCounter = 0;
@@ -58,7 +58,7 @@ void GPS_voidReceiveSentence(f64* Copy_f64Latitude, f64 *Copy_f64Longitude, u8 *
 										Local_u8GPS_Sentence[Local_u8ReadCounter] = Local_u8ReceivedChar;
 										Local_u8ReadCounter++;
 									}
-									GPS_voidExtractCoordinates(Local_u8GPS_Sentence,Copy_f64Latitude,Copy_f64Longitude,Copy_u8Speed);
+									GPS_voidExtractCoordinates(Local_u8GPS_Sentence,Copy_f32Latitude,Copy_f32Longitude,Copy_u8Speed);
 								}
 							}
 						}
@@ -69,7 +69,7 @@ void GPS_voidReceiveSentence(f64* Copy_f64Latitude, f64 *Copy_f64Longitude, u8 *
 	} while (Local_u8ReadCounter == 0);
 }
 
-void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f64 *Copy_f64Latitude,f64 *Copy_f64Longitude,u8 *Copy_u8Speed)
+void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f32 *Copy_f32Latitude,f32 *Copy_f32Longitude,u8 *Copy_u8Speed)
 {
 	f32 Deg,Min,Sec;
 	char altitudeARR[15]={0};
@@ -91,7 +91,7 @@ void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f64 *Copy_f64Latitude,f64 *
 		{
 			if (Copy_pu8sentence[i]!='A')
 			{
-				GPS_voidReceiveSentence(Copy_f64Latitude, Copy_f64Longitude,Copy_u8Speed);
+				GPS_voidReceiveSentence(Copy_f32Latitude, Copy_f32Longitude,Copy_u8Speed);
 			}
 		}
 	    if (Local_u8_CommaCount==2)
@@ -108,18 +108,18 @@ void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f64 *Copy_f64Latitude,f64 *
 		}
 		i++;
 	}
-	*Copy_f64Latitude=atof(altitudeARR);
-	Deg=*Copy_f64Latitude/100;
-	Min=*Copy_f64Latitude-(f32)(Deg*100);
+	*Copy_f32Latitude=atof(altitudeARR);
+	Deg=*Copy_f32Latitude/100;
+	Min=*Copy_f32Latitude-(f32)(Deg*100);
 	Sec=Min/60.0;
-	*Copy_f64Latitude= Deg+Sec;
+	*Copy_f32Latitude= Deg+Sec;
 
 
-	*Copy_f64Longitude=atof(longARR);
-	Deg=*Copy_f64Longitude/100;
-	Min=*Copy_f64Longitude-(f32)(Deg*100);
+	*Copy_f32Longitude=atof(longARR);
+	Deg=*Copy_f32Longitude/100;
+	Min=*Copy_f32Longitude-(f32)(Deg*100);
 	Sec=Min/60.0;
-	*Copy_f64Longitude= Deg+Sec;
+	*Copy_f32Longitude= Deg+Sec;
 	//int i;
 	for ( i =0;i<4;i++)
 	{
