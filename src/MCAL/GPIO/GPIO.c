@@ -64,7 +64,6 @@
 			GPIO_PORTD_DEN_R = 0xFF;
 			GPIO_PORTD_PCTL_R = 0x00;
 			GPIO_PORTD_AMSEL_R = 0x00;
-
   }
    void PortE_Init(void){
 	SET_BIT(SYSCTL_RCGCGPIO_R,4);
@@ -211,7 +210,7 @@ u8 Get_Port_Value(u8 Port_ID){ // a fn that reads the data of the port
 		return 0;
 	}}
 
-	u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction)
+	s8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction)
 	{ // a fn that reads the data of a specific pin
 		if(((port_name>='A' && port_name<='F')||(port_name>='a' && port_name<='f'))&&((pin_number>=0)&&(pin_number<=7))&&((pin_direction==0)||(pin_direction==1)))
 	{	switch(port_name)
@@ -281,50 +280,54 @@ u8 Get_Port_Value(u8 Port_ID){ // a fn that reads the data of the port
 		case 'a':
 		{
 			GPIO_PORTA_DATA_R=PortValue;
+			return status;
 		}
-		break;
 		
 		case 'B':
 		case 'b':
 		{
 			GPIO_PORTB_DATA_R=PortValue;
+				return status;
 		}
-		break;
+
 		
 		case 'C':
 		case 'c':
 		{
 			GPIO_PORTC_DATA_R=PortValue;
+				return status;
 		}
-		break;
+
 		
 		case 'D':
 		case 'd':
 		{
 			GPIO_PORTD_DATA_R=PortValue;
+				return status;
 		}
-		break;
-		
+
 		case 'E':
 		case 'e':
 		{
 			GPIO_PORTE_DATA_R=PortValue;
+				return status;
 		}
-		break;
 		
 		case 'F':
 		case 'f':
 		{
 			GPIO_PORTF_DATA_R=PortValue;
+				return status;
 		}
-		break;
 		default:
-			status=STD_TYPES_NOK;
-		}
+		{	status=STD_TYPES_NOK;
+			return status;
+		}}
 	}else{
 		status=STD_TYPES_NOK;
+		return status;
 	}
-	}	
+}
 	
 	
 

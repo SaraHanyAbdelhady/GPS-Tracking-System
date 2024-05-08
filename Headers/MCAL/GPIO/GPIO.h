@@ -18,7 +18,7 @@ void PortE_Init(void);
 
 u8 Set_vPinValue(u8 Port_ID,u8 Pin_Number,u8 Pin_Value);
 u8 Set_vPortValue(u8 port_name, u8 PortValue);
-u8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
+s8 Get_u8PinValue(u8 port_name,u8 pin_number, u8 pin_direction);
 u8 Get_Port_Value(u8 Port_ID);
 
 #endif
