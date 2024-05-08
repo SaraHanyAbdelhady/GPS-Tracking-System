@@ -54,6 +54,7 @@ int main() {
 	UART0_Init();
 	Button_Init();
 	LEDInit();
+	LCD_voidInit();
   
 	
 	GPS_voidReceiveSentence(& latStart, & longStart, & Local_u8Speed );
