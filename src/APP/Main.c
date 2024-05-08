@@ -32,8 +32,6 @@ f32 longEnd = 0, latEnd = 0 ;
 
 
 int main() {
-	
-	
 
 	f32 totalDistance =0;
 	f32 distance =0;
@@ -122,17 +120,13 @@ int main() {
 		ConvertFloatToStr(longitude,str_longitude);
 		UART0_SendString (str_longitude);
 		address-=4;
+		UART0_SendString ("   ");
 		latitude = eeprom_read(address);
 		ConvertFloatToStr(latitude,str_latitude);
 		UART0_SendString (str_latitude);
 		address-=4;
-		
-	
-	
+		UART0_SendString ("\n");
 	}
-		
-	
-	
 }
 }
 
