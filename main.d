@@ -8,3 +8,8 @@
 .\main.o: src\APP\../../Headers/HAL/LED/LED.h
 .\main.o: src\APP\../../Headers/HAL/Push button/Push button.h
 .\main.o: src\APP\../../Headers/APP/APP.h
+.\main.o: src\APP\../../Headers/HAL/LCD/LCD.h
+.\main.o: src\APP\../../Headers/MCAL/SYSTICK/Systick.h
+.\main.o: src\APP\../../Headers/MCAL/EEPROM/EEPROM.h
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h

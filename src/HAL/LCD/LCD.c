@@ -4,6 +4,8 @@
 #include "../../../Services/STD_TYPES.h"
 #include "../../../Headers/HAL/LCD/LCD.h"
 #include "../../../Headers/MCAL/SYSTICK/Systick.h"
+#include <string.h>
+#include <stdint.h>
 
 /*
  * Array of characters that stores the string to be printed on the LCD
@@ -46,7 +48,7 @@ void LCD_voidInit()
  * delay of 2 seconds
  * Clears the ENABLE pin so that data is sent at the falling edge
  */
-void LCD_SendCommand(u8 Data_Value)
+void LCD_SendCommand(char Data_Value)
 {
 	Set_vPinValue(CTRL_PORT, LCD_RS_PIN, PIN_LOW);
 	Set_vPinValue(CTRL_PORT, LCD_RW_PIN, PIN_LOW);
@@ -66,7 +68,7 @@ void LCD_SendCommand(u8 Data_Value)
  * delay of 2 seconds
  * Clears the ENABLE pin so that data is sent at the falling edge
  */
-void LCD_voidSendData(u8 character)
+void LCD_voidSendData(char character)
 {
 	Set_vPinValue(CTRL_PORT, LCD_RS_PIN, PIN_HIGH);
 	Set_vPinValue(CTRL_PORT, LCD_RW_PIN, PIN_LOW);
@@ -81,12 +83,12 @@ void LCD_voidSendData(u8 character)
  * Description : 
  * Sends each character in the string to be printed on the LCD 
  */
-void LCD_voidSendString(u8 str[])
+void LCD_voidSendString(char *str)
 {
-	u8 i = 0;
-	while(str[i]!='\0')
+	while(*str)
 	{
-		LCD_voidSendData(str[i++]);
+		LCD_voidSendData(*str);
+		str++;
 	}
 }
 
@@ -95,9 +97,9 @@ void LCD_voidSendString(u8 str[])
  * Description : 
  * Converts the floating distance into a string and stores it in str_distance
  */
-void ConvertFloatToStr(f32 distance)
+void ConvertFloatToStr(f32 distance,char *str)
 {
-	distance = sprintf((u8 *)str_distance, "Distance = %f", distance);
+	distance = sprintf(str, "Distance = %f", distance);
 }
 
 
@@ -109,7 +111,8 @@ void ConvertFloatToStr(f32 distance)
  */
 void Print_Distance_To_LCD(f32 distance)
 {
-	ConvertFloatToStr(distance);
+	char str_distance[20]={0};
+	ConvertFloatToStr(distance, str_distance);
 	LCD_voidSendString(str_distance);
 }
 
@@ -147,30 +150,6 @@ void LCD_voidGoToXYPos(u8 copy_u8XPos,u8 copy_u8YPos)
 }
 
 
-
-
-void LCD_voidSendNumber(f64 copy_f64Number)
-{
-
-    u8 Local_u8Integer[11]={0};
-    s8 Local_u8Counter = 0;
-    if(((s32)copy_f64Number)<0)
-    {
-        LCD_voidSendData('-');
-        copy_f64Number*=-1;
-    }
-    do
-    {
-        Local_u8Integer[Local_u8Counter] = (u32)copy_f64Number%10;
-        copy_f64Number/=10;
-        Local_u8Counter++;
-    }while((u32)copy_f64Number !=0);
-    Local_u8Counter--;
-    for(;Local_u8Counter>=0;Local_u8Counter--)
-    {
-        LCD_voidSendData(Local_u8Integer[Local_u8Counter]+48);
-    }
-}
 
 
 

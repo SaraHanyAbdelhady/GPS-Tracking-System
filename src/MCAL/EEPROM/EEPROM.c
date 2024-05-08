@@ -59,11 +59,9 @@ void eeprom_write(f32 data,u32 addr) // ???? uinnt8_t mkan kol u8 ?????
 f32 eeprom_read(u32 addr) // hl el data htb2a saved mn mara l mara ??
 {
 	while(EEPROM_EEDONE_R & EEPROM_EEDONE_WORKING);
-	f32 data;
 	EEPROM_EEBLOCK_R = addr >>4;//Block number
 	EEPROM_EEOFFSET_R = (addr& 0xF); //offset within the block
-	data = EEPROM_EERDWR_R;
-	return data;
+	return EEPROM_EERDWR_R;
 }
 
 

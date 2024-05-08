@@ -5,3 +5,5 @@
 .\lcd.o: src\HAL\LCD\../../../Services/Bit_Utilities.h
 .\lcd.o: src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h
 .\lcd.o: src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h
+.\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h

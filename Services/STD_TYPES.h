@@ -1,7 +1,7 @@
 #ifndef __STD_TYPES_H__
 #define __STD_TYPES_H__
 
-#define NULL				((void *)0x00)
+//#define NULL				((void *)0x00)
 
 #define STD_TYPES_OK		1
 #define STD_TYPES_NOK		0

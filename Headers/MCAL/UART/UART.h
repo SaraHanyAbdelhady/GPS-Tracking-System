@@ -11,15 +11,15 @@
 void UART0_Init (void);
 void UART2_Init (void);
 
-void UART0_SendChar (u8 data);
-void UART0_SendString (u8 *pt);
-u8 UART0_Recievechar (void);
-void UART0_RecieveString (u8 *command, u32 length);
+void UART0_SendChar (char data);
+void UART0_SendString (char *pt);
+char UART0_Recievechar (void);
+void UART0_RecieveString (char *command, u32 length);
 
-void UART2_SendChar (u8 data);
-void UART2_SendString (u8 *pt);
-u8 UART2_Recievechar (void);
-void UART2_RecieveString (u8 *command, u32 length);
+void UART2_SendChar (char data);
+void UART2_SendString (char *pt);
+char UART2_Recievechar (void);
+void UART2_RecieveString (char *command, u32 length);
 
 
 

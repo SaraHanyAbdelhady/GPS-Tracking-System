@@ -3,10 +3,108 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\Takwa\OneDrive\Documents\GitHub\GPS-Tracking-System\GPS-Tracking-System.uvproj
-Project File Date:  05/07/2024
+C:\Users\User\Documents\GitHub\GPS-Tracking-System\GPS-Tracking-System.uvproj
+Project File Date:  05/08/2024
 
 <h2>Output:</h2>
-</pre>
-</body>
-</html>
+Rebuild target 'Target 1'
+assembling startup_TM4C123.s...
+compiling system_TM4C123.c...
+compiling Main.c...
+compiling UART.c...
+compiling GPIO.c...
+src\MCAL\GPIO\GPIO.c(92): warning:  #186-D: pointless comparison of unsigned integer with zero
+        if(((Port_ID>='A' && Port_ID<='F')||(Port_ID>='a' && Port_ID<='f'))&&((Pin_Number>=0)&&(Pin_Number<=7))&&((Pin_Value==0)||(Pin_Value==1)))
+src\MCAL\GPIO\GPIO.c(134): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((Pin_Number>=0)&&(Pin_Number<=5)){
+src\MCAL\GPIO\GPIO.c(147): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((Pin_Number>=0)&&(Pin_Number<=4)){
+src\MCAL\GPIO\GPIO.c(216): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if(((port_name>='A' && port_name<='F')||(port_name>='a' && port_name<='f'))&&((pin_number>=0)&&(pin_number<=7))&&((pin_direction==0)||(pin_direction==1)))
+src\MCAL\GPIO\GPIO.c(250): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((pin_number>=0)&&(pin_number<=5)){
+src\MCAL\GPIO\GPIO.c(253): warning:  #68-D: integer conversion resulted in a change of sign
+                                return -1;
+src\MCAL\GPIO\GPIO.c(262): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((pin_number>=0)&&(pin_number<=4)){
+src\MCAL\GPIO\GPIO.c(265): warning:  #68-D: integer conversion resulted in a change of sign
+                                return -1;
+src\MCAL\GPIO\GPIO.c(270): warning:  #68-D: integer conversion resulted in a change of sign
+                        return -1;
+src\MCAL\GPIO\GPIO.c(272): warning:  #68-D: integer conversion resulted in a change of sign
+                return -1;
+src\MCAL\GPIO\GPIO.c(327): warning:  #940-D: missing return statement at end of non-void function "Set_vPortValue"
+        }       
+src\MCAL\GPIO\GPIO.c(276): warning:  #550-D: variable "status" was set but never used
+                u8 status=STD_TYPES_OK; // a variable to store the status of the function wether it's set the Port value or not
+src\MCAL\GPIO\GPIO.c: 12 warnings, 0 errors
+compiling Systick.c...
+compiling GPS.c...
+src\HAL\GPS\GPS.c(114): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c(121): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c: 2 warnings, 0 errors
+compiling LED.c...
+compiling Push button.c...
+compiling LCD.c...
+src\HAL\LCD\LCD.c(125): warning:  #186-D: pointless comparison of unsigned integer with zero
+      if((copy_u8XPos== 0 || copy_u8XPos== 1) && (copy_u8YPos >= 0 && copy_u8YPos<=15))
+src\HAL\LCD\LCD.c: 1 warning, 0 errors
+compiling APP.c...
+src\APP\APP.c(18): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  return angle*M_PI/180;
+src\APP\APP.c: 1 warning, 0 errors
+compiling EEPROM.c...
+linking...
+Program Size: Code=24180 RO-data=1692 RW-data=36 ZI-data=612  
+".\GPS-Tracking-System.axf" - 0 Error(s), 16 Warning(s).
+L\EEPROM\EEPROM.c: 0 warnings, 1 error
+".\GPS-Tracking-System.axf" - 1 Error(s), 16 Warning(s).
+Target not created
+ROM.c...
+src\MCAL\EEPROM\EEPROM.c(62): error:  #268: declaration may not appear after executable statement in block
+        f32 data;
+src\MCAL\EEPROM\EEPROM.c: 0 warnings, 1 error
+".\GPS-Tracking-System.axf" - 3 Error(s), 16 Warning(s).
+Target not created
+executable statement in block
+        f32 data;
+src\MCAL\EEPROM\EEPROM.c: 0 warnings, 1 error
+".\GPS-Tracking-System.axf" - 2 Error(s), 18 Warning(s).
+Target not created
+mpiling LCD.c...
+src\HAL\LCD\LCD.c(125): warning:  #186-D: pointless comparison of unsigned integer with zero
+      if((copy_u8XPos== 0 || copy_u8XPos== 1) && (copy_u8YPos >= 0 && copy_u8YPos<=15))
+src\HAL\LCD\LCD.c: 1 warning, 0 errors
+compiling APP.c...
+src\APP\APP.c(18): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  return angle*M_PI/180;
+src\APP\APP.c: 1 warning, 0 errors
+compiling EEPROM.c...
+src\MCAL\EEPROM\EEPROM.c(62): error:  #268: declaration may not appear after executable statement in block
+        f32 data;
+src\MCAL\EEPROM\EEPROM.c: 0 warnings, 1 error
+".\GPS-Tracking-System.axf" - 4 Error(s), 22 Warning(s).
+Target not created
+S.c: 3 warnings, 0 errors
+compiling LED.c...
+compiling Push button.c...
+compiling LCD.c...
+src\HAL\LCD\../../../Headers/MCAL/GPIO/../../../Services/STD_TYPES.h(4): warning:  #47-D: incompatible redefinition of macro "NULL" (declared at line 48 of "C:\Keil\ARM\ARMCC\bin\..\include\stdio.h")
+  #define NULL                          ((void *)0x00)
+src\HAL\LCD\LCD.c(88): warning:  #177-D: variable "i" was declared but never referenced
+        u8 i = 0;
+src\HAL\LCD\LCD.c(126): warning:  #186-D: pointless comparison of unsigned integer with zero
+      if((copy_u8XPos== 0 || copy_u8XPos== 1) && (copy_u8YPos >= 0 && copy_u8YPos<=15))
+src\HAL\LCD\LCD.c: 3 warnings, 0 errors
+compiling APP.c...
+src\APP\APP.c(18): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  return angle*M_PI/180;
+src\APP\APP.c: 1 warning, 0 errors
+compiling EEPROM.c...
+src\MCAL\EEPROM\EEPROM.c(62): error:  #268: declaration may not appear after executable statement in block
+        f32 data;
+src\MCAL\EEPROM\EEPROM.c: 0 warnings, 1 error
+".\GPS-Tracking-System.axf" - 4 Error(s), 29 Warning(s).
+Target not created

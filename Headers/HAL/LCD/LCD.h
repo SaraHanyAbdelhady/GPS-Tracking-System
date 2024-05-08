@@ -32,13 +32,14 @@
 #define LCD_ENTRY_MODE_SET_CMND		0x06
 /*********************************** LCD FUNCTIONS PROTOTYPES **************************************/
 void LCD_voidInit(void);
-void LCD_voidSendData(u8 character);
-void LCD_voidSendString(u8 str[]);
-void LCD_SendCommand(u8 Data_Value);
-void ConvertFloatToStr(f32 distance);
+void LCD_voidSendData(char character);
+void LCD_voidSendString(char *str);
+void LCD_SendCommand(char Data_Value);
+
+void ConvertFloatToStr(f32 distance, char *str);
 void Print_Distance_To_LCD(f32 distance);
 void LCD_voidGoToXYPos(u8 copy_u8XPos,u8 copy_u8YPos);
-void LCD_voidSendNumber(f64 copy_f64Number);
+
 
 
 

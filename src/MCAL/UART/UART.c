@@ -3,6 +3,7 @@
 #include "../../../Services/STD_TYPES.h"
 #include "../../../Headers/MCAL/UART/UART.h"
 #include <string.h>
+#include <stdint.h>
 
 
 void UART0_Init (void){
@@ -37,24 +38,24 @@ void UART2_Init (void){
 }
 
 
-void UART0_SendChar (u8 data){
+void UART0_SendChar (char data){
 		while ((UART0_FR_R & 0x20));
 	UART0_DR_R = data;
 }
 
-void UART0_SendString (u8 *pt){
+void UART0_SendString (char *pt){
 		while (*pt){
 			UART0_SendChar(*pt);
 			pt++;
 		}
 }
 
-u8 UART0_Recievechar (){
+char UART0_Recievechar (){
 		while ((UART0_FR_R & 0x10));
 	return (char)UART0_DR_R;
 }
 
-void UART0_RecieveString (u8 *command, u32 length){
+void UART0_RecieveString (char *command, u32 length){
 	char chararacter;
 	int i;
 	for(i =0;i<length;i++){
@@ -70,24 +71,24 @@ void UART0_RecieveString (u8 *command, u32 length){
 
 
 
-void UART2_SendChar (u8 data){
+void UART2_SendChar (char data){
 		while ((UART2_FR_R & 0x20));
 	UART2_DR_R = data;
 }
 
-void UART2_SendString (u8 *pt){
+void UART2_SendString (char *pt){
 		while (*pt){
 			UART2_SendChar(*pt);
 			pt++;
 		}
 }
 
-u8 UART2_Recievechar (){
+char UART2_Recievechar (){
 		while ((UART2_FR_R & 0x10));
 	return (char)UART2_DR_R;
 }
 
-void UART2_RecieveString (u8 *command, u32 length){
+void UART2_RecieveString (char *command, u32 length){
 	char chararacter;
 	int i;
 	for(i =0;i<length;i++){
