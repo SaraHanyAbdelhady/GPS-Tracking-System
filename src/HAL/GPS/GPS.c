@@ -31,31 +31,32 @@ void GPS_voidReceiveSentence(f32* Copy_f32Latitude, f32 *Copy_f32Longitude, u8 *
 	}
 	do 
 	{
-		UART2_Recievechar ();
+		Local_u8ReceivedChar = UART2_Recievechar ();
 		if(Local_u8ReceivedChar == Local_u8GPS_Check[0])
 		{
-			UART2_Recievechar ();
+			Local_u8ReceivedChar = UART2_Recievechar ();
 			if(Local_u8ReceivedChar == Local_u8GPS_Check[1])
 			{
-				UART2_Recievechar ();
+				Local_u8ReceivedChar = UART2_Recievechar ();
 				if(Local_u8ReceivedChar == Local_u8GPS_Check[2])
 				{
-					UART2_Recievechar ();
+					Local_u8ReceivedChar = UART2_Recievechar ();
 					if(Local_u8ReceivedChar == Local_u8GPS_Check[3])
 					{
-						UART2_Recievechar ();
+						Local_u8ReceivedChar = UART2_Recievechar ();
 						if(Local_u8ReceivedChar == Local_u8GPS_Check[4])
 						{
-							UART2_Recievechar ();
+							Local_u8ReceivedChar = UART2_Recievechar ();
 							if(Local_u8ReceivedChar == Local_u8GPS_Check[5])
 							{
-								UART2_Recievechar ();
+								Local_u8ReceivedChar = UART2_Recievechar ();
 								if(Local_u8ReceivedChar == Local_u8GPS_Check[6])
 								{
-									UART2_Recievechar ();
+									Local_u8ReceivedChar = UART2_Recievechar ();
 									while(Local_u8ReceivedChar != '*')
 									{
 										Local_u8GPS_Sentence[Local_u8ReadCounter] = Local_u8ReceivedChar;
+										Local_u8ReceivedChar = UART2_Recievechar ();
 										Local_u8ReadCounter++;
 									}
 									GPS_voidExtractCoordinates(Local_u8GPS_Sentence,Copy_f32Latitude,Copy_f32Longitude,Copy_u8Speed);
