@@ -8,66 +8,7 @@ Project File Date:  05/09/2024
 
 <h2>Output:</h2>
 Build target 'Target 1'
-compiling Main.c...
-src\APP\../../Services/Bit_Utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\APP\Main.c: 1 warning, 0 errors
-compiling UART.c...
-src\MCAL\UART\../../../Services/Bit_Utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\MCAL\UART\UART.c: 1 warning, 0 errors
-compiling GPIO.c...
-src\MCAL\GPIO\../../../Services/Bit_Utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\MCAL\GPIO\GPIO.c(91): warning:  #186-D: pointless comparison of unsigned integer with zero
-        if(((Port_ID>='A' && Port_ID<='F')||(Port_ID>='a' && Port_ID<='f'))&&((Pin_Number>=0)&&(Pin_Number<=7))&&((Pin_Value==0)||(Pin_Value==1)))
-src\MCAL\GPIO\GPIO.c(133): warning:  #186-D: pointless comparison of unsigned integer with zero
-                        if((Pin_Number>=0)&&(Pin_Number<=5)){
-src\MCAL\GPIO\GPIO.c(146): warning:  #186-D: pointless comparison of unsigned integer with zero
-                        if((Pin_Number>=0)&&(Pin_Number<=4)){
-src\MCAL\GPIO\GPIO.c(215): warning:  #186-D: pointless comparison of unsigned integer with zero
-                if(((port_name>='A' && port_name<='F')||(port_name>='a' && port_name<='f'))&&((pin_number>=0)&&(pin_number<=7))&&((pin_direction==0)||(pin_direction==1)))
-src\MCAL\GPIO\GPIO.c(249): warning:  #186-D: pointless comparison of unsigned integer with zero
-                        if((pin_number>=0)&&(pin_number<=5)){
-src\MCAL\GPIO\GPIO.c(261): warning:  #186-D: pointless comparison of unsigned integer with zero
-                        if((pin_number>=0)&&(pin_number<=4)){
-src\MCAL\GPIO\GPIO.c: 7 warnings, 0 errors
-compiling Systick.c...
-src\MCAL\SYSTICK\../../../Services/Bit_Utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\MCAL\SYSTICK\Systick.c: 1 warning, 0 errors
-compiling GPS.c...
-src\HAL\GPS\../../../Services/BIT_UTILITIES.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\HAL\GPS\GPS.c(115): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-        Sec=Min/60.0;
-src\HAL\GPS\GPS.c(122): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-        Sec=Min/60.0;
-src\HAL\GPS\GPS.c: 3 warnings, 0 errors
-compiling LED.c...
-src\HAL\LED\../../../Services/Bit_Utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\HAL\LED\LED.c: 1 warning, 0 errors
-compiling Push button.c...
-src\HAL\Push Button\../../../Services/Bit_Utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\HAL\Push Button\Push button.c: 1 warning, 0 errors
-compiling LCD.c...
-src\HAL\LCD\../../../Services/Bit_Utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\HAL\LCD\LCD.c(125): warning:  #186-D: pointless comparison of unsigned integer with zero
-      if((copy_u8XPos== 0 || copy_u8XPos== 1) && (copy_u8YPos >= 0 && copy_u8YPos<=15))
-src\HAL\LCD\LCD.c: 2 warnings, 0 errors
-compiling APP.c...
-src\APP\../../Services/Bit_Utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\APP\APP.c(18): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  return angle*M_PI/180;
-src\APP\APP.c: 2 warnings, 0 errors
-compiling EEPROM.c...
-src\MCAL\EEPROM\../../../Services/Bit_Utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-src\MCAL\EEPROM\EEPROM.c: 1 warning, 0 errors
+assembling startup_TM4C123.s...
 linking...
-Program Size: Code=18244 RO-data=1300 RW-data=40 ZI-data=512  
-".\GPS-Tracking-System.axf" - 0 Error(s), 20 Warning(s).
+Program Size: Code=18268 RO-data=1300 RW-data=40 ZI-data=512  
+".\GPS-Tracking-System.axf" - 0 Error(s), 0 Warning(s).

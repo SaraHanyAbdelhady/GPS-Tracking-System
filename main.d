@@ -1,4 +1,6 @@
 .\main.o: src\APP\Main.c
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\main.o: src\APP\../../Services/tm4c123gh6pm.h
 .\main.o: src\APP\../../Services/Bit_Utilities.h
 .\main.o: src\APP\../../Services/STD_TYPES.h
@@ -11,5 +13,3 @@
 .\main.o: src\APP\../../Headers/HAL/LCD/LCD.h
 .\main.o: src\APP\../../Headers/MCAL/SYSTICK/Systick.h
 .\main.o: src\APP\../../Headers/MCAL/EEPROM/EEPROM.h
-.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
-.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h

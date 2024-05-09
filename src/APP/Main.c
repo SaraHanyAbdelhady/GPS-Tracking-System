@@ -1,3 +1,5 @@
+#include <string.h>
+#include <stdint.h>
 #include "../../Services/tm4c123gh6pm.h"
 #include "../../Services/Bit_Utilities.h"
 #include "../../Services/STD_TYPES.h"
@@ -11,8 +13,7 @@
 #include "../../Headers/HAL/LCD/LCD.h"
 #include "../../Headers/MCAL/SYSTICK/Systick.h"
 #include "../../Headers/MCAL/EEPROM/EEPROM.h"
-#include <string.h>
-#include <stdint.h>
+
 
 
 
@@ -82,6 +83,7 @@ int main() {
 		
 		while(!push_button){ //&&  totalDistance < 100
 			//Put trajectories
+			//BIT_UTILITIES_H
 			GPS_voidReceiveSentence(& currentLatitude, & currentlongitude, & Local_u8Speed );
 		  distance =Distance( previousLongitude, previousLatitude, currentlongitude, currentLatitude); 
 			previousLongitude=currentlongitude;

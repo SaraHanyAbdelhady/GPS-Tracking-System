@@ -128,6 +128,6 @@ void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f32 *Copy_f32Latitude,f32 *
 	}
     SpeedARR[i]='\0';
 	*Copy_u8Speed=atof(SpeedARR);
-}
+} 
 
 
