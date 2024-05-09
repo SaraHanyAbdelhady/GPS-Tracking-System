@@ -50,7 +50,7 @@ int main() {
 	// intiallize uart2 for gps
 	UART2_Init();
 	
-	// intiallize uart0 for bluetooth or serial inter face between laptop&tiva c
+	// intiallize uart0 for bluetooth or serial interface between laptop&tiva c
 	UART0_Init();
 	Button_Init();
 	LEDInit();
