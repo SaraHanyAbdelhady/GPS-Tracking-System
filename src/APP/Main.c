@@ -17,7 +17,6 @@
 
 
 char GPS_u8SpeedArr[5];
-
 u8 push_button;
 
 u32 address;
@@ -29,9 +28,8 @@ f32 longStart = 0, latStart = 0;
 	
 //declaration of variables that store the End points of the trajectory 
 f32 longEnd = 0, latEnd = 0 ;
-
-
 int main() {
+
 
 	f32 totalDistance =0;
 	f32 distance =0;
