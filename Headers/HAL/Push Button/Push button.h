@@ -5,7 +5,7 @@
 #define SW_1	4
 #define SW_2	0
 
-void Button_Init(void);
-u8 Button_Pressed(void);
+extern void Button_Init(void);
+extern u8 Button_Pressed(void);
 
 #endif 

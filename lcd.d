@@ -1,9 +1,9 @@
 .\lcd.o: src\HAL\LCD\LCD.c
-.\lcd.o: C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\bin\..\include\stdio.h
+.\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\lcd.o: src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h
 .\lcd.o: src\HAL\LCD\../../../Headers/MCAL/GPIO/../../../Services/STD_TYPES.h
 .\lcd.o: src\HAL\LCD\../../../Services/Bit_Utilities.h
 .\lcd.o: src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h
 .\lcd.o: src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h
-.\lcd.o: C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\bin\..\include\string.h
-.\lcd.o: C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\bin\..\include\stdint.h
+.\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h

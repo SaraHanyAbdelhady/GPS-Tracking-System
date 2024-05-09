@@ -6,6 +6,6 @@
 
 #define Earth_Radius    6371000
 
-f32 Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd);
+extern f32 Distance(f32 longStart, f32 latStart, f32 longEnd, f32 latEnd);
 
 #endif

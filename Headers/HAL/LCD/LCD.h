@@ -31,14 +31,14 @@
 #define LCD_CURSOR_OFF_CMND				0x0C
 #define LCD_ENTRY_MODE_SET_CMND		0x06
 /*********************************** LCD FUNCTIONS PROTOTYPES **************************************/
-void LCD_voidInit(void);
-void LCD_voidSendData(char character);
-void LCD_voidSendString(char *str);
-void LCD_SendCommand(char Data_Value);
+extern void LCD_voidInit(void);
+extern void LCD_voidSendData(char character);
+extern void LCD_voidSendString(char *str);
+extern void LCD_SendCommand(char Data_Value);
 
-void ConvertFloatToStr(f32 distance, char *str);
-void Print_Distance_To_LCD(f32 distance);
-void LCD_voidGoToXYPos(u8 copy_u8XPos,u8 copy_u8YPos);
+extern void ConvertFloatToStr(f32 distance, char *str);
+extern void Print_Distance_To_LCD(f32 distance);
+extern void LCD_voidGoToXYPos(u8 copy_u8XPos,u8 copy_u8YPos);
 
 
 
