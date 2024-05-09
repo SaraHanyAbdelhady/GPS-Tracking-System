@@ -11,8 +11,8 @@
 
 #define LED_TIME_ON			1000
 
-void LEDInit(void);
-void LED_On(u8 copy_u8LedColour);
-void LED_Off(u8 copy_u8LedColour);
+extern void LEDInit(void);
+extern void LED_On(u8 copy_u8LedColour);
+extern void LED_Off(u8 copy_u8LedColour);
 
 #endif 
