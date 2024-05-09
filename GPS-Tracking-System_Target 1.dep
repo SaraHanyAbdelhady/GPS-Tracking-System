@@ -1,94 +1,94 @@
 Dependencies for Project 'GPS-Tracking-System', Target 'Target 1': (DO NOT MODIFY !)
-F (.\startup_TM4C123.s)(0x663C1132)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123--list .\startup_tm4c123.lst --xref -o .\startup_tm4c123.o --depend .\startup_tm4c123.d)
-F (.\system_TM4C123.c)(0x663C1132)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\system_tm4c123.o --omf_browse .\system_tm4c123.crf --depend .\system_tm4c123.d)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-I (C:\Keil\ARM\Inc\TI\TM4C123\TM4C123.h)(0x532C5688)
-I (C:\Keil\ARM\Inc\TI\TM4C123\TM4C123GH6PM.h)(0x532C5688)
-I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x532C5A32)
-I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x532C5A32)
-I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x532C5A32)
-I (C:\Keil\ARM\CMSIS\Include\core_cm4_simd.h)(0x532C5A32)
-I (C:\Keil\ARM\Inc\TI\TM4C123\system_TM4C123.h)(0x532C5688)
-F (.\src\APP\Main.c)(0x663C1132)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\main.o --omf_browse .\main.crf --depend .\main.d)
-I (src\APP\../../Services/tm4c123gh6pm.h)(0x663C1132)
-I (src\APP\../../Services/Bit_Utilities.h)(0x663C1132)
-I (src\APP\../../Services/STD_TYPES.h)(0x663C1132)
-I (src\APP\../../Headers/MCAL/UART/UART.h)(0x663C1132)
-I (src\APP\../../Headers/MCAL/GPIO/GPIO.h)(0x663C1132)
-I (src\APP\../../Headers/HAL/GPS/GPS.h)(0x663C1132)
-I (src\APP\../../Headers/HAL/LED/LED.h)(0x663C1132)
-I (src\APP\../../Headers/HAL/Push button/Push button.h)(0x663C1132)
-I (src\APP\../../Headers/APP/APP.h)(0x663C1132)
-I (src\APP\../../Headers/HAL/LCD/LCD.h)(0x663C1132)
-I (src\APP\../../Headers/MCAL/SYSTICK/Systick.h)(0x663C1132)
-I (src\APP\../../Headers/MCAL/EEPROM/EEPROM.h)(0x663C1132)
-I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-F (.\src\MCAL\UART\UART.c)(0x663C1132)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
-I (src\MCAL\UART\../../../Services/tm4c123gh6pm.h)(0x663C1132)
-I (src\MCAL\UART\../../../Services/Bit_Utilities.h)(0x663C1132)
-I (src\MCAL\UART\../../../Services/STD_TYPES.h)(0x663C1132)
-I (src\MCAL\UART\../../../Headers/MCAL/UART/UART.h)(0x663C1132)
-I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-F (.\src\MCAL\GPIO\GPIO.c)(0x663C1132)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\gpio.o --omf_browse .\gpio.crf --depend .\gpio.d)
-I (src\MCAL\GPIO\../../../Services/Bit_Utilities.h)(0x663C1132)
-I (src\MCAL\GPIO\../../../Services/STD_TYPES.h)(0x663C1132)
-I (src\MCAL\GPIO\../../../Services/tm4c123gh6pm.h)(0x663C1132)
-I (src\MCAL\GPIO\../../../Headers/MCAL/GPIO/GPIO.h)(0x663C1132)
-F (.\src\MCAL\SYSTICK\Systick.c)(0x663C1132)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\systick.o --omf_browse .\systick.crf --depend .\systick.d)
-I (src\MCAL\SYSTICK\../../../Services/tm4c123gh6pm.h)(0x663C1132)
-I (src\MCAL\SYSTICK\../../../Services/Bit_Utilities.h)(0x663C1132)
-I (src\MCAL\SYSTICK\../../../Services/STD_TYPES.h)(0x663C1132)
-F (.\src\HAL\GPS\GPS.c)(0x663C14B4)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\gps.o --omf_browse .\gps.crf --depend .\gps.d)
-I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\Stdlib.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\math.h)(0x51C819B4)
-I (src\HAL\GPS\../../../Services/STD_TYPES.h)(0x663C1132)
-I (src\HAL\GPS\../../../Services/BIT_UTILITIES.h)(0x663C1132)
-I (src\HAL\GPS\../../../Headers/MCAL/UART/UART.h)(0x663C1132)
-I (src\HAL\GPS\../../../Headers/HAL/GPS/GPS.h)(0x663C1132)
-F (.\src\HAL\LED\LED.c)(0x663C1132)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\led.o --omf_browse .\led.crf --depend .\led.d)
-I (src\HAL\LED\../../../Services/tm4c123gh6pm.h)(0x663C1132)
-I (src\HAL\LED\../../../Services/Bit_Utilities.h)(0x663C1132)
-I (src\HAL\LED\../../../Services/STD_TYPES.h)(0x663C1132)
-I (src\HAL\LED\../../../Headers/HAL/LED/LED.h)(0x663C1132)
-I (src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h)(0x663C1132)
-F (.\src\HAL\Push Button\Push button.c)(0x663C1132)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o ".\push button.o" --omf_browse ".\push button.crf" --depend ".\push button.d")
-I (src\HAL\Push Button\../../../Services/tm4c123gh6pm.h)(0x663C1132)
-I (src\HAL\Push Button\../../../Services/Bit_Utilities.h)(0x663C1132)
-I (src\HAL\Push Button\../../../Services/STD_TYPES.h)(0x663C1132)
-I (src\HAL\Push Button\../../../Headers/HAL/Push Button/Push button.h)(0x663C1132)
-F (.\src\HAL\LCD\LCD.c)(0x663C1132)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\lcd.o --omf_browse .\lcd.crf --depend .\lcd.d)
-I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
-I (src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h)(0x663C1132)
-I (src\HAL\LCD\../../../Headers/MCAL/GPIO/../../../Services/STD_TYPES.h)(0x663C1132)
-I (src\HAL\LCD\../../../Services/Bit_Utilities.h)(0x663C1132)
-I (src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h)(0x663C1132)
-I (src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h)(0x663C1132)
-I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-F (.\src\APP\APP.c)(0x663C1132)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\app.o --omf_browse .\app.crf --depend .\app.d)
-I (src\APP\../../Headers/HAL/GPS/GPS.h)(0x663C1132)
-I (src\APP\../../Headers/HAL/GPS/../../../Services/STD_TYPES.h)(0x663C1132)
-I (src\APP\../../Headers/APP/APP.h)(0x663C1132)
-I (src\APP\../../Services/Bit_Utilities.h)(0x663C1132)
-I (C:\Keil\ARM\ARMCC\include\math.h)(0x51C819B4)
-F (.\src\MCAL\EEPROM\EEPROM.c)(0x663C1132)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\eeprom.o --omf_browse .\eeprom.crf --depend .\eeprom.d)
-I (src\MCAL\EEPROM\../../../Services/Bit_Utilities.h)(0x663C1132)
-I (src\MCAL\EEPROM\../../../Services/STD_TYPES.h)(0x663C1132)
-I (src\MCAL\EEPROM\../../../Services/tm4c123gh6pm.h)(0x663C1132)
-I (src\MCAL\EEPROM\../../../Headers/MCAL/SYSTICK/Systick.h)(0x663C1132)
-F (.\Headers\MCAL\UART\UART.h)(0x663C1132)()
-F (.\Headers\MCAL\SYSTICK\Systick.h)(0x663C1132)()
-F (.\Headers\HAL\GPS\GPS.h)(0x663C1132)()
-F (.\Headers\HAL\LED\LED.h)(0x663C1132)()
-F (.\Headers\HAL\Push Button\Push button.h)(0x663C1132)()
-F (.\Headers\HAL\LCD\LCD.h)(0x663C1132)()
-F (.\Headers\MCAL\GPIO\GPIO.h)(0x663C1132)()
-F (.\Headers\APP\APP.h)(0x663C1132)()
-F (.\Headers\MCAL\EEPROM\EEPROM.h)(0x663C1132)()
-F (.\Services\Bit_Utilities.h)(0x663C1132)()
-F (.\Services\STD_TYPES.h)(0x663C1132)()
-F (.\Services\tm4c123gh6pm.h)(0x663C1132)()
+F (.\startup_TM4C123.s)(0x6632920A)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"--list .\startup_tm4c123.lst --xref -o .\startup_tm4c123.o --depend .\startup_tm4c123.d)
+F (.\system_TM4C123.c)(0x66258444)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o .\system_tm4c123.o --omf_browse .\system_tm4c123.crf --depend .\system_tm4c123.d)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123\TM4C123.h)(0x532C5688)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123\TM4C123GH6PM.h)(0x532C5688)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include\core_cm4.h)(0x532C5A32)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include\core_cmInstr.h)(0x532C5A32)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include\core_cmFunc.h)(0x532C5A32)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include\core_cm4_simd.h)(0x532C5A32)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123\system_TM4C123.h)(0x532C5688)
+F (.\src\APP\Main.c)(0x663C97C0)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (src\APP\../../Services/tm4c123gh6pm.h)(0x663C8093)
+I (src\APP\../../Services/Bit_Utilities.h)(0x663233CF)
+I (src\APP\../../Services/STD_TYPES.h)(0x663C8093)
+I (src\APP\../../Headers/MCAL/UART/UART.h)(0x663C8093)
+I (src\APP\../../Headers/MCAL/GPIO/GPIO.h)(0x663C8093)
+I (src\APP\../../Headers/HAL/GPS/GPS.h)(0x663C8093)
+I (src\APP\../../Headers/HAL/LED/LED.h)(0x66376968)
+I (src\APP\../../Headers/HAL/Push button/Push button.h)(0x66376968)
+I (src\APP\../../Headers/APP/APP.h)(0x663C8093)
+I (src\APP\../../Headers/HAL/LCD/LCD.h)(0x663C8093)
+I (src\APP\../../Headers/MCAL/SYSTICK/Systick.h)(0x66376968)
+I (src\APP\../../Headers/MCAL/EEPROM/EEPROM.h)(0x663C8093)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+F (.\src\MCAL\UART\UART.c)(0x663C8093)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
+I (src\MCAL\UART\../../../Services/tm4c123gh6pm.h)(0x663C8093)
+I (src\MCAL\UART\../../../Services/Bit_Utilities.h)(0x663233CF)
+I (src\MCAL\UART\../../../Services/STD_TYPES.h)(0x663C8093)
+I (src\MCAL\UART\../../../Headers/MCAL/UART/UART.h)(0x663C8093)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+F (.\src\MCAL\GPIO\GPIO.c)(0x663C8093)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o .\gpio.o --omf_browse .\gpio.crf --depend .\gpio.d)
+I (src\MCAL\GPIO\../../../Services/Bit_Utilities.h)(0x663233CF)
+I (src\MCAL\GPIO\../../../Services/STD_TYPES.h)(0x663C8093)
+I (src\MCAL\GPIO\../../../Services/tm4c123gh6pm.h)(0x663C8093)
+I (src\MCAL\GPIO\../../../Headers/MCAL/GPIO/GPIO.h)(0x663C8093)
+F (.\src\MCAL\SYSTICK\Systick.c)(0x66376968)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o .\systick.o --omf_browse .\systick.crf --depend .\systick.d)
+I (src\MCAL\SYSTICK\../../../Services/tm4c123gh6pm.h)(0x663C8093)
+I (src\MCAL\SYSTICK\../../../Services/Bit_Utilities.h)(0x663233CF)
+I (src\MCAL\SYSTICK\../../../Services/STD_TYPES.h)(0x663C8093)
+F (.\src\HAL\GPS\GPS.c)(0x663C8093)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o .\gps.o --omf_browse .\gps.crf --depend .\gps.d)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\Stdlib.h)(0x51C819B4)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\math.h)(0x51C819B4)
+I (src\HAL\GPS\../../../Services/STD_TYPES.h)(0x663C8093)
+I (src\HAL\GPS\../../../Services/BIT_UTILITIES.h)(0x663233CF)
+I (src\HAL\GPS\../../../Headers/MCAL/UART/UART.h)(0x663C8093)
+I (src\HAL\GPS\../../../Headers/HAL/GPS/GPS.h)(0x663C8093)
+F (.\src\HAL\LED\LED.c)(0x66376968)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o .\led.o --omf_browse .\led.crf --depend .\led.d)
+I (src\HAL\LED\../../../Services/tm4c123gh6pm.h)(0x663C8093)
+I (src\HAL\LED\../../../Services/Bit_Utilities.h)(0x663233CF)
+I (src\HAL\LED\../../../Services/STD_TYPES.h)(0x663C8093)
+I (src\HAL\LED\../../../Headers/HAL/LED/LED.h)(0x66376968)
+I (src\HAL\LED\../../../Headers/MCAL/GPIO/GPIO.h)(0x663C8093)
+F (.\src\HAL\Push Button\Push button.c)(0x66376968)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o ".\push button.o" --omf_browse ".\push button.crf" --depend ".\push button.d")
+I (src\HAL\Push Button\../../../Services/tm4c123gh6pm.h)(0x663C8093)
+I (src\HAL\Push Button\../../../Services/Bit_Utilities.h)(0x663233CF)
+I (src\HAL\Push Button\../../../Services/STD_TYPES.h)(0x663C8093)
+I (src\HAL\Push Button\../../../Headers/HAL/Push Button/Push button.h)(0x66376968)
+F (.\src\HAL\LCD\LCD.c)(0x663C8093)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o .\lcd.o --omf_browse .\lcd.crf --depend .\lcd.d)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (src\HAL\LCD\../../../Headers/MCAL/GPIO/GPIO.h)(0x663C8093)
+I (src\HAL\LCD\../../../Headers/MCAL/GPIO/../../../Services/STD_TYPES.h)(0x663C8093)
+I (src\HAL\LCD\../../../Services/Bit_Utilities.h)(0x663233CF)
+I (src\HAL\LCD\../../../Headers/HAL/LCD/LCD.h)(0x663C8093)
+I (src\HAL\LCD\../../../Headers/MCAL/SYSTICK/Systick.h)(0x66376968)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+F (.\src\APP\APP.c)(0x663C8093)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o .\app.o --omf_browse .\app.crf --depend .\app.d)
+I (src\APP\../../Headers/HAL/GPS/GPS.h)(0x663C8093)
+I (src\APP\../../Headers/HAL/GPS/../../../Services/STD_TYPES.h)(0x663C8093)
+I (src\APP\../../Headers/APP/APP.h)(0x663C8093)
+I (src\APP\../../Services/Bit_Utilities.h)(0x663233CF)
+I (C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\ARMCC\include\math.h)(0x51C819B4)
+F (.\src\MCAL\EEPROM\EEPROM.c)(0x663C8093)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\RV31\INC"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\CMSIS\Include"-I "C:\Users\Ehab\Downloads\Junior ASUFE\Second term\Embedded\Lab\ARM\Inc\TI\TM4C123"-DTM4C123GH6PM-o .\eeprom.o --omf_browse .\eeprom.crf --depend .\eeprom.d)
+I (src\MCAL\EEPROM\../../../Services/Bit_Utilities.h)(0x663233CF)
+I (src\MCAL\EEPROM\../../../Services/STD_TYPES.h)(0x663C8093)
+I (src\MCAL\EEPROM\../../../Services/tm4c123gh6pm.h)(0x663C8093)
+I (src\MCAL\EEPROM\../../../Headers/MCAL/SYSTICK/Systick.h)(0x66376968)
+F (.\Headers\MCAL\UART\UART.h)(0x663C8093)()
+F (.\Headers\MCAL\SYSTICK\Systick.h)(0x66376968)()
+F (.\Headers\HAL\GPS\GPS.h)(0x663C8093)()
+F (.\Headers\HAL\LED\LED.h)(0x66376968)()
+F (.\Headers\HAL\Push Button\Push button.h)(0x66376968)()
+F (.\Headers\HAL\LCD\LCD.h)(0x663C8093)()
+F (.\Headers\MCAL\GPIO\GPIO.h)(0x663C8093)()
+F (.\Headers\APP\APP.h)(0x663C8093)()
+F (.\Headers\MCAL\EEPROM\EEPROM.h)(0x663C8093)()
+F (.\Services\Bit_Utilities.h)(0x663233CF)()
+F (.\Services\STD_TYPES.h)(0x663C8093)()
+F (.\Services\tm4c123gh6pm.h)(0x663C8093)()

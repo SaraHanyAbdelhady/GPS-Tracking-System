@@ -58,8 +58,12 @@ int main() {
   
 	
 	GPS_voidReceiveSentence(& latStart, & longStart, & Local_u8Speed );
-	previousLatitude =latStart;
-	previousLongitude=longStart;
+	eeprom_write(latStart,address);
+			address+=4;
+			eeprom_write(longStart,address);
+			address+=4;
+			previousLatitude =latStart;
+			previousLongitude=longStart;
 	 
 	//	displaying on LCD
 	  LCD_voidSendString("Total Dist:");
@@ -78,7 +82,7 @@ int main() {
 
 		push_button = Button_Pressed();	
 		
-		while(!push_button &&  totalDistance < 100){
+		while(!push_button){ //&&  totalDistance < 100
 			//Put trajectories
 			GPS_voidReceiveSentence(& currentLatitude, & currentlongitude, & Local_u8Speed );
 		  distance =Distance( previousLongitude, previousLatitude, currentlongitude, currentLatitude); 
@@ -116,7 +120,6 @@ int main() {
 		f32 latitude=0;
 		char str_latitude[20]={0};
 		
-		// to be seen isa
 		longitude = eeprom_read(address);
 		ConvertFloatToStr(longitude,str_longitude);
 		UART0_SendString (str_longitude);
