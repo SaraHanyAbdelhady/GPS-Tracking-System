@@ -73,7 +73,7 @@ void GPS_voidReceiveSentence(f32* Copy_f32Latitude, f32 *Copy_f32Longitude, u8 *
 void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f32 *Copy_f32Latitude,f32 *Copy_f32Longitude,u8 *Copy_u8Speed)
 {
 	f32 Deg,Min,Sec;
-	char altitudeARR[15]={0};
+	char latitudeARR[15]={0};
 	char longARR[15]={0};
 	char SpeedARR[10];
 	u8 j=0;
@@ -97,7 +97,7 @@ void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f32 *Copy_f32Latitude,f32 *
 		}
 	    if (Local_u8_CommaCount==2)
 		{
-           altitudeARR[j++]=Copy_pu8sentence[i];
+           latitudeARR[j++]=Copy_pu8sentence[i];
 		}
 	    if (Local_u8_CommaCount==4)
 		{
@@ -109,7 +109,7 @@ void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f32 *Copy_f32Latitude,f32 *
 		}
 		i++;
 	}
-	*Copy_f32Latitude=atof(altitudeARR);
+	*Copy_f32Latitude=atof(latitudeARR);
 	Deg=*Copy_f32Latitude/100;
 	Min=*Copy_f32Latitude-(f32)(Deg*100);
 	Sec=Min/60.0;
