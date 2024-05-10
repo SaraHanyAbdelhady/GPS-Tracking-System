@@ -40,13 +40,13 @@ int main() {
 	u8 Local_u8Speed = 0;
 	
 	// intiallize portf for leds & switches
-    PortF_Init();
-	
+  PortF_Init();
+	PortE_Init();
 	// intiallize portB for LCD
 	PortB_Init();
-	PortE_Init();
+	PortD_Init();
 	// intiallize uart2 for gps
-	UART2_Init();
+	UART5_Init();
 	
 	// intiallize uart0 for bluetooth or serial interface between laptop&tiva c
 	UART0_Init();
