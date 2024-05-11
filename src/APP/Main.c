@@ -70,7 +70,7 @@ int main() {
 	//	start of interface between laptop and tiva
 	
 		address=EEPROM_START_ADDR;	
-	
+		UART5_SendString ("HI \n");
 		GPS_voidReceiveSentence(& latStart, & longStart, & Local_u8Speed );
 		eeprom_write(latStart,address);
 		address+=4;
@@ -102,17 +102,12 @@ int main() {
 			address+=4;
 			push_button = Button_Pressed();
 		}
-		
 		longEnd = currentlongitude;
 		latEnd =currentLatitude;
 		LED_On(LED_BLUE );
 		LCD_voidGoToXYPos(0, 11); /**< New Line in LCD @ position:(1,0) */
     Print_Distance_To_LCD(totalDistance);
 	
-
-
- 
-
 		UART0_RecieveString(command,length);
 		if(strcmp(command, "U") == 0)
 			{

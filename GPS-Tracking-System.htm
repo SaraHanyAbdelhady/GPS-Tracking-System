@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\GPS-Tracking-System.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\GPS-Tracking-System.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri May 10 20:39:59 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat May 11 20:59:03 2024
 <BR><P>
 <H3>Maximum Stack Usage =        552 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -128,7 +128,7 @@ Mutually Recursive functions
  <LI><a href="#[74]">PWM1_2_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[74]">PWM1_2_Handler</a><BR>
  <LI><a href="#[75]">PWM1_3_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[75]">PWM1_3_Handler</a><BR>
  <LI><a href="#[76]">PWM1_FAULT_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[76]">PWM1_FAULT_Handler</a><BR>
- <LI><a href="#[a2]">GPS_voidExtractCoordinates</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8c]">GPS_voidReceiveSentence</a><BR>
+ <LI><a href="#[a2]">GPS_voidExtractCoordinates</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8f]">GPS_voidReceiveSentence</a><BR>
 </UL>
 <P>
 <H3>
@@ -1115,31 +1115,32 @@ Global Symbols
 <P><STRONG><a name="[78]"></a>SystemInit</STRONG> (Thumb, 112 bytes, Stack size 0 bytes, system_tm4c123.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(.text)
 </UL>
-<P><STRONG><a name="[77]"></a>main</STRONG> (Thumb, 576 bytes, Stack size 80 bytes, main.o(.text))
+<P><STRONG><a name="[77]"></a>main</STRONG> (Thumb, 582 bytes, Stack size 80 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 552<LI>Call Chain = main &rArr; GPS_voidReceiveSentence &rArr; GPS_voidExtractCoordinates &rArr;  GPS_voidReceiveSentence (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_write
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_read
+<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_write
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_read
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_SendString
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_Init
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendString
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendString
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_Init
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print_Distance_To_LCD
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print_Distance_To_LCD
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortF_Init
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortE_Init
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortD_Init
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortB_Init
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LEDInit
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidSendString
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidSendString
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidInit
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidGoToXYPos
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidReceiveSentence
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertFloatToStr
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_Pressed
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidGoToXYPos
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidReceiveSentence
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertFloatToStr
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_Pressed
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
@@ -1149,48 +1150,52 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[87]"></a>UART5_Init</STRONG> (Thumb, 132 bytes, Stack size 0 bytes, uart.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidReceiveSentence
+<BR><BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidReceiveSentence
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9a]"></a>UART0_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendString
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
+<P><STRONG><a name="[9b]"></a>UART0_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendString
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
 </UL>
 
-<P><STRONG><a name="[90]"></a>UART0_SendString</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(.text))
+<P><STRONG><a name="[91]"></a>UART0_SendString</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = UART0_SendString
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendChar
+<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendChar
 </UL>
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9b]"></a>UART0_Recievechar</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
+<P><STRONG><a name="[9c]"></a>UART0_Recievechar</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
 </UL>
 
-<P><STRONG><a name="[95]"></a>UART0_RecieveString</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, uart.o(.text))
+<P><STRONG><a name="[96]"></a>UART0_RecieveString</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, uart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = UART0_RecieveString
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_Recievechar
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendChar
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_Recievechar
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendChar
 </UL>
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9d]"></a>UART5_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<P><STRONG><a name="[9d]"></a>UART5_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_RecieveString
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_SendString
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_SendString
 </UL>
 
-<P><STRONG><a name="[9c]"></a>UART5_SendString</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_SendChar
+<P><STRONG><a name="[8e]"></a>UART5_SendString</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = UART5_SendString
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_SendChar
+</UL>
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[9f]"></a>UART5_Recievechar</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_RecieveString
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidReceiveSentence
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidReceiveSentence
 </UL>
 
 <P><STRONG><a name="[9e]"></a>UART5_RecieveString</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, uart.o(.text), UNUSED)
@@ -1258,12 +1263,12 @@ Global Symbols
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidReceiveSentence
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidReceiveSentence
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidReceiveSentence
+<BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidReceiveSentence
 </UL>
 
-<P><STRONG><a name="[8c]"></a>GPS_voidReceiveSentence</STRONG> (Thumb, 190 bytes, Stack size 136 bytes, gps.o(.text))
+<P><STRONG><a name="[8f]"></a>GPS_voidReceiveSentence</STRONG> (Thumb, 190 bytes, Stack size 136 bytes, gps.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 472<LI>Call Chain = GPS_voidReceiveSentence &rArr; GPS_voidExtractCoordinates &rArr;  GPS_voidReceiveSentence (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidExtractCoordinates
@@ -1278,7 +1283,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[93]"></a>LED_On</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, led.o(.text))
+<P><STRONG><a name="[94]"></a>LED_On</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, led.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1288,7 +1293,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[91]"></a>Button_Pressed</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, push button.o(.text))
+<P><STRONG><a name="[92]"></a>Button_Pressed</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, push button.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1300,7 +1305,7 @@ Global Symbols
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_vPinValue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidInit
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidGoToXYPos
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidGoToXYPos
 </UL>
 
 <P><STRONG><a name="[8b]"></a>LCD_voidInit</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, lcd.o(.text))
@@ -1319,39 +1324,39 @@ Global Symbols
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_vPortValue
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_vPinValue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidSendString
+<BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidSendString
 </UL>
 
-<P><STRONG><a name="[8e]"></a>LCD_voidSendString</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, lcd.o(.text))
+<P><STRONG><a name="[8c]"></a>LCD_voidSendString</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = LCD_voidSendString &rArr; LCD_voidSendData &rArr; Set_vPinValue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidSendData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print_Distance_To_LCD
+<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print_Distance_To_LCD
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[99]"></a>ConvertFloatToStr</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, lcd.o(.text))
+<P><STRONG><a name="[9a]"></a>ConvertFloatToStr</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = ConvertFloatToStr &rArr; __2sprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print_Distance_To_LCD
+<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print_Distance_To_LCD
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[94]"></a>Print_Distance_To_LCD</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, lcd.o(.text))
+<P><STRONG><a name="[95]"></a>Print_Distance_To_LCD</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Print_Distance_To_LCD &rArr; ConvertFloatToStr &rArr; __2sprintf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidSendString
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertFloatToStr
+<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_voidSendString
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertFloatToStr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8f]"></a>LCD_voidGoToXYPos</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, lcd.o(.text))
+<P><STRONG><a name="[8d]"></a>LCD_voidGoToXYPos</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = LCD_voidGoToXYPos &rArr; LCD_SendCommand &rArr; Set_vPinValue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SendCommand
@@ -1360,7 +1365,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[af]"></a>Todegree</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, app.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<BR><BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
 </UL>
 
 <P><STRONG><a name="[ad]"></a>ToRad</STRONG> (Thumb, 104 bytes, Stack size 40 bytes, app.o(.text))
@@ -1371,10 +1376,10 @@ Global Symbols
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
-<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
 </UL>
 
-<P><STRONG><a name="[92]"></a>Distance</STRONG> (Thumb, 552 bytes, Stack size 136 bytes, app.o(.text))
+<P><STRONG><a name="[93]"></a>Distance</STRONG> (Thumb, 552 bytes, Stack size 136 bytes, app.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 432<LI>Call Chain = Distance &rArr; __hardfp_sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
@@ -1407,11 +1412,11 @@ Global Symbols
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_Start
 </UL>
 
-<P><STRONG><a name="[8d]"></a>eeprom_write</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, eeprom.o(.text))
+<P><STRONG><a name="[90]"></a>eeprom_write</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, eeprom.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[98]"></a>eeprom_read</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, eeprom.o(.text))
+<P><STRONG><a name="[99]"></a>eeprom_read</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, eeprom.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1428,8 +1433,8 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
-<P><STRONG><a name="[97]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print_Distance_To_LCD
+<P><STRONG><a name="[98]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print_Distance_To_LCD
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1439,7 +1444,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
-<P><STRONG><a name="[96]"></a>strcmp</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, strcmp.o(.text))
+<P><STRONG><a name="[97]"></a>strcmp</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, strcmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = strcmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1459,7 +1464,7 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
@@ -1500,7 +1505,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_pow
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ToRad
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
@@ -1538,8 +1543,8 @@ Global Symbols
 <P><STRONG><a name="[a5]"></a>__aeabi_f2d</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, f2d.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ToRad
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidExtractCoordinates
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertFloatToStr
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertFloatToStr
 </UL>
 
 <P><STRONG><a name="[a4]"></a>__aeabi_d2f</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, d2f.o(.text))
@@ -1549,7 +1554,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ToRad
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_voidExtractCoordinates
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
 </UL>
 
@@ -1739,7 +1744,7 @@ Global Symbols
 <P><STRONG><a name="[ac]"></a>__2sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertFloatToStr
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertFloatToStr
 </UL>
 
 <P><STRONG><a name="[fe]"></a>__c89sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
@@ -1780,7 +1785,7 @@ Global Symbols
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fabs
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 </UL>
-<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
 </UL>
 
 <P><STRONG><a name="[a3]"></a>__hardfp_atof</STRONG> (Thumb, 44 bytes, Stack size 24 bytes, atof.o(i.__hardfp_atof))
@@ -1803,7 +1808,7 @@ Global Symbols
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 </UL>
-<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
 </UL>
 
 <P><STRONG><a name="[b1]"></a>__hardfp_pow</STRONG> (Thumb, 3132 bytes, Stack size 184 bytes, pow.o(i.__hardfp_pow))
@@ -1824,7 +1829,7 @@ Global Symbols
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fabs
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
 </UL>
-<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
 </UL>
 
 <P><STRONG><a name="[b0]"></a>__hardfp_sin</STRONG> (Thumb, 200 bytes, Stack size 40 bytes, sin.o(i.__hardfp_sin))
@@ -1837,7 +1842,7 @@ Global Symbols
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 </UL>
-<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
 </UL>
 
 <P><STRONG><a name="[b4]"></a>__hardfp_sqrt</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, sqrt.o(i.__hardfp_sqrt))
@@ -1846,7 +1851,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Distance
 </UL>
 
 <P><STRONG><a name="[dd]"></a>__ieee754_rem_pio2</STRONG> (Thumb, 972 bytes, Stack size 168 bytes, rred.o(i.__ieee754_rem_pio2))
