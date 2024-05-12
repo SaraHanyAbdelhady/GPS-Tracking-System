@@ -51,7 +51,7 @@ int main() {
 		UART5_Init();
 	
 	// intiallize uart0 for bluetooth or serial interface between laptop&tiva c
-		UART0_Init();
+		UART2_Init();
 		Button_Init();
 		LEDInit();
 		LCD_voidInit();
@@ -79,7 +79,7 @@ int main() {
 		previousLatitude =latStart;
 		previousLongitude=longStart;
 	 
-		UART0_SendString ("ENTER: \n");
+		UART2_SendString ("ENTER: \n");
 		push_button = Button_Pressed();
 	
 	while(1){
@@ -108,7 +108,7 @@ int main() {
 		LCD_voidGoToXYPos(0, 11); /**< New Line in LCD @ position:(1,0) */
     Print_Distance_To_LCD(totalDistance);
 	
-		UART0_RecieveString(command,length);
+		UART2_RecieveString(command,length);
 		if(strcmp(command, "U") == 0)
 			{
 		while(address>EEPROM_START_ADDR){
@@ -119,14 +119,14 @@ int main() {
 		
 			longitude = eeprom_read(address);
 			ConvertFloatToStr(longitude,str_longitude);
-			UART0_SendString (str_longitude);
+			UART2_SendString (str_longitude);
 			address-=4;
-			UART0_SendString ("   ");
+			UART2_SendString ("   ");
 			latitude = eeprom_read(address);
 			ConvertFloatToStr(latitude,str_latitude);
-			UART0_SendString (str_latitude);
+			UART2_SendString (str_latitude);
 			address-=4;
-			UART0_SendString ("\n");
+			UART2_SendString ("\n");
 		}
 	
 	}

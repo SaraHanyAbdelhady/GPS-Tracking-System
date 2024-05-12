@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\GPS-Tracking-System.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\GPS-Tracking-System.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat May 11 20:59:03 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sun May 12 14:05:29 2024
 <BR><P>
 <H3>Maximum Stack Usage =        552 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1124,9 +1124,9 @@ Global Symbols
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eeprom_read
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_SendString
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_Init
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendString
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_Init
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendString
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_RecieveString
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Print_Distance_To_LCD
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortF_Init
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortE_Init
@@ -1145,7 +1145,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[88]"></a>UART0_Init</STRONG> (Thumb, 130 bytes, Stack size 0 bytes, uart.o(.text))
+<P><STRONG><a name="[88]"></a>UART2_Init</STRONG> (Thumb, 134 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1154,28 +1154,28 @@ Global Symbols
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9b]"></a>UART0_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendString
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
+<P><STRONG><a name="[9b]"></a>UART2_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendString
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_RecieveString
 </UL>
 
-<P><STRONG><a name="[91]"></a>UART0_SendString</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = UART0_SendString
+<P><STRONG><a name="[91]"></a>UART2_SendString</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = UART2_SendString
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendChar
+<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendChar
 </UL>
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9c]"></a>UART0_Recievechar</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
+<P><STRONG><a name="[9c]"></a>UART2_Recievechar</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_RecieveString
 </UL>
 
-<P><STRONG><a name="[96]"></a>UART0_RecieveString</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, uart.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = UART0_RecieveString
+<P><STRONG><a name="[96]"></a>UART2_RecieveString</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, uart.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = UART2_RecieveString
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_Recievechar
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendChar
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Recievechar
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendChar
 </UL>
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
