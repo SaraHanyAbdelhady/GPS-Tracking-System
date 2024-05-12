@@ -23,7 +23,7 @@ void UART2_Init (void){
 
 
 void UART5_Init (void){
-	SYSCTL_RCGCUART_R |= 0x0020; 	//activate UARTD
+	SYSCTL_RCGCUART_R |= 0x0020; 	//activate UARTE
 	SYSCTL_RCGCGPIO_R |= 0x0010;  //activate portE clk
 	while((SYSCTL_PRGPIO_R & 0x0010) == 0);
 	UART5_CTL_R &= ~0x0001;				//disable UART
@@ -31,7 +31,7 @@ void UART5_Init (void){
 	UART5_FBRD_R = 0xB;					  //FBRD = int (0.16667*64 + 0.5)
 	UART5_LCRH_R = 0x070;					//8-bits Data + enable FIFO
 	UART5_CTL_R = 0x0301;					//activate RXE, TXE & UART
-	GPIO_PORTE_AFSEL_R |= pinUart5; 	//enable alternate function PD4 & PD5
+	GPIO_PORTE_AFSEL_R |= pinUart5; 	//enable alternate function PE4 & PE5
 	GPIO_PORTE_PCTL_R = (GPIO_PORTD_PCTL_R & 0xFF00FFFF) + 0x00110000;
 	GPIO_PORTE_DEN_R |= pinUart5;			//enable digtal I/O 
 	GPIO_PORTE_AMSEL_R &= ~pinUart5;	//disable analog I/O
