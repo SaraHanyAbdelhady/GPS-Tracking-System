@@ -22,7 +22,7 @@ void GPS_voidReceiveSentence(f32* Copy_f32Latitude, f32 *Copy_f32Longitude, u8 *
 	static u8 Local_u8UART_InitFlag = 0;
 	u8 Local_u8ReadCounter = 0;
 	u8 Local_u8GPS_Sentence[100];
-	u8 Local_u8GPS_Check[] = "$GNRMC,";
+	u8 Local_u8GPS_Check[] = "GPRMC,";
 	u8 Local_u8ReceivedChar;
 	if(Local_u8UART_InitFlag == 0)
 	{

@@ -3,5 +3,6 @@
 .\uart.o: src\MCAL\UART\../../../Services/Bit_Utilities.h
 .\uart.o: src\MCAL\UART\../../../Services/STD_TYPES.h
 .\uart.o: src\MCAL\UART\../../../Headers/MCAL/UART/UART.h
+.\uart.o: src\MCAL\UART\../../../Headers/HAL/LED/LED.h
 .\uart.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
 .\uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h

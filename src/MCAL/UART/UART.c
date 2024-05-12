@@ -2,6 +2,7 @@
 #include "../../../Services/Bit_Utilities.h"
 #include "../../../Services/STD_TYPES.h"
 #include "../../../Headers/MCAL/UART/UART.h"
+
 #include <string.h>
 #include <stdint.h>
 
@@ -10,11 +11,11 @@ void UART2_Init (void){
 	SYSCTL_RCGCUART_R |= 0x0004; 	//activate UARTD
 	SYSCTL_RCGCGPIO_R |= 0x0008;  //activate portD clk
 	while((SYSCTL_PRGPIO_R & 0x08) == 0);
-	UART0_CTL_R &= ~0x0001;				//disable UART
-	UART0_IBRD_R = 0x208;					//IBRD = int(80000000/(16*9600)) = int(520.8333)
-	UART0_FBRD_R = 0x35;					//FBRD = int (0.833*64 + 0.5)
-	UART0_LCRH_R = 0x070;					//8-bits Data + enable FIFO
-	UART0_CTL_R = 0x0301;					//activate RXE, TXE & UART
+	UART2_CTL_R &= ~0x0001;				//disable UART
+	UART2_IBRD_R = 0x208;					//IBRD = int(80000000/(16*9600)) = int(520.8333)
+	UART2_FBRD_R = 0x35;					//FBRD = int (0.833*64 + 0.5)
+	UART2_LCRH_R = 0x070;					//8-bits Data + enable FIFO
+	UART2_CTL_R = 0x0301;					//activate RXE, TXE & UART
 	GPIO_PORTD_AFSEL_R |= pinUart2; 	//enable alternate function PD6 & PD7
 	GPIO_PORTD_PCTL_R = (GPIO_PORTD_PCTL_R & 0x00FFFFFF) + 0x11000000;
 	GPIO_PORTD_DEN_R |= pinUart2;			//enable digtal I/O 
@@ -85,8 +86,10 @@ void UART5_SendString (char *pt){
 
 char UART5_Recievechar (){
 		while ((UART5_FR_R & 0x10));
+		
 	return (char)UART5_DR_R;
 }
+
 
 void UART5_RecieveString (char *command, u32 length){
 	char chararacter;

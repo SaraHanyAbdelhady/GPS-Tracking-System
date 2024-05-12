@@ -50,7 +50,7 @@ int main() {
 		PortE_Init();
 		UART5_Init();
 	
-	// intiallize uart0 for bluetooth or serial interface between laptop&tiva c
+	// intiallize uart2 for bluetooth or serial interface between laptop&tiva c
 		UART2_Init();
 		Button_Init();
 		LEDInit();
