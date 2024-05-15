@@ -1,6 +1,6 @@
 #include "../../../Services/Bit_Utilities.h"
 #include "../../../Services/STD_TYPES.h"
-#include  "../../../Services/tm4c123gh6pm.h"
+#include "../../../Services/tm4c123gh6pm.h"
 #include "../../../Headers/MCAL/GPIO/GPIO.h"
 
 	// Port F initialization as GPIO for switches and LEDs
