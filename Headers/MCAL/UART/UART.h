@@ -3,13 +3,13 @@
 
 #define CR   			  0x0D
 #define END    			0x2A
-#define pinUart2    0xC0
-#define pinUart0		0x03
-
+#define pinUart5    0x30
+#define pinUart2		0xC0
 
 
 extern void UART0_Init (void);
 extern void UART2_Init (void);
+extern void UART5_Init (void);
 
 extern void UART0_SendChar (char data);
 extern void UART0_SendString (char *pt);
@@ -20,6 +20,11 @@ extern void UART2_SendChar (char data);
 extern void UART2_SendString (char *pt);
 extern char UART2_Recievechar (void);
 extern void UART2_RecieveString (char *command, u32 length);
+
+extern void UART5_SendChar (char data);
+extern void UART5_SendString (char *pt);
+extern char UART5_Recievechar (void);
+extern void UART5_RecieveString (char *command, u32 length);
 
 
 

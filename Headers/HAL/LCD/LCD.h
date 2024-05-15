@@ -9,7 +9,7 @@
 
 
 /*************************************** CONTROL PINS MACROS ***************************************/
-#define CTRL_PORT					'E'	
+#define CTRL_PORT					'D'	
 #define CTRL_PORT_DIR				0x07
 #define LCD_RS_PIN					1
 #define LCD_RW_PIN					2

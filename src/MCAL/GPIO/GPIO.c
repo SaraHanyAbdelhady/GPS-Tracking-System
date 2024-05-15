@@ -1,6 +1,6 @@
 #include "../../../Services/Bit_Utilities.h"
 #include "../../../Services/STD_TYPES.h"
-#include  "../../../Services/tm4c123gh6pm.h"
+#include "../../../Services/tm4c123gh6pm.h"
 #include "../../../Headers/MCAL/GPIO/GPIO.h"
 
 	// Port F initialization as GPIO for switches and LEDs
@@ -31,7 +31,7 @@
 	SET_BIT(SYSCTL_RCGCGPIO_R,0);
 			while(READ_BIT(SYSCTL_PRGPIO_R,0)==0);
 			GPIO_PORTA_LOCK_R =GPIO_LOCK_KEY;
-		    GPIO_PORTA_AFSEL_R = 0x01;
+		  GPIO_PORTA_AFSEL_R = 0x01;
 			GPIO_PORTA_PCTL_R = 0x11;
 			GPIO_PORTA_DEN_R = 0xFF;
 			GPIO_PORTA_AMSEL_R = 0x00;
@@ -46,7 +46,7 @@
 			while(READ_BIT(SYSCTL_PRGPIO_R,1)==0);
 			GPIO_PORTB_LOCK_R =GPIO_LOCK_KEY;
 			GPIO_PORTB_CR_R=0xFF;
-		    GPIO_PORTB_AFSEL_R = 0x00;
+		  GPIO_PORTB_AFSEL_R = 0x00;
 			GPIO_PORTB_PCTL_R = 0x00;
 			GPIO_PORTB_DEN_R = 0xFF;
 			GPIO_PORTB_AMSEL_R = 0x00;

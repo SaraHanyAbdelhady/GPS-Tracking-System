@@ -22,41 +22,41 @@ void GPS_voidReceiveSentence(f32* Copy_f32Latitude, f32 *Copy_f32Longitude, u8 *
 	static u8 Local_u8UART_InitFlag = 0;
 	u8 Local_u8ReadCounter = 0;
 	u8 Local_u8GPS_Sentence[100];
-	u8 Local_u8GPS_Check[] = "$GNRMC,";
+	u8 Local_u8GPS_Check[] = "GPRMC,";
 	u8 Local_u8ReceivedChar;
 	if(Local_u8UART_InitFlag == 0)
 	{
-		UART2_Init();
+		UART5_Init();
 		Local_u8UART_InitFlag++;
 	}
 	do 
 	{
-		Local_u8ReceivedChar = UART2_Recievechar ();
+		Local_u8ReceivedChar = UART5_Recievechar ();
 		if(Local_u8ReceivedChar == Local_u8GPS_Check[0])
 		{
-			Local_u8ReceivedChar = UART2_Recievechar ();
+			Local_u8ReceivedChar = UART5_Recievechar ();
 			if(Local_u8ReceivedChar == Local_u8GPS_Check[1])
 			{
-				Local_u8ReceivedChar = UART2_Recievechar ();
+				Local_u8ReceivedChar = UART5_Recievechar ();
 				if(Local_u8ReceivedChar == Local_u8GPS_Check[2])
 				{
-					Local_u8ReceivedChar = UART2_Recievechar ();
+					Local_u8ReceivedChar = UART5_Recievechar ();
 					if(Local_u8ReceivedChar == Local_u8GPS_Check[3])
 					{
-						Local_u8ReceivedChar = UART2_Recievechar ();
+						Local_u8ReceivedChar = UART5_Recievechar ();
 						if(Local_u8ReceivedChar == Local_u8GPS_Check[4])
 						{
-							Local_u8ReceivedChar = UART2_Recievechar ();
+							Local_u8ReceivedChar = UART5_Recievechar ();
 							if(Local_u8ReceivedChar == Local_u8GPS_Check[5])
 							{
-								Local_u8ReceivedChar = UART2_Recievechar ();
+								Local_u8ReceivedChar = UART5_Recievechar ();
 								if(Local_u8ReceivedChar == Local_u8GPS_Check[6])
 								{
-									Local_u8ReceivedChar = UART2_Recievechar ();
+									Local_u8ReceivedChar = UART5_Recievechar ();
 									while(Local_u8ReceivedChar != '*')
 									{
 										Local_u8GPS_Sentence[Local_u8ReadCounter] = Local_u8ReceivedChar;
-										Local_u8ReceivedChar = UART2_Recievechar ();
+										Local_u8ReceivedChar = UART5_Recievechar ();
 										Local_u8ReadCounter++;
 									}
 									GPS_voidExtractCoordinates(Local_u8GPS_Sentence,Copy_f32Latitude,Copy_f32Longitude,Copy_u8Speed);

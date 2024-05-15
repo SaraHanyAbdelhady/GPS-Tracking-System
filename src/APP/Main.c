@@ -17,53 +17,48 @@
 
 
 
-char GPS_u8SpeedArr[5];
-u8 push_button;
+		char GPS_u8SpeedArr[5];
+		u8 push_button;
 
-u32 address;
+		u32 address;
 
-const int length=3;					//	for receiving U
-char command[length]={0}; 	//	for receiving U
+		const int length=3;					//	for receiving U
+		char command[length]={0}; 	//	for receiving U
 //declaration of variables that store the start points of the trajectory 
-f32 longStart = 0, latStart = 0;
+		f32 longStart = 0, latStart = 0;
 	
 //declaration of variables that store the End points of the trajectory 
-f32 longEnd = 0, latEnd = 0 ;
+		f32 longEnd = 0, latEnd = 0 ;
 int main() {
 
 
-	f32 totalDistance =0;
-	f32 distance =0;
-  f32 currentLatitude =0;
-	f32 currentlongitude =0;
-	f32 previousLatitude =0;
-	f32 previousLongitude =0;
-	u8 Local_u8Speed = 0;
+		f32 totalDistance =0;
+		f32 distance =0;
+		f32 currentLatitude =0;
+		f32 currentlongitude =0;
+		f32 previousLatitude =0;
+		f32 previousLongitude =0;
+		u8 Local_u8Speed = 0;
 	
 	// intiallize portf for leds & switches
-    PortF_Init();
+		PortF_Init();
 	
-	// intiallize portB for LCD
-	PortB_Init();
-	PortE_Init();
-	// intiallize uart2 for gps
-	UART2_Init();
+
+	// intiallize portB&D for LCD
+		PortB_Init();
+		PortD_Init();
+	// intiallize uart5 for gps
+		PortE_Init();
+		UART5_Init();
 	
-	// intiallize uart0 for bluetooth or serial interface between laptop&tiva c
-	UART0_Init();
-	Button_Init();
-	LEDInit();
-	LCD_voidInit();
+	// intiallize uart2 for bluetooth or serial interface between laptop&tiva c
+		UART2_Init();
+		Button_Init();
+		LEDInit();
+		LCD_voidInit();
   
 	
-	GPS_voidReceiveSentence(& latStart, & longStart, & Local_u8Speed );
-	eeprom_write(latStart,address);
-			address+=4;
-			eeprom_write(longStart,address);
-			address+=4;
-			previousLatitude =latStart;
-			previousLongitude=longStart;
-	 
+	
 	//	displaying on LCD
 	  LCD_voidSendString("Total Dist:");
     LCD_voidGoToXYPos(0, 14);
@@ -75,12 +70,21 @@ int main() {
 		
 	//	start of interface between laptop and tiva
 	
-	address=EEPROM_START_ADDR;	
-		
+		address=EEPROM_START_ADDR;	
+		UART5_SendString ("HI \n");
+		GPS_voidReceiveSentence(& latStart, & longStart, & Local_u8Speed );
+		eeprom_write(latStart,address);
+		address+=4;
+		eeprom_write(longStart,address);
+		address+=4;
+		previousLatitude =latStart;
+		previousLongitude=longStart;
+	 
+		UART2_SendString ("ENTER: \n");
+		push_button = Button_Pressed();
+	
 	while(1){
 
-		push_button = Button_Pressed();	
-		
 		while(!push_button){ //&&  totalDistance < 100
 			//Put trajectories
 			//BIT_UTILITIES_H
@@ -98,42 +102,37 @@ int main() {
 			address+=4;
 			eeprom_write(currentlongitude,address);
 			address+=4;
-			
+			push_button = Button_Pressed();
 		}
-		
 		longEnd = currentlongitude;
 		latEnd =currentLatitude;
 		LED_On(LED_BLUE );
 		LCD_voidGoToXYPos(0, 11); /**< New Line in LCD @ position:(1,0) */
     Print_Distance_To_LCD(totalDistance);
 	
-
-	UART0_SendString ("ENTER: \n");
- 
-
-	UART0_RecieveString(command,length);
-	if(strcmp(command, "U") == 0)
-		{
-  while(address>EEPROM_START_ADDR){
-		f32 longitude=0;
-		char str_longitude[20]={0};
-		f32 latitude=0;
-		char str_latitude[20]={0};
+		UART2_RecieveString(command,length);
+		if(strcmp(command, "U") == 0)
+			{
+		while(address>EEPROM_START_ADDR){
+			f32 longitude=0;
+			char str_longitude[20]={0};
+			f32 latitude=0;
+			char str_latitude[20]={0};
 		
-		longitude = eeprom_read(address);
-		ConvertFloatToStr(longitude,str_longitude);
-		UART0_SendString (str_longitude);
-		address-=4;
-		UART0_SendString ("   ");
-		latitude = eeprom_read(address);
-		ConvertFloatToStr(latitude,str_latitude);
-		UART0_SendString (str_latitude);
-		address-=4;
-		UART0_SendString ("\n");
+			longitude = eeprom_read(address);
+			ConvertFloatToStr(longitude,str_longitude);
+			UART2_SendString (str_longitude);
+			address-=4;
+			UART2_SendString ("   ");
+			latitude = eeprom_read(address);
+			ConvertFloatToStr(latitude,str_latitude);
+			UART2_SendString (str_latitude);
+			address-=4;
+			UART2_SendString ("\n");
+		}
+	
 	}
 }
-}
-
 
 }
 	

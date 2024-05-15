@@ -6,10 +6,11 @@ Section Cross References
 
     startup_tm4c123.o(RESET) refers to startup_tm4c123.o(STACK) for __initial_sp
     startup_tm4c123.o(RESET) refers to startup_tm4c123.o(.text) for Reset_Handler
+    startup_tm4c123.o(.text) refers to system_tm4c123.o(.text) for SystemInit
     startup_tm4c123.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
     system_tm4c123.o(.text) refers to system_tm4c123.o(.data) for SystemCoreClock
     main.o(.text) refers to gpio.o(.text) for PortF_Init
-    main.o(.text) refers to uart.o(.text) for UART2_Init
+    main.o(.text) refers to uart.o(.text) for UART5_Init
     main.o(.text) refers to push button.o(.text) for Button_Init
     main.o(.text) refers to led.o(.text) for LEDInit
     main.o(.text) refers to lcd.o(.text) for LCD_voidInit
@@ -18,13 +19,13 @@ Section Cross References
     main.o(.text) refers to app.o(.text) for Distance
     main.o(.text) refers to strcmp.o(.text) for strcmp
     main.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
-    main.o(.text) refers to main.o(.data) for longStart
+    main.o(.text) refers to main.o(.data) for address
     gps.o(.text) refers to atof.o(i.__hardfp_atof) for __hardfp_atof
     gps.o(.text) refers to d2f.o(.text) for __aeabi_d2f
     gps.o(.text) refers to f2d.o(.text) for __aeabi_f2d
     gps.o(.text) refers to ddiv.o(.text) for __aeabi_ddiv
     gps.o(.text) refers to dfixui.o(.text) for __aeabi_d2uiz
-    gps.o(.text) refers to uart.o(.text) for UART2_Init
+    gps.o(.text) refers to uart.o(.text) for UART5_Init
     gps.o(.text) refers to main.o(.data) for GPS_u8SpeedArr
     gps.o(.text) refers to gps.o(.data) for Local_u8UART_InitFlag
     lcd.o(.text) refers to gpio.o(.text) for Set_vPinValue
@@ -545,14 +546,12 @@ Removing Unused input sections from the image.
     Removing startup_tm4c123.o(HEAP), (0 bytes).
     Removing system_tm4c123.o(.rev16_text), (4 bytes).
     Removing system_tm4c123.o(.revsh_text), (4 bytes).
-    Removing system_tm4c123.o(.text), (588 bytes).
-    Removing system_tm4c123.o(.data), (4 bytes).
     Removing main.o(.constdata), (4 bytes).
     Removing lcd.o(.bss), (16 bytes).
     Removing dneg.o(.text), (6 bytes).
     Removing cdcmple.o(.text), (40 bytes).
 
-9 unused section(s) (total 666 bytes) removed from the image.
+7 unused section(s) (total 74 bytes) removed from the image.
 
 ==============================================================================
 
@@ -565,36 +564,36 @@ Image Symbol Table
     RESET                                    0x00000000   Section      620  startup_tm4c123.o(RESET)
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  ctype_c.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isspace_c.o ABSOLUTE
-    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/fputc.c           0x00000000   Number         0  fputc.o ABSOLUTE
     ../clib/microlib/stdio/semi.s            0x00000000   Number         0  semi.o ABSOLUTE
@@ -603,18 +602,18 @@ Image Symbol Table
     ../clib/microlib/string/strcmp.c         0x00000000   Number         0  strcmp.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusesemip.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../clib/scanf.c                          0x00000000   Number         0  strtod.o ABSOLUTE
     ../clib/scanf.c                          0x00000000   Number         0  scanf_fp.o ABSOLUTE
     ../clib/scanf.c                          0x00000000   Number         0  _sgetc.o ABSOLUTE
-    ../clib/scanf.c                          0x00000000   Number         0  strtod.o ABSOLUTE
     ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
-    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltul.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
@@ -634,8 +633,8 @@ Image Symbol Table
     ../mathlib/fabs.c                        0x00000000   Number         0  fabs.o ABSOLUTE
     ../mathlib/fpclassify.c                  0x00000000   Number         0  fpclassify.o ABSOLUTE
     ../mathlib/poly.c                        0x00000000   Number         0  poly.o ABSOLUTE
-    ../mathlib/pow.c                         0x00000000   Number         0  pow_x.o ABSOLUTE
     ../mathlib/pow.c                         0x00000000   Number         0  pow.o ABSOLUTE
+    ../mathlib/pow.c                         0x00000000   Number         0  pow_x.o ABSOLUTE
     ../mathlib/qnan.c                        0x00000000   Number         0  qnan.o ABSOLUTE
     ../mathlib/rred.c                        0x00000000   Number         0  rred.o ABSOLUTE
     ../mathlib/sin.c                         0x00000000   Number         0  sin_x.o ABSOLUTE
@@ -1201,21 +1200,23 @@ Memory Map of the image
     0x00004c50   0x00000020   Data   RO          808    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Base: 0x20000000, Size: 0x00000028, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Base: 0x20000000, Size: 0x0000002c, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000020   Data   RW           61    .data               main.o
-    0x20000020   0x00000001   Data   RW          184    .data               gps.o
-    0x20000021   0x00000003   PAD
-    0x20000024   0x00000004   Data   RW          762    .data               mc_w.l(errno.o)
+    0x20000000   0x00000004   Data   RW           13    .data               system_tm4c123.o
+    0x20000004   0x00000020   Data   RW           61    .data               main.o
+    0x20000024   0x00000001   Data   RW          184    .data               gps.o
+    0x20000025   0x00000003   PAD
+    0x20000028   0x00000004   Data   RW          762    .data               mc_w.l(errno.o)
 
 
-    Execution Region ER_ZI (Base: 0x20000028, Size: 0x00000200, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Base: 0x2000002c, Size: 0x00000204, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000028   0x00000200   Zero   RW            1    STACK               startup_tm4c123.o
+    0x2000002c   0x00000004   PAD
+    0x20000030   0x00000200   Zero   RW            1    STACK               startup_tm4c123.o
 
 
 ==============================================================================
@@ -1241,7 +1242,7 @@ Image component sizes
     ----------------------------------------------------------------------
       5472        436        652         36        512      29716   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         0          0          0          3          0          0   (incl. Padding)
+         2          0          0          3          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1305,8 +1306,8 @@ Image component sizes
        108          0          0          0          0        168   fepilogue.o
 
     ----------------------------------------------------------------------
-     12796        892        648          4          0       5944   Library Totals
-        22          0          0          0          0          0   (incl. Padding)
+     12796        892        648          4          4       5944   Library Totals
+        22          0          0          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1317,7 +1318,7 @@ Image component sizes
       1668          2          0          0          0       1544   mf_w.l
 
     ----------------------------------------------------------------------
-     12796        892        648          4          0       5944   Library Totals
+     12796        892        648          4          4       5944   Library Totals
 
     ----------------------------------------------------------------------
 
