@@ -1,0 +1,84 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\User\Downloads\sara\tany.uvproj
+Project File Date:  05/16/2024
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling startup_TM4C123.s...
+compiling APP.c...
+src\APP\../../Headers/HAL/GPS/GPS.h(10): warning:  #1295-D: Deprecated declaration GPS_Read - give arg types
+  void GPS_Read();
+src\APP\APP.c(18): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  return angle*M_PI/180;
+src\APP\APP.c: 2 warnings, 0 errors
+compiling Main.c...
+src\APP\../../Headers/MCAL/UART/UART.h(99): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\APP\../../Headers/HAL/GPS/GPS.h(10): warning:  #1295-D: Deprecated declaration GPS_Read - give arg types
+  void GPS_Read();
+src\APP\Main.c: 2 warnings, 0 errors
+compiling Push button.c...
+compiling LED.c...
+compiling LCD.c...
+src\HAL\LCD\../../../Headers/MCAL/UART/UART.h(99): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\HAL\LCD\LCD.c(83): warning:  #550-D: variable "flag" was set but never used
+        char flag = 0;
+src\HAL\LCD\LCD.c(145): warning:  #186-D: pointless comparison of unsigned integer with zero
+      if((copy_u8XPos== 0 || copy_u8XPos== 1) && (copy_u8YPos >= 0 && copy_u8YPos<=15))
+src\HAL\LCD\LCD.c: 3 warnings, 0 errors
+compiling GPS.c...
+src\HAL\GPS\../../../Headers/MCAL/UART/UART.h(99): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\HAL\GPS\../../../Headers/HAL/GPS/GPS.h(10): warning:  #1295-D: Deprecated declaration GPS_Read - give arg types
+  void GPS_Read();
+src\HAL\GPS\GPS.c(34): warning:  #177-D: variable "i" was declared but never referenced
+        char i=0;
+src\HAL\GPS\GPS.c(59): warning:  #177-D: variable "Local_u8GPS_Sentence" was declared but never referenced
+        u8 Local_u8GPS_Sentence[100];
+src\HAL\GPS\GPS.c(176): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c(183): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        Sec=Min/60.0;
+src\HAL\GPS\GPS.c: 6 warnings, 0 errors
+compiling EEPROM.c...
+compiling GPIO.c...
+src\MCAL\GPIO\GPIO.c(97): warning:  #186-D: pointless comparison of unsigned integer with zero
+        if(((Port_ID>='A' && Port_ID<='F')||(Port_ID>='a' && Port_ID<='f'))&&((Pin_Number>=0)&&(Pin_Number<=7))&&((Pin_Value==0)||(Pin_Value==1)))
+src\MCAL\GPIO\GPIO.c(139): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((Pin_Number>=0)&&(Pin_Number<=5)){
+src\MCAL\GPIO\GPIO.c(152): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((Pin_Number>=0)&&(Pin_Number<=4)){
+src\MCAL\GPIO\GPIO.c(221): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if(((port_name>='A' && port_name<='F')||(port_name>='a' && port_name<='f'))&&((pin_number>=0)&&(pin_number<=7))&&((pin_direction==0)||(pin_direction==1)))
+src\MCAL\GPIO\GPIO.c(255): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((pin_number>=0)&&(pin_number<=5)){
+src\MCAL\GPIO\GPIO.c(267): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if((pin_number>=0)&&(pin_number<=4)){
+src\MCAL\GPIO\GPIO.c: 6 warnings, 0 errors
+compiling Systick.c...
+compiling UART.c...
+src\MCAL\UART\../../../Headers/MCAL/UART/UART.h(99): warning:  #1-D: last line of file ends without a newline
+  #endif // __MCAL_UART_INTERFACE_H__
+src\MCAL\UART\UART.c(78): warning:  #223-D: function "delay_m" declared implicitly
+                delay_m(1);
+src\MCAL\UART\UART.c(57): warning:  #177-D: variable "BRD" was declared but never referenced
+          unsigned BRD;
+src\MCAL\UART\UART.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=5914 RO-data=718 RW-data=60 ZI-data=812  
+".\tany.axf" - 0 Error(s), 22 Warning(s).
+Load "C:\\Users\\User\\Downloads\\sara\\tany.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+red but never referenced
+          unsigned BRD;
+src\MCAL\UART\UART.c: 3 warnings, 0 errors
+".\tany.axf" - 4 Error(s), 22 Warning(s).
+Target not created

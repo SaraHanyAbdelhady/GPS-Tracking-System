@@ -211,8 +211,13 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
+<<<<<<< Updated upstream
       <TopLine>220</TopLine>
       <CurrentLine>248</CurrentLine>
+=======
+      <TopLine>233</TopLine>
+      <CurrentLine>235</CurrentLine>
+>>>>>>> Stashed changes
       <bDave2>0</bDave2>
       <PathWithFileName>.\startup_TM4C123.s</PathWithFileName>
       <FilenameWithoutPath>startup_TM4C123.s</FilenameWithoutPath>
@@ -249,7 +254,11 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
+<<<<<<< Updated upstream
       <ColumnNumber>0</ColumnNumber>
+=======
+      <ColumnNumber>17</ColumnNumber>
+>>>>>>> Stashed changes
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>27</TopLine>
       <CurrentLine>32</CurrentLine>
@@ -265,10 +274,17 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
+<<<<<<< Updated upstream
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>78</CurrentLine>
+=======
+      <ColumnNumber>44</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>133</TopLine>
+      <CurrentLine>75</CurrentLine>
+>>>>>>> Stashed changes
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\MCAL\UART\UART.c</PathWithFileName>
       <FilenameWithoutPath>UART.c</FilenameWithoutPath>
@@ -313,10 +329,15 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>9</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
+<<<<<<< Updated upstream
       <TopLine>6</TopLine>
       <CurrentLine>19</CurrentLine>
+=======
+      <TopLine>17</TopLine>
+      <CurrentLine>29</CurrentLine>
+>>>>>>> Stashed changes
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\HAL\GPS\GPS.c</PathWithFileName>
       <FilenameWithoutPath>GPS.c</FilenameWithoutPath>
