@@ -1513,7 +1513,7 @@ Symbol: COMP2_Handler
       At line 109 in file startup_TM4C123.s
       At line 460 in file startup_TM4C123.s
 
-Debug1ssMon_Handler 00000024
+DebugMon_Handler 00000024
 
 Symbol: DebugMon_Handler
    Definitions
@@ -2574,14 +2574,6 @@ Comment: __Vectors_Size used once
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 External symbols
 
-SystemInit 00000000
-
-Symbol: SystemInit
-   Definitions
-      At line 233 in file startup_TM4C123.s
-   Uses
-      At line 235 in file startup_TM4C123.s
-Comment: SystemInit used once
 __main 00000000
 
 Symbol: __main
@@ -2590,5 +2582,5 @@ Symbol: __main
    Uses
       At line 245 in file startup_TM4C123.s
 Comment: __main used once
-2 symbols
-469 symbols in table
+1 symbol
+468 symbols in table

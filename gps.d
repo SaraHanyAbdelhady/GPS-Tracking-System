@@ -5,5 +5,8 @@
 .\gps.o: C:\Keil\ARM\ARMCC\bin\..\include\math.h
 .\gps.o: src\HAL\GPS\../../../Services/STD_TYPES.h
 .\gps.o: src\HAL\GPS\../../../Services/BIT_UTILITIES.h
+.\gps.o: src\HAL\GPS\../../../Services/tm4c123gh6pm.h
 .\gps.o: src\HAL\GPS\../../../Headers/MCAL/UART/UART.h
+.\gps.o: src\HAL\GPS\../../../Headers/MCAL/SYSTICK/Systick.h
 .\gps.o: src\HAL\GPS\../../../Headers/HAL/GPS/GPS.h
+.\gps.o: src\HAL\GPS\../../../Headers/HAL/LED/LED.h

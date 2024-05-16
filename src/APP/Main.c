@@ -42,23 +42,19 @@ double approximate(double a, float d);
 
 
 	int main(void) {
-    SYSTICKTIMER_init();
+    Systick_Init();
     PortF_Init();
    UART2_Init();
 	 UART5_Init();
 		LEDInit();
    LED_On(LED_RED);
-    delay_m(3000);
-    
-    delay_m(1000 * 20);
+    delay(3000);
+   
    LED_Off(LED_RED);
 	 LED_Off(LED_BLUE);
 	 LED_Off(LED_GREEN);
-    delay_m(3000);
-    LED_Off(LED_RED);
-	 LED_Off(LED_BLUE);
-	 LED_Off(LED_GREEN);
- LED_On(LED_RED);
+ 
+   LED_On(LED_RED);
 
     // get start point
     GPS_read();
