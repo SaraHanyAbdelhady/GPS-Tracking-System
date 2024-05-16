@@ -1,5 +1,3 @@
-#include <string.h>
-#include <stdint.h>
 #include "../../Services/tm4c123gh6pm.h"
 #include "../../Services/Bit_Utilities.h"
 #include "../../Services/STD_TYPES.h"
@@ -13,126 +11,98 @@
 #include "../../Headers/HAL/LCD/LCD.h"
 #include "../../Headers/MCAL/SYSTICK/Systick.h"
 #include "../../Headers/MCAL/EEPROM/EEPROM.h"
+#include <string.h>
+#include <stdint.h>
+
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
 
 
 
 
-		char GPS_u8SpeedArr[5];
-		u8 push_button;
+#define RADIUS 6371000  // radius of earth in meters
 
-		u32 address;
+double tot_distance = 0;
 
-		const int length=3;					//	for receiving U
-		char command[length]={0}; 	//	for receiving U
-//declaration of variables that store the start points of the trajectory 
-		f32 longStart = 0, latStart = 0;
-	
-//declaration of variables that store the End points of the trajectory 
-		f32 longEnd = 0, latEnd = 0 ;
-int main() {
+// points coordinates
+double lat1 = 0;
+double long1 = 0;
+extern float currentLat;
+extern float currentLong;
 
 
-		f32 totalDistance =0;
-		f32 distance =0;
-		f32 currentLatitude =0;
-		f32 currentlongitude =0;
-		f32 previousLatitude =0;
-		f32 previousLongitude =0;
-		u8 Local_u8Speed = 0;
-	
-	// intiallize portf for leds & switches
-		PortF_Init();
-	
+double to_degree(float raw_degree);
+double to_radians(double degrees);
+double distance(double lat1, double lon1, double lat2, double lon2);
+double approximate(double a, float d);
 
-	// intiallize portB&D for LCD
-		PortB_Init();
-		PortD_Init();
-	// intiallize uart5 for gps
-		PortE_Init();
-		UART5_Init();
-	
-	// intiallize uart2 for bluetooth or serial interface between laptop&tiva c
-		UART2_Init();
-		Button_Init();
+
+
+	int main(void) {
+    SYSTICKTIMER_init();
+    PortF_Init();
+   UART2_Init();
+	 UART5_Init();
 		LEDInit();
-		LCD_voidInit();
-  
-	
-	
-	//	displaying on LCD
-	  LCD_voidSendString("Total Dist:");
-    LCD_voidGoToXYPos(0, 14);
-    LCD_voidSendString(" m");
-    LCD_voidGoToXYPos(1, 0);
-    LCD_voidSendString("SPEED:");
-    LCD_voidGoToXYPos(1, 12);
-    LCD_voidSendString("knot");
-		
-	//	start of interface between laptop and tiva
-	
-		address=EEPROM_START_ADDR;	
-		UART5_SendString ("HI \n");
-		GPS_voidReceiveSentence(& latStart, & longStart, & Local_u8Speed );
-		eeprom_write(latStart,address);
-		address+=4;
-		eeprom_write(longStart,address);
-		address+=4;
-		previousLatitude =latStart;
-		previousLongitude=longStart;
-	 
-		UART2_SendString ("ENTER: \n");
-		push_button = Button_Pressed();
-	
-	while(1){
+   LED_On(LED_RED);
+    delay_m(3000);
+    
+    delay_m(1000 * 20);
+   LED_Off(LED_RED);
+	 LED_Off(LED_BLUE);
+	 LED_Off(LED_GREEN);
+    delay_m(3000);
+    LED_Off(LED_RED);
+	 LED_Off(LED_BLUE);
+	 LED_Off(LED_GREEN);
+ LED_On(LED_RED);
 
-		while(!push_button){ //&&  totalDistance < 100
-			//Put trajectories
-			//BIT_UTILITIES_H
-			GPS_voidReceiveSentence(& currentLatitude, & currentlongitude, & Local_u8Speed );
-		  distance =Distance( previousLongitude, previousLatitude, currentlongitude, currentLatitude); 
-			previousLongitude=currentlongitude;
-			previousLatitude=currentLatitude;
-			totalDistance+= distance ;
-			LCD_voidGoToXYPos(1, 6);
-      LCD_voidSendString(GPS_u8SpeedArr);	
-			
-			
-			//	Saving to memory
-			eeprom_write(currentLatitude,address);
-			address+=4;
-			eeprom_write(currentlongitude,address);
-			address+=4;
-			push_button = Button_Pressed();
-		}
-		longEnd = currentlongitude;
-		latEnd =currentLatitude;
-		LED_On(LED_BLUE );
-		LCD_voidGoToXYPos(0, 11); /**< New Line in LCD @ position:(1,0) */
-    Print_Distance_To_LCD(totalDistance);
-	
-		UART2_RecieveString(command,length);
-		if(strcmp(command, "U") == 0)
-			{
-		while(address>EEPROM_START_ADDR){
-			f32 longitude=0;
-			char str_longitude[20]={0};
-			f32 latitude=0;
-			char str_latitude[20]={0};
-		
-			longitude = eeprom_read(address);
-			ConvertFloatToStr(longitude,str_longitude);
-			UART2_SendString (str_longitude);
-			address-=4;
-			UART2_SendString ("   ");
-			latitude = eeprom_read(address);
-			ConvertFloatToStr(latitude,str_latitude);
-			UART2_SendString (str_latitude);
-			address-=4;
-			UART2_SendString ("\n");
-		}
-	
-	}
+    // get start point
+    GPS_read();
+    GPS_format();
+    lat1 = to_degree(currentLat);
+    long1 = to_degree(currentLong);
+
+    while (1) {
+        GPS_read();
+        GPS_format();
+
+        currentLat = to_degree(currentLat);
+        currentLong = to_degree(currentLong);
+
+        tot_distance += distance(lat1, long1, currentLat, currentLong);
+        lat1 = currentLat;
+        long1 = currentLong;
+
+        if ( tot_distance >=100.0) {
+            LED_On(LED_GREEN);
+            break;
+        }
+    }
 }
 
+
+
+double to_degree(float raw_degree) {  // gps output to degrees
+    int dd = (int)(raw_degree / 100);
+    double mm = raw_degree - (dd * 100);
+    double degree = dd + (mm / 60);
+    return degree;
 }
+
+double to_radians(double degrees) {  // degree to rad
+    return degrees * M_PI / 180.0;
+}
+
+double distance(double lat1, double lon1, double lat2, double lon2) {  // calc distance between 2 coordinates in M
+    double dlat = to_radians(lat2 - lat1);
+    double dlon = to_radians(lon2 - lon1);
+    double a = pow(sin(dlat / 2), 2) + cos(to_radians(lat1)) * cos(to_radians(lat2)) * pow(sin(dlon / 2), 2);
+    double c = 2 * atan2(sqrt(a), sqrt(1 - a));
+    return RADIUS * c;
+}
+
+double approximate(double a, float d) { return (int)(a / d + 0.5) * d; }
+
 	
