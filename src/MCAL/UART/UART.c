@@ -8,6 +8,7 @@
 
 void UART0_Init (void){
 	SYSCTL_RCGCUART_R |= 0x0001; 	//activate UART0
+	while((SYSCTL_PRUART_R & 0x00000001) == 0);
 	SYSCTL_RCGCGPIO_R |= 0x0001;  //activate portA clk
 	while((SYSCTL_PRGPIO_R & 0x01) == 0);
 	UART0_CTL_R &= ~0x0001;				//disable UART
@@ -24,6 +25,7 @@ void UART0_Init (void){
 
 void UART2_Init (void){
 	SYSCTL_RCGCUART_R |= 0x0004; 	//activate UARTD
+	while((SYSCTL_PRUART_R & 0x0004) == 0);
 	SYSCTL_RCGCGPIO_R |= 0x0008;  //activate portD clk
 	while((SYSCTL_PRGPIO_R & 0x08) == 0);
 	UART2_CTL_R &= ~0x0001;				//disable UART
@@ -41,6 +43,7 @@ void UART2_Init (void){
 
 void UART5_Init (void){
 	SYSCTL_RCGCUART_R |= 0x0020; 	//activate UARTE
+	while((SYSCTL_PRUART_R & 0x0020) == 0);
 	SYSCTL_RCGCGPIO_R |= 0x0010;  //activate portE clk
 	while((SYSCTL_PRGPIO_R & 0x0010) == 0);
 	UART5_CTL_R &= ~0x0001;				//disable UART
