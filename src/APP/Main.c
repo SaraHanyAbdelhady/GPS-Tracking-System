@@ -38,17 +38,17 @@ double approximate(double a, float d);
 	int main(void) {
     Systick_Init();
     PortF_Init();
-   UART2_Init();
-	 UART5_Init();
+		UART0_Init();
+		UART2_Init();
 		LEDInit();
-   LED_On(LED_RED);
+		LED_On(LED_RED);
     delay(3000);
    
-   LED_Off(LED_RED);
-	 LED_Off(LED_BLUE);
-	 LED_Off(LED_GREEN);
+		LED_Off(LED_RED);
+		LED_Off(LED_BLUE);
+		LED_Off(LED_GREEN);
  
-   LED_On(LED_RED);
+		LED_On(LED_RED);
 
     GPS_read();
     GPS_format();
@@ -69,28 +69,34 @@ double approximate(double a, float d);
             LED_On(LED_GREEN);
             break;
         }
-		UART2_RecieveString(command,length);
+		UART0_RecieveString(command,length);
 		if(strcmp(command, "U") == 0)
-			{ int k;
-		for(k=0;k<sizeof(allLats);k++){
-			f32 longitude=0;
-			char str_longitude[20]={0};
-			f32 latitude=0;
-			char str_latitude[20]={0};
+			{ 
+				int k;
+				char str_distance[20]={0};
+				for(k=0;k<sizeof(allLats);k++)
+					{
+						f32 longitude=0;
+						char str_longitude[20]={0};
+						f32 latitude=0;
+						char str_latitude[20]={0};
 		
-			longitude = allLongs[k] ;
-			ConvertFloatToStr(longitude,str_longitude);
-			UART2_SendString (str_longitude);
+						longitude = allLongs[k] ;
+						ConvertFloatToStr(longitude,str_longitude);
+						UART0_SendString (str_longitude);
 			
-			UART2_SendString ("   ");
-			latitude = allLats[k] ;
-			ConvertFloatToStr(latitude,str_latitude);
-			UART2_SendString (str_latitude);
+						UART0_SendString ("   ");
+						latitude = allLats[k] ;
+						ConvertFloatToStr(latitude,str_latitude);
+						UART0_SendString (str_latitude);
 			
-			UART2_SendString ("\n");
-		}
-	
-	}
+						UART0_SendString ("\n");
+					}
+				
+				ConvertFloatToStr(totalDistance,str_distance);
+				UART0_SendString ("Total Distance:");
+				UART0_SendString (str_distance);
+			}
     }
 }
 

@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\GPS-Tracking-System.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\GPS-Tracking-System.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Thu May 16 21:27:46 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri May 17 00:39:01 2024
 <BR><P>
-<H3>Maximum Stack Usage =        496 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        520 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; distance &rArr; __hardfp_sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
 <P>
@@ -1144,8 +1144,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[77]"></a>main</STRONG> (Thumb, 578 bytes, Stack size 72 bytes, main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 496<LI>Call Chain = main &rArr; distance &rArr; __hardfp_sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
+<P><STRONG><a name="[77]"></a>main</STRONG> (Thumb, 626 bytes, Stack size 96 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = main &rArr; distance &rArr; __hardfp_sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
@@ -1154,10 +1154,10 @@ Global Symbols
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_Init
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendString
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_RecieveString
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Init
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Init
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendString
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_Init
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_Init
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortF_Init
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
@@ -1178,59 +1178,59 @@ Global Symbols
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
 </UL>
 
-<P><STRONG><a name="[e8]"></a>UART0_Init</STRONG> (Thumb, 144 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
-
-<P><STRONG><a name="[91]"></a>UART2_Init</STRONG> (Thumb, 156 bytes, Stack size 0 bytes, uart.o(.text))
+<P><STRONG><a name="[91]"></a>UART0_Init</STRONG> (Thumb, 144 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[92]"></a>UART5_Init</STRONG> (Thumb, 146 bytes, Stack size 0 bytes, uart.o(.text))
+<P><STRONG><a name="[92]"></a>UART2_Init</STRONG> (Thumb, 156 bytes, Stack size 0 bytes, uart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a3]"></a>UART0_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendString
+<P><STRONG><a name="[e8]"></a>UART5_Init</STRONG> (Thumb, 146 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+
+<P><STRONG><a name="[a2]"></a>UART0_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendString
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
 </UL>
 
-<P><STRONG><a name="[a2]"></a>UART0_SendString</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendChar
+<P><STRONG><a name="[9f]"></a>UART0_SendString</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = UART0_SendString
 </UL>
-
-<P><STRONG><a name="[a5]"></a>UART0_Recievechar</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
-</UL>
-
-<P><STRONG><a name="[a4]"></a>UART0_RecieveString</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, uart.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_Recievechar
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendChar
-</UL>
-
-<P><STRONG><a name="[a6]"></a>UART2_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendString
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_RecieveString
-</UL>
-
-<P><STRONG><a name="[9f]"></a>UART2_SendString</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = UART2_SendString
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendChar
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendChar
 </UL>
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[a3]"></a>UART0_Recievechar</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_RecieveString
+</UL>
+
+<P><STRONG><a name="[9b]"></a>UART0_RecieveString</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, uart.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = UART0_RecieveString
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_Recievechar
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_SendChar
+</UL>
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[a5]"></a>UART2_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_RecieveString
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendString
+</UL>
+
+<P><STRONG><a name="[a4]"></a>UART2_SendString</STRONG> (Thumb, 22 bytes, Stack size 4 bytes, uart.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendChar
 </UL>
 
 <P><STRONG><a name="[a7]"></a>UART2_Recievechar</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_RecieveString
+<BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_RecieveString
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPS_read
 </UL>
 
-<P><STRONG><a name="[9b]"></a>UART2_RecieveString</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, uart.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = UART2_RecieveString
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Recievechar
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendChar
-</UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[a6]"></a>UART2_RecieveString</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, uart.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Recievechar
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_SendChar
 </UL>
 
 <P><STRONG><a name="[a9]"></a>UART5_SendChar</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, uart.o(.text), UNUSED)

@@ -110,12 +110,12 @@ void UART2_RecieveString (char *command, u32 length){
 	int i;
 	for(i =0;i<length;i++){
 	  	chararacter = UART2_Recievechar();
-			if(chararacter != CR)
+			if(chararacter != END)
 			{
 				command[i] = chararacter;
 				UART2_SendChar(command[i]);
 			}
-			else if (chararacter == CR || i == length) break;
+			else if (chararacter == END || i == length) break;
 	}
 }
 
