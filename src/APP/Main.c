@@ -15,18 +15,13 @@
 #include <stdint.h>
 #include <math.h>
 #include <stdlib.h>
-
-
-
-
-
 #define RADIUS 6371000  // radius of earth in meters
 
-double tot_distance = 0;
+double totalDistance = 0;
 
 // points coordinates
-double lat1 = 0;
-double long1 = 0;
+double upcomingLat = 0;
+double upcomingLong = 0;
 extern float currentLat;
 extern float currentLong;
 const int length=3;					//	for receiving U
@@ -55,11 +50,10 @@ double approximate(double a, float d);
  
    LED_On(LED_RED);
 
-    // get start point
     GPS_read();
     GPS_format();
-    lat1 = to_degree(currentLat);
-    long1 = to_degree(currentLong);
+    upcomingLat= to_degree(currentLat);
+    upcomingLong = to_degree(currentLong);
 
     while (1) {
         GPS_read();
@@ -67,12 +61,11 @@ double approximate(double a, float d);
 
         currentLat = to_degree(currentLat);
         currentLong = to_degree(currentLong);
+        totalDistance += distance(upcomingLat, upcomingLong, currentLat, currentLong);
+        upcomingLat = currentLat;
+        upcomingLong = currentLong;
 
-        tot_distance += distance(lat1, long1, currentLat, currentLong);
-        lat1 = currentLat;
-        long1 = currentLong;
-
-        if ( tot_distance >=100.0) {
+        if ( totalDistance >=100.0) {
             LED_On(LED_GREEN);
             break;
         }

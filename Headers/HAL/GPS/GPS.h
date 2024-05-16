@@ -9,9 +9,7 @@
 
 
 extern void GPS_read(void);
-
 extern void GPS_format(void);
-
 extern float allLats[200];
 extern float allLongs[200];
 

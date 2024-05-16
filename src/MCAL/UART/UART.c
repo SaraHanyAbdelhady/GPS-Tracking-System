@@ -2,7 +2,6 @@
 #include "../../../Services/Bit_Utilities.h"
 #include "../../../Services/STD_TYPES.h"
 #include "../../../Headers/MCAL/UART/UART.h"
-
 #include <string.h>
 #include <stdint.h>
 
