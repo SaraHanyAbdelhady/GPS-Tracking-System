@@ -79,6 +79,28 @@ double approximate(double a, float d);
             LED_On(LED_GREEN);
             break;
         }
+		UART2_RecieveString(command,length);
+		if(strcmp(command, "U") == 0)
+			{ int k;
+		for(k=0;k<sizeof(allLats);k++){
+			f32 longitude=0;
+			char str_longitude[20]={0};
+			f32 latitude=0;
+			char str_latitude[20]={0};
+		
+			longitude = allLongs[k] ;
+			ConvertFloatToStr(longitude,str_longitude);
+			UART2_SendString (str_longitude);
+			
+			UART2_SendString ("   ");
+			latitude = allLats[k] ;
+			ConvertFloatToStr(latitude,str_latitude);
+			UART2_SendString (str_latitude);
+			
+			UART2_SendString ("\n");
+		}
+	
+	}
     }
 }
 
