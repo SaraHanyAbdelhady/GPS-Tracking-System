@@ -24,6 +24,12 @@ char GPS_formated[12][20];
 char* token;
 float currentLat;
 float currentLong;
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+float allLats[200];
+int latscount=0;
+float allLongs[200];
+int longscount=0;
+
 
 // extract $GPRMC message content
 void GPS_read(void) {
@@ -32,7 +38,7 @@ void GPS_read(void) {
 
     // wait till $GPRMC message
     do {
-        while (UART2_Receivechar() != GPS_logname[i]) {
+        while (UART2_Recievechar() != GPS_logname[i]) {
             i = 0;
         }
         i++;
@@ -40,7 +46,7 @@ void GPS_read(void) {
 
     // extract GPRMC message content
     do {
-        GPS[counter] = UART2_Receivechar();
+        GPS[counter] = UART2_Recievechar();
         counter++;
     } while (GPS[counter - 1] != '*');
 }
@@ -57,15 +63,21 @@ void GPS_format(void) {
     } while (token != NULL);
 
     if (strcmp(GPS_formated[1], "A") == 0) {
-        if (strcmp(GPS_formated[3], "N") == 0)
+        if (strcmp(GPS_formated[3], "N") == 0){
             currentLat = atof(GPS_formated[2]);
-        else
+				    allLats[latscount++]= currentLat;}
+        else{
             currentLat = -(atof(GPS_formated[2]));
+				    allLats[latscount++]= currentLat;}
 
-        if (strcmp(GPS_formated[5], "E") == 0)
+        if (strcmp(GPS_formated[5], "E") == 0){
             currentLong = atof(GPS_formated[4]);
-        else
+					  allLongs[longscount++]= currentLong;
+				}
+        else{
             currentLong = -(atof(GPS_formated[4]));
+					  allLongs[longscount++]= currentLong;
+				}
     }
 }
 

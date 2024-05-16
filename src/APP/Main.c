@@ -30,7 +30,9 @@ double lat1 = 0;
 double long1 = 0;
 extern float currentLat;
 extern float currentLong;
-
+const int length=3;					//	for receiving U
+#define COMMAND_LENGTH 3
+char command[COMMAND_LENGTH] = {0}; 	//	for receiving U
 
 double to_degree(float raw_degree);
 double to_radians(double degrees);
