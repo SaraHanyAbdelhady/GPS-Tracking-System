@@ -81,5 +81,154 @@ void GPS_format(void) {
     }
 }
 
+/************* PREVIOUS APPROACH *************/
+/*
 
+int flag = 0;
+u8 Received_Char, Counter;
+char GPS[300];
+char header[] = "$GPRMC,";
+int i;
+unsigned long int check;
+
+
+void GPS_Read()
+{
+	
+
+	char i=0;
+	short unsigned int counter=0;
+
+	//wait till $GPRMC message
+	
+		LED_On(LED_BLUE);
+	
+		
+		
+	//extract GPRMC message content
+	do{	
+			GPS[counter]=UART2_Receivechar();
+			UART0_SendChar(GPS[counter]);
+			counter++;;
+	  }while(GPS[counter-1]!= '*');
+		LED_On(LED_GREEN);
+}
+
+void GPS_voidReceiveSentence(f32* Copy_f32Latitude, f32 *Copy_f32Longitude, u8 *Copy_u8Speed)
+{
+	u8 Local_u8GPS_Sentence[100];
+	do 
+	{
+		GPS[i] = UART2_Receivechar();
+		if(GPS[i]== header[check])
+		{
+			check++;
+		}
+		else 
+			check = 0;
+		i++;
+
+		if(Received_Char == header[0])
+		{
+			Received_Char = UART5_Recievechar ();
+			if(Received_Char == header[1])
+			{
+				Received_Char = UART5_Recievechar ();
+				if(Received_Char == header[2])
+				{
+					Received_Char = UART5_Recievechar ();
+					if(Received_Char == header[3])
+					{
+						Received_Char = UART5_Recievechar ();
+						if(Received_Char == header[4])
+						{
+							Received_Char = UART5_Recievechar ();
+							if(Received_Char == header[5])
+							{
+								Received_Char = UART5_Recievechar ();
+								if(Received_Char == header[6])
+								{
+									Received_Char = UART5_Recievechar ();
+									while(Received_Char != '*')
+									{
+										Local_u8GPS_Sentence[Counter] = Received_Char;
+										Received_Char = UART5_Recievechar ();
+										Counter++;
+									}
+									GPS_voidExtractCoordinates(Local_u8GPS_Sentence,Copy_f32Latitude,Copy_f32Longitude,Copy_u8Speed);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}while (check!=7);
+}
+
+
+void GPS_voidExtractCoordinates(u8 *Copy_pu8sentence,f32 *Copy_f32Latitude,f32 *Copy_f32Longitude,u8 *Copy_u8Speed)
+{
+	f32 Deg,Min,Sec;
+	char latitudeARR[15]={0};
+	char longARR[15]={0};
+	char SpeedARR[10];
+	u8 j=0;
+	u8 k=0;
+	u8 l=0;
+	u8 i=0;
+	u8 Local_u8_CommaCount =0;
+	while (Local_u8_CommaCount<7)
+	{
+		if (Copy_pu8sentence[i]==',')
+		{
+			Local_u8_CommaCount++;
+			i++;
+		}
+		if (Local_u8_CommaCount==1)
+		{
+			if (Copy_pu8sentence[i]!='A')
+			{
+				GPS_voidReceiveSentence(Copy_f32Latitude, Copy_f32Longitude,Copy_u8Speed);
+			}
+		}
+	    if (Local_u8_CommaCount==2)
+		{
+           latitudeARR[j++]=Copy_pu8sentence[i];
+		}
+	    if (Local_u8_CommaCount==4)
+		{
+           longARR[k++]=Copy_pu8sentence[i];
+		}
+		if (Local_u8_CommaCount==6)
+		{
+           SpeedARR[l++]=Copy_pu8sentence[i];
+		}
+		i++;
+	}
+	*Copy_f32Latitude=atof(latitudeARR);
+	Deg=*Copy_f32Latitude/100;
+	Min=*Copy_f32Latitude-(f32)(Deg*100);
+	Sec=Min/60.0;
+	*Copy_f32Latitude= Deg+Sec;
+
+
+	*Copy_f32Longitude=atof(longARR);
+	Deg=*Copy_f32Longitude/100;
+	Min=*Copy_f32Longitude-(f32)(Deg*100);
+	Sec=Min/60.0;
+	*Copy_f32Longitude= Deg+Sec;
+	//int i;
+	for ( i =0;i<4;i++)
+	{
+		GPS_u8SpeedArr[i]=SpeedARR[i];
+	}
+    SpeedARR[i]='\0';
+	*Copy_u8Speed=atof(SpeedARR);
+}
+
+
+
+
+*******************************************/
 
